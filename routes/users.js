@@ -69,7 +69,15 @@ router.get("/api/v1/user", async (ctx) => {
   if (db.find((q) => q.login === user.login)) {
     ctx.cookies.set(
       "token",
-      encrypt(Buffer.from(JSON.stringify(user), "utf8")),
+      encrypt(
+        Buffer.from(
+          JSON.stringify({
+            ...user,
+            pay: true,
+          }),
+          "utf8"
+        )
+      ),
       {
         httpOnly: false,
         expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
