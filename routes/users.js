@@ -6,7 +6,7 @@ const secret = process.env.secret;
 
 const clientId = "c16b80e7b58a5a007157";
 const algorithm = "aes-256-ctr";
-const iv = crypto.randomBytes(16).toString("hex");
+const iv = crypto.randomBytes(16);
 
 const db = [
   {
@@ -26,7 +26,7 @@ function decrypt(content) {
   const decipher = crypto.createDecipheriv(
     algorithm,
     secret.slice(0, 32),
-    Buffer.from(iv, "hex")
+    Buffer.from(iv.toString("hex"), "hex")
   );
 
   const decrpyted = Buffer.concat([
