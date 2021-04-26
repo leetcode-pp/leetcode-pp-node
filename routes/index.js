@@ -34,7 +34,7 @@ router.get("/api/v1/user", async (ctx) => {
       Authorization: `token ${access_token}`,
     },
   }).then((res) => res.json());
-  if (db.find((q) => q.login === login)) {
+  if (db.find((q) => q.login === user.login)) {
     ctx.body = {
       ...user,
       pay: true,
