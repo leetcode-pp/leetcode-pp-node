@@ -43,8 +43,9 @@ router.get("/api/v1/user", async (ctx) => {
   if (token) {
     const duserStr = decrypt(token);
     if (duserStr) {
-      const duser = JSON.parse(duserStr);
       console.log(duserStr);
+      const duser = JSON.parse(duserStr);
+
       if (db.find((q) => q.login === duser.login)) {
         ctx.body = duser;
         return;
