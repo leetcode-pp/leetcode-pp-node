@@ -34,7 +34,7 @@ function decrypt(content) {
     decipher.final(),
   ]);
 
-  return decrpyted.toString();
+  return decrpyted.toString("utf-8");
 }
 
 router.get("/api/v1/user", async (ctx) => {
