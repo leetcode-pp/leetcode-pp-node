@@ -5,7 +5,7 @@ const crypto = require("crypto");
 const secret = process.env.secret;
 
 const clientId = "c16b80e7b58a5a007157";
-const clientSecret = process.env.secret;
+const algorithm = "aes-256-ctr";
 
 const db = [
   {
@@ -13,24 +13,30 @@ const db = [
   },
 ];
 
-function encrypt(str) {
-  const cipher = crypto.createCipheriv(
-    "aes192",
-    crypto.generateLegacyKey("aes192", secret)
-  );
-  let enc = cipher.update(str, "utf8", "hex"); //编码方式从utf-8转为hex;
-  enc += cipher.final("hex"); //编码方式从转为hex;
-  return enc;
+function encrypt(text) {
+  const cipher = crypto.createCipheriv(algorithm, secret, iv);
+
+  const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
+
+  return {
+    iv: iv.toString("hex"),
+    content: encrypted.toString("hex"),
+  };
 }
 
-function decrypt(str) {
+function decrypt(hash) {
   const decipher = crypto.createDecipheriv(
-    "aes192",
-    crypto.generateLegacyKey("aes192", secret)
+    algorithm,
+    secret,
+    Buffer.from(hash.iv, "hex")
   );
-  let dec = decipher.update(str, "hex", "utf8"); //编码方式从hex转为utf-8;
-  dec += decipher.final("utf8"); //编码方式从utf-8;
-  return dec;
+
+  const decrpyted = Buffer.concat([
+    decipher.update(Buffer.from(hash.content, "hex")),
+    decipher.final(),
+  ]);
+
+  return decrpyted.toString();
 }
 
 router.get("/api/v1/user", async (ctx) => {
@@ -42,7 +48,7 @@ router.get("/api/v1/user", async (ctx) => {
   }
   const code = ctx.query.code;
   const { access_token } = await fetch(
-    `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${clientSecret}`,
+    `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${secret}`,
     {
       method: "POST",
       headers: {
