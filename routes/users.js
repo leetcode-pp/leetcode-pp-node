@@ -68,7 +68,7 @@ router.get("/api/v1/user", async (ctx) => {
   if (db.find((q) => q.login === user.login)) {
     ctx.cookies.set("token", encrypt(JSON.stringify(user)), {
       httpOnly: false,
-      expires: () => 24 * 60 * 60 * 1000 + Date.now(),
+      expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
     });
     ctx.body = {
       ...user,
