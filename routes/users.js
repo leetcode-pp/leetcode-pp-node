@@ -6,6 +6,7 @@ const secret = process.env.secret;
 
 const clientId = "c16b80e7b58a5a007157";
 const algorithm = "aes-256-ctr";
+const iv = crypto.randomBytes(16);
 
 const db = [
   {
