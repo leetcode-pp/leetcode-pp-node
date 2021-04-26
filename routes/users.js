@@ -34,7 +34,7 @@ function decrypt(content) {
     decipher.final(),
   ]);
 
-  return decrpyted.toString("utf-8");
+  return decrpyted.toString();
 }
 
 router.get("/api/v1/user", async (ctx) => {
@@ -71,10 +71,14 @@ router.get("/api/v1/user", async (ctx) => {
   }).then((res) => res.json());
 
   if (db.find((q) => q.login === user.login)) {
-    ctx.cookies.set("token", encrypt(JSON.stringify(user)), {
-      httpOnly: false,
-      expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
-    });
+    ctx.cookies.set(
+      "token",
+      encrypt(Buffer.from(JSON.stringify(user), "utf8")),
+      {
+        httpOnly: false,
+        expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
+      }
+    );
     ctx.body = {
       ...user,
       pay: true,
