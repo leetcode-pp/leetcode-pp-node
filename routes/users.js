@@ -1,9 +1,17 @@
 const router = require("koa-router")();
+const fetch = require("node-fetch");
 const crypto = require("crypto");
 
 const secret = process.env.secret;
 
-router.prefix("/api/v1/user");
+const clientId = "c16b80e7b58a5a007157";
+const clientSecret = process.env.secret;
+
+const db = [
+  {
+    login: "azl397985856",
+  },
+];
 
 function encrypt(str) {
   const cipher = crypto.createCipher("aes192", secret);
@@ -19,7 +27,7 @@ function decrypt(str) {
   return dec;
 }
 
-router.get("/", async (ctx) => {
+router.get("/api/v1/user", async (ctx) => {
   const token = ctx.cookies.get("token");
 
   if (token) {
@@ -43,9 +51,7 @@ router.get("/", async (ctx) => {
       Authorization: `token ${access_token}`,
     },
   }).then((res) => res.json());
-  if (user.login) {
-    loginedUsers.add(user.login);
-  }
+
   if (db.find((q) => q.login === user.login)) {
     ctx.cookies.set("token", encrypt(JSON.stringify(user)), {
       httpOnly: false,
