@@ -14,14 +14,20 @@ const db = [
 ];
 
 function encrypt(str) {
-  const cipher = crypto.createCipher("aes192", secret);
+  const cipher = crypto.createCipheriv(
+    "aes192",
+    crypto.generateLegacyKey("aes192", secret)
+  );
   let enc = cipher.update(str, "utf8", "hex"); //编码方式从utf-8转为hex;
   enc += cipher.final("hex"); //编码方式从转为hex;
   return enc;
 }
 
 function decrypt(str) {
-  const decipher = crypto.createDecipher("aes192", secret);
+  const decipher = crypto.createDecipheriv(
+    "aes192",
+    crypto.generateLegacyKey("aes192", secret)
+  );
   let dec = decipher.update(str, "hex", "utf8"); //编码方式从hex转为utf-8;
   dec += decipher.final("utf8"); //编码方式从utf-8;
   return dec;
