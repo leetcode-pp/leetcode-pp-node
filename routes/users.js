@@ -15,7 +15,7 @@ const db = [
 ];
 
 function encrypt(text) {
-  const cipher = crypto.createCipheriv(algorithm, secret, iv);
+  const cipher = crypto.createCipheriv(algorithm, secret.slice(0, 32), iv);
 
   const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
 
@@ -28,7 +28,7 @@ function encrypt(text) {
 function decrypt(hash) {
   const decipher = crypto.createDecipheriv(
     algorithm,
-    secret,
+    secret.slice(0, 32),
     Buffer.from(hash.iv, "hex")
   );
 
