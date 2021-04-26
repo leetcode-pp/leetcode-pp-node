@@ -41,9 +41,11 @@ router.get("/api/v1/user", async (ctx) => {
   const token = ctx.cookies.get("token");
 
   if (token) {
-    const duser = decrypt(token);
-    console.log(duser);
-    if (db.find((q) => q.login === duser.login)) return duser;
+    const duserStr = decrypt(token);
+    if (duserStr) {
+      const duser = JSON.parse(duserStr);
+      if (db.find((q) => q.login === duser.login)) return duser;
+    }
   }
   const code = ctx.query.code;
   const { access_token } = await fetch(
