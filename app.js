@@ -19,7 +19,7 @@ app.use(
     enableTypes: ["json", "form", "text"],
   })
 );
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ credentials: true }));
 app.use(json());
 app.use(logger());
 app.use(require("koa-static")(__dirname + "/public"));
