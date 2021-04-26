@@ -47,7 +47,10 @@ router.get("/", async (ctx) => {
     loginedUsers.add(user.login);
   }
   if (db.find((q) => q.login === user.login)) {
-    ctx.cookies.set("token", encrypt(JSON.stringify(user)));
+    ctx.cookies.set("token", encrypt(JSON.stringify(user)), {
+      httpOnly: false,
+      expires: 24 * 60 * 60 * 1000 + Date.now(),
+    });
     ctx.body = {
       ...user,
       pay: true,
