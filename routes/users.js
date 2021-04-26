@@ -29,7 +29,7 @@ function decrypt(hash) {
   const decipher = crypto.createDecipheriv(
     algorithm,
     secret.slice(0, 32),
-    Buffer.from(hash.iv, "hex")
+    Buffer.from(hash, iv, "hex")
   );
 
   const decrpyted = Buffer.concat([
