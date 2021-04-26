@@ -19,7 +19,7 @@ function encrypt(text) {
 
   const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
 
-  return encrypted.toString("utf-8");
+  return encrypted.toString("utf8");
 }
 
 function decrypt(content) {
