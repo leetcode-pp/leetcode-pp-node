@@ -10,41 +10,12 @@ const db = [
   },
 ];
 
+const loginedUsers = Set();
+
 router.get("/", async (ctx) => {
   await ctx.render("index", {
     title: "欢迎来到 91 天学算法~",
   });
-});
-
-router.get("/api/v1/user", async (ctx) => {
-  const code = ctx.query.code;
-  const { access_token } = await fetch(
-    `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${clientSecret}`,
-    {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-    }
-  ).then((res) => res.json());
-
-  const user = await fetch("https://api.github.com/user", {
-    headers: {
-      Accept: "application/json",
-      Authorization: `token ${access_token}`,
-    },
-  }).then((res) => res.json());
-  if (db.find((q) => q.login === user.login)) {
-    ctx.body = {
-      ...user,
-      pay: true,
-    };
-  } else {
-    ctx.body = {
-      ...user,
-      pay: false,
-    };
-  }
 });
 
 module.exports = router;
