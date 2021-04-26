@@ -39,12 +39,15 @@ router.get("/api/v1/user", async (ctx) => {
   if (token) {
     const duserStr = decrypt(token);
     if (duserStr) {
-      console.log(duserStr);
-      const duser = JSON.parse(duserStr);
+      try {
+        const duser = JSON.parse(duserStr);
 
-      if (db.find((q) => q.login === duser.login)) {
-        ctx.body = duser;
-        return;
+        if (db.find((q) => q.login === duser.login)) {
+          ctx.body = duser;
+          return;
+        }
+      } catch (err) {
+        console.log("token 解析失败:", err);
       }
     }
   }
