@@ -70,17 +70,18 @@ module.exports = async function checkAuth(ctx, next) {
           expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
         }
       );
-    }
-    if (db.find((q) => q.login === user.login)) {
-      ctx.session.user = {
-        ...user,
-        pay: true,
-      };
-    } else {
-      ctx.session.user = {
-        ...user,
-        pay: false,
-      };
+
+      if (db.find((q) => q.login === user.login)) {
+        ctx.session.user = {
+          ...user,
+          pay: true,
+        };
+      } else {
+        ctx.session.user = {
+          ...user,
+          pay: false,
+        };
+      }
     }
 
     await next();
