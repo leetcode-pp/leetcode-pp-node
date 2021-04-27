@@ -28,6 +28,7 @@ module.exports = async function checkAuth(ctx, next) {
 
           if (db.find((q) => q.login === duser.login)) {
             ctx.session.user = duser;
+            next();
             return;
           }
         } catch (err) {
