@@ -1,6 +1,7 @@
 const router = require("koa-router")();
 const lectures = require("../static/lectures/lectures.json");
 const { decrypt } = require("../utils/crypto");
+const { success, fail } = require("../utils/request");
 
 router.get("/api/v1/lectures/basic", async (ctx) => {
   ctx.body = {
@@ -24,11 +25,14 @@ router.get("/api/v1/lectures/basic", async (ctx) => {
 router.get("/api/v1/lectures/basic/:id", async (ctx) => {
   const id = ctx.params.id;
   const lecture = lectures[id];
-
-  ctx.body = {
-    ...lecture,
-    content: decrypt(lectures[id].content),
-  };
+  if (!lecture) {
+    ctx.body = fail({ message: "讲义不存在" });
+  } else {
+    ctx.body = success({
+      ...lecture,
+      content: decrypt(lecture.content),
+    });
+  }
 });
 
 module.exports = router;

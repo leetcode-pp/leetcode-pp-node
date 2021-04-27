@@ -11,6 +11,7 @@ const passport = require("./middleware/passport");
 const index = require("./routes/index");
 const users = require("./routes/users");
 const lectures = require("./routes/lectures");
+const mockUserInfo = require("./middleware/mockUserInfo");
 
 // error handler
 onerror(app);
@@ -24,7 +25,11 @@ app.use(
 app.use(cors({ credentials: true }));
 app.use(json());
 app.use(logger());
-app.use(passport);
+if (process.env.NODE_ENV === "development") {
+  app.use(mockUserInfo);
+} else {
+  app.use(passport);
+}
 app.use(require("koa-static")(__dirname + "/public"));
 
 app.use(
