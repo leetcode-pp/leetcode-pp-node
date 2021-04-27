@@ -11,6 +11,9 @@ const db = [
 ];
 
 module.exports = async function checkAuth(ctx, next) {
+  if (!ctx.session) {
+    ctx.session = {};
+  }
   const token = ctx.cookies.get("token");
 
   if (token) {
@@ -63,9 +66,7 @@ module.exports = async function checkAuth(ctx, next) {
         expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
       }
     );
-    if (!ctx.session) {
-      ctx.session = {};
-    }
+
     ctx.session.user = {
       ...user,
       pay: true,
