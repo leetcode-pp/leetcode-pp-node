@@ -14,6 +14,7 @@ module.exports = async function checkAuth(ctx, next) {
   if (!ctx.session) {
     ctx.session = {};
   }
+  if (ctx.session.user) next();
   const token = ctx.cookies.get("token");
 
   if (token) {
