@@ -22,7 +22,36 @@ router.get("/api/v1/lectures/basic", async (ctx) => {
   };
 });
 
-router.get("/api/v1/lectures/basic/:id", async (ctx) => {
+router.get("/api/v1/lectures/intro", async (ctx) => {
+  ctx.body = {
+    success: true,
+    code: 0,
+    data: [
+      {
+        title: "01. 数据结构与算法概述",
+        desc: "主要介绍了数据结构与算法是在研究什么",
+        image: {
+          url:
+            "https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-22/1603338453129-image.png",
+          alt: "数据结构总览",
+        },
+        id: -1,
+      },
+      {
+        title: "02. 如何衡量算法的性能",
+        desc: "介绍复杂度",
+        image: {
+          url:
+            "https://cdn.jsdelivr.net/gh/azl397985856/cdn/2020-10-22/1603339778900-image.png",
+          alt: "复杂度",
+        },
+        id: -2,
+      },
+    ],
+  };
+});
+
+router.get("/api/v1/lectures/:id", async (ctx) => {
   const id = ctx.params.id;
   const lecture = lectures[id];
   if (!lecture) {
