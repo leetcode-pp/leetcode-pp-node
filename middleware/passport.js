@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
 const { encrypt, decrypt } = require("../utils/crypto");
+const { success, fail } = require("../utils/request");
 
 const secret = process.env.secret;
 
@@ -26,7 +27,7 @@ module.exports = async function checkAuth(ctx, next) {
           const duser = JSON.parse(duserStr);
 
           if (db.find((q) => q.login === duser.login)) {
-            ctx.body = duser;
+            ctx.body = success(duser);
             return;
           }
         } catch (err) {
