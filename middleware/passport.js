@@ -51,22 +51,26 @@ module.exports = async function checkAuth(ctx, next) {
         Authorization: `token ${access_token}`,
       },
     }).then((res) => res.json());
-    ctx.cookies.set(
-      "token",
-      encrypt(
-        Buffer.from(
-          JSON.stringify({
-            ...user,
-            pay: true,
-          }),
-          "utf8"
-        )
-      ),
-      {
-        httpOnly: false,
-        expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
-      }
-    );
+
+    // user.login 存在表示登录成功
+    if (user.login) {
+      ctx.cookies.set(
+        "token",
+        encrypt(
+          Buffer.from(
+            JSON.stringify({
+              ...user,
+              pay: true,
+            }),
+            "utf8"
+          )
+        ),
+        {
+          httpOnly: false,
+          expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
+        }
+      );
+    }
     if (db.find((q) => q.login === user.login)) {
       ctx.session.user = {
         ...user,
