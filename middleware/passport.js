@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const { encrypt, decrypt } = require("../utils/crypto");
-// const { success, fail } = require("../utils/request");
+const { fail } = require("../utils/request");
 
 const secret = process.env.secret;
 
@@ -41,7 +41,10 @@ module.exports = async function checkAuth(ctx, next) {
       }
     }
     const code = ctx.query.code;
-    if (!code) return;
+    if (!code) {
+      ctx.body = fail({ message: "请先登录~", code: 91 });
+      return;
+    }
     const { access_token } = await fetch(
       `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${secret}`,
       {
