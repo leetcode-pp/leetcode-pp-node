@@ -10,6 +10,7 @@ module.exports = {
     return encrypted.toString("hex");
   },
   decrypt(content) {
+    if (!content) return "";
     const decipher = crypto.createDecipheriv(
       algorithm,
       secret.slice(0, 32),

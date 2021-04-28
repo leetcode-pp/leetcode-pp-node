@@ -48,56 +48,59 @@ module.exports = async function checkAuth(ctx, next) {
       ctx.body = fail({ message: "code 码无效，请重新登录", code: 92 });
       return;
     }
-    const { access_token } = await fetch(
-      `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${secret}`,
-      {
-        method: "POST",
+    try {
+      const { access_token } = await fetch(
+        `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${secret}`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      ).then((res) => res.json());
+
+      const user = await fetch("https://api.github.com/user", {
         headers: {
           Accept: "application/json",
+          Authorization: `token ${access_token}`,
         },
-      }
-    ).then((res) => res.json());
-    if (!access_token) return;
+      }).then((res) => res.json());
 
-    const user = await fetch("https://api.github.com/user", {
-      headers: {
-        Accept: "application/json",
-        Authorization: `token ${access_token}`,
-      },
-    }).then((res) => res.json());
+      // user.login 存在表示登录成功
+      if (user.login) {
+        ctx.cookies.set(
+          "token",
+          encrypt(
+            Buffer.from(
+              JSON.stringify({
+                ...user,
+                pay: true,
+              }),
+              "utf8"
+            )
+          ),
+          {
+            httpOnly: false,
+            expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
+          }
+        );
 
-    // user.login 存在表示登录成功
-    if (user.login) {
-      ctx.cookies.set(
-        "token",
-        encrypt(
-          Buffer.from(
-            JSON.stringify({
-              ...user,
-              pay: true,
-            }),
-            "utf8"
-          )
-        ),
-        {
-          httpOnly: false,
-          expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
+        if (db.find((q) => q.login === user.login)) {
+          ctx.session.user = {
+            ...user,
+            pay: true,
+          };
+        } else {
+          ctx.session.user = {
+            ...user,
+            pay: false,
+          };
         }
-      );
-
-      if (db.find((q) => q.login === user.login)) {
-        ctx.session.user = {
-          ...user,
-          pay: true,
-        };
-      } else {
-        ctx.session.user = {
-          ...user,
-          pay: false,
-        };
       }
-    }
 
-    await next();
+      await next();
+    } catch (err) {
+      ctx.body = fail({ message: "登录失败， code 码已失效~", code: 93 });
+    }
   }
 };
