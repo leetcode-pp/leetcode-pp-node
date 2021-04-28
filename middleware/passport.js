@@ -44,6 +44,9 @@ module.exports = async function checkAuth(ctx, next) {
     if (!code) {
       ctx.body = fail({ message: "请先登录~", code: 91 });
       return;
+    } else if (code.length !== 20) {
+      ctx.body = fail({ message: "code 码无效，请重新登录", code: 92 });
+      return;
     }
     const { access_token } = await fetch(
       `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${secret}`,
