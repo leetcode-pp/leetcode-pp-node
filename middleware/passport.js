@@ -9,6 +9,9 @@ const db = [
   {
     login: "azl397985856",
   },
+  {
+    login: "Yueqi-19",
+  },
 ];
 
 module.exports = async function checkAuth(ctx, next) {
@@ -33,10 +36,12 @@ module.exports = async function checkAuth(ctx, next) {
           }
         } catch (err) {
           console.log("token 解析失败:", err);
+          return;
         }
       }
     }
     const code = ctx.query.code;
+    if (!code) return;
     const { access_token } = await fetch(
       `https://github.com/login/oauth/access_token?code=${code}&client_id=${clientId}&client_secret=${secret}`,
       {
@@ -46,6 +51,7 @@ module.exports = async function checkAuth(ctx, next) {
         },
       }
     ).then((res) => res.json());
+    if (!access_token) return;
 
     const user = await fetch("https://api.github.com/user", {
       headers: {
