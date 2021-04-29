@@ -257,11 +257,11 @@ const lectures = {
 };
 
 // 先导
-lectures.intro["-2"].content = encrypt(
+lectures.intro["-4"].content = encrypt(
   Buffer.from(fs.readFileSync("./-1.intro-01.md"), "utf8")
 );
 
-lectures.intro["-1"].content = encrypt(
+lectures.intro["-3"].content = encrypt(
   Buffer.from(fs.readFileSync("./-2.intro-02.md"), "utf8")
 );
 
