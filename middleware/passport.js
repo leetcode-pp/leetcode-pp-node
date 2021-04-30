@@ -28,9 +28,7 @@ module.exports = async function checkAuth(ctx, next) {
       if (duserStr) {
         try {
           const duser = JSON.parse(duserStr);
-
           ctx.session.user = duser;
-
           await next();
           return;
         } catch (err) {
@@ -67,22 +65,6 @@ module.exports = async function checkAuth(ctx, next) {
 
       // user.login 存在表示登录成功
       if (user.login) {
-        ctx.cookies.set(
-          "token",
-          encrypt(
-            Buffer.from(
-              JSON.stringify({
-                ...user,
-                pay: true,
-              }),
-              "utf8"
-            )
-          ),
-          {
-            httpOnly: false,
-            expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
-          }
-        );
         // 付费用户
         if (db.find((q) => q.login === user.login)) {
           // TODO: 如果不在组织中，自动邀请进 Github 组织
@@ -93,11 +75,45 @@ module.exports = async function checkAuth(ctx, next) {
             ...user,
             pay: true,
           };
+
+          ctx.cookies.set(
+            "token",
+            encrypt(
+              Buffer.from(
+                JSON.stringify({
+                  ...user,
+                  pay: true,
+                }),
+                "utf8"
+              )
+            ),
+            {
+              httpOnly: false,
+              expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
+            }
+          );
         } else {
           ctx.session.user = {
             ...user,
             pay: false,
           };
+
+          ctx.cookies.set(
+            "token",
+            encrypt(
+              Buffer.from(
+                JSON.stringify({
+                  ...user,
+                  pay: false,
+                }),
+                "utf8"
+              )
+            ),
+            {
+              httpOnly: false,
+              expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
+            }
+          );
         }
       }
 
