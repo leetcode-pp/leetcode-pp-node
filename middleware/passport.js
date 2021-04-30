@@ -84,8 +84,12 @@ module.exports = async function checkAuth(ctx, next) {
             expires: new Date(24 * 60 * 60 * 1000 + Date.now()),
           }
         );
-
+        // 付费用户
         if (db.find((q) => q.login === user.login)) {
+          // TODO: 如果不在组织中，自动邀请进 Github 组织
+          // see #1 https://octokit.github.io/rest.js/v18#orgs-check-membership
+          // see #2 https://github.com/octokit/octokit.js
+          // see #3 https://github.com/thundergolfer/automated-github-organization-invites/blob/bb1bb3d42a330716f4dd5c49256245e4bde27489/web_app.rb
           ctx.session.user = {
             ...user,
             pay: true,
