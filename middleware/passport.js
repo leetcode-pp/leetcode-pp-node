@@ -99,8 +99,6 @@ module.exports = async function checkAuth(ctx, next) {
             ...user,
             pay: false,
           };
-          await next();
-          return;
         }
       }
 
