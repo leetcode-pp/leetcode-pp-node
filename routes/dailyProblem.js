@@ -2,7 +2,11 @@ const router = require("koa-router")();
 const solutions = require("../static/solution/solutions.json");
 const { decrypt } = require("../utils/crypto");
 
-const { success } = require("../utils/request");
+const { success, fail } = require("../utils/request");
+
+function getCurrentDay(date) {
+  return 1;
+}
 
 router.get("/api/v1/daily-problem", async (ctx) => {
   // 1. 如果用户指定了时间，则获取指定时间，否则获取今天
@@ -67,9 +71,17 @@ router.get("/api/v1/daily-problem", async (ctx) => {
 
 router.get("/api/v1/daily-problem/solution", async (ctx) => {
   // 逻辑和上面类似，只是返回值为 Markdown
-  ctx.body = success({
-    content: decrypt(solutions[1].content),
-  });
+
+  const day = ctx.query.day || getCurrentDay(); // 用户指定的实际第几天（注意这里的 day 是数字，含义为第 day 天）
+  if (day in solutions) {
+    ctx.body = success({
+      content: decrypt(solutions[day].content),
+    });
+  } else {
+    ctx.body = fail({
+      message: "当前暂时没有官方题解，请联系当前讲师进行处理~",
+    });
+  }
 });
 
 module.exports = router;
