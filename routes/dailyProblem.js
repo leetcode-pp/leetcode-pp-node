@@ -3,9 +3,12 @@ const solutions = require("../static/solution/solutions.json");
 const { decrypt } = require("../utils/crypto");
 
 const { success, fail } = require("../utils/request");
+const { startTime } = require("../config/index");
 
-function getCurrentDay(date) {
-  return 1;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+function getDay(date) {
+  return ((date - startTime + MS_PER_DAY - 1) / MS_PER_DAY) >> 0;
 }
 
 router.get("/api/v1/daily-problem", async (ctx) => {
@@ -14,9 +17,8 @@ router.get("/api/v1/daily-problem", async (ctx) => {
   // 3. 根据 Day 几 计算出具体返回哪一个题目
   // ！！注意： 如果用户指定的时间大于今天，则返回”题目不存在，仅支持查询历史每日一题“
 
-  const date = ctx.query.date; // 用户指定的实际
-
-  if (date) {
+  const date = getDay(ctx.query.date || new Date().getTime()); // 用户指定的实际
+  if (date === 2) {
     ctx.body = success({
       day: 2,
       title: "821. 字符的最短距离",
@@ -38,7 +40,7 @@ router.get("/api/v1/daily-problem", async (ctx) => {
       
       `,
     });
-  } else {
+  } else if (date <= 1) {
     ctx.body = success({
       day: 1,
       title: "66. 加一",
@@ -67,6 +69,10 @@ router.get("/api/v1/daily-problem", async (ctx) => {
 解释: 输入数组表示数字 4321。
     `,
     });
+  } else {
+    ctx.body = fail({
+      message: "当前暂时没有每日一题，请联系当前讲师进行处理~",
+    });
   }
 });
 
@@ -75,7 +81,7 @@ router.get("/api/v1/daily-problem/solution", async (ctx) => {
 
   // ！！注意： 如果用户指定的 day 大于今天对应的day，则返回”题解不存在，仅支持查询历史官方题解“
 
-  const day = ctx.query.day || getCurrentDay(); // 用户指定的实际第几天（注意这里的 day 是数字，含义为第 day 天）
+  const day = ctx.query.day || getDay(new Date().getTime()); // 用户指定的实际第几天（注意这里的 day 是数字，含义为第 day 天）
   if (day in solutions) {
     ctx.body = success({
       content: decrypt(solutions[day].content),
