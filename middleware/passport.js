@@ -33,7 +33,13 @@ module.exports = async function checkAuth(ctx, next) {
             ctx.session.user = duser;
             await next();
             return;
+          } else {
+            ctx.body = fail({
+              message: "本页内容需付费才能查看，请和 lucifer 进行联系~",
+              code: 93,
+            });
           }
+          return;
         } catch (err) {
           console.log("token 解析失败:", err);
           return;
