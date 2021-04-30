@@ -5,35 +5,19 @@ const { decrypt } = require("../utils/crypto");
 const { success, fail } = require("../utils/request");
 
 router.get("/api/v1/lectures/advance", async (ctx) => {
-  ctx.body = {
-    success: true,
-    code: 0,
-    data: Object.values(lectures.advance),
-  };
+  ctx.body = success(Object.values(lectures.advance));
 });
 
 router.get("/api/v1/lectures/topic", async (ctx) => {
-  ctx.body = {
-    success: true,
-    code: 0,
-    data: Object.values(lectures.topic),
-  };
+  ctx.body = success(Object.values(lectures.topic));
 });
 
 router.get("/api/v1/lectures/basic", async (ctx) => {
-  ctx.body = {
-    success: true,
-    code: 0,
-    data: Object.values(lectures.basic),
-  };
+  ctx.body = success(Object.values(lectures.basic));
 });
 
 router.get("/api/v1/lectures/intro", async (ctx) => {
-  ctx.body = {
-    success: true,
-    code: 0,
-    data: Object.values(lectures.intro),
-  };
+  ctx.body = success(Object.values(lectures.intro));
 });
 
 router.get("/api/v1/lectures/:id", async (ctx) => {
