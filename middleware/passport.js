@@ -29,11 +29,10 @@ module.exports = async function checkAuth(ctx, next) {
         try {
           const duser = JSON.parse(duserStr);
 
-          if (db.find((q) => q.login === duser.login)) {
-            ctx.session.user = duser;
-            await next();
-            return;
-          }
+          ctx.session.user = duser;
+
+          await next();
+          return;
         } catch (err) {
           console.log("token 解析失败:", err);
           return;
