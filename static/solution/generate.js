@@ -38,7 +38,7 @@ function matchWioutPaddingLine(reg, txt) {
 // 基础篇
 Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
   solutions[i] = {};
-  const rawMDBuffer = fs.readFileSync(`./basic/d${i}.md`);
+  const rawMDBuffer = fs.readFileSync(`../../91alg-4/solution/basic/d${i}.md`);
   const rawMD = rawMDBuffer.toString();
   const regs = {
     ...getSatelliteDataReg(),
