@@ -1,7 +1,7 @@
 const startTime = new Date();
 
 startTime.setMonth(4);
-startTime.setDate(1);
+startTime.setDate(10);
 startTime.setHours(0);
 startTime.setMinutes(0);
 startTime.setSeconds(0);

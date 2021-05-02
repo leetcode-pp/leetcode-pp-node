@@ -12,13 +12,21 @@ function getDay(date) {
 }
 
 router.get("/api/v1/daily-problem", async (ctx) => {
-  // 1. 如果用户指定了时间，则获取指定时间，否则获取今天
-  // 2. 根据上一步计算的时间和活动开始时间计算当前是 Day 几
-  // 3. 根据 Day 几 计算出具体返回哪一个题目
-  // ！！注意： 如果用户指定的时间大于今天，则返回”题目不存在，仅支持查询历史每日一题“
+  if (ctx.query.date && ctx.query.date > new Date().getTime()) {
+    // 活动没有开始，给大家一个体验版本(两道题)
+    // TODO: 活动开始去除下面 if 代码
+    if (new Date().getTime() - startTime < 0) {
+      console.log((Math.random() * 3) >>> 0);
+      ctx.body = success(solutions[(Math.random() * 3 + 1) >>> 0]);
+    } else {
+      ctx.body = fail({
+        message: "仅能查询今天之前的题目",
+      });
+    }
 
+    return;
+  }
   const date = getDay(ctx.query.date || new Date().getTime()); // 用户指定的实际
-  console.log(date);
   if (date in solutions) {
     ctx.body = success(solutions[date]);
   } else {
