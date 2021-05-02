@@ -8,7 +8,7 @@ startTime.setSeconds(0);
 
 module.exports = {
   startTime: startTime.getTime(),
-  secre: process.env.secret,
+  secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
   db: [
     {
