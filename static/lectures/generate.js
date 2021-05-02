@@ -257,22 +257,15 @@ const lectures = {
 };
 
 // 先导
-lectures.intro["-4"].content = encrypt(
-  Buffer.from(fs.readFileSync("./-1.intro-01.md"), "utf8")
-);
+lectures.intro["-4"].content = encrypt(fs.readFileSync("./-1.intro-01.md"));
 
-lectures.intro["-3"].content = encrypt(
-  Buffer.from(fs.readFileSync("./-2.intro-02.md"), "utf8")
-);
+lectures.intro["-3"].content = encrypt(fs.readFileSync("./-2.intro-02.md"));
 
 // 基础
 
 [1, 2, 3, 4, 5, 6].forEach((i) => {
   lectures.basic[i].content = encrypt(
-    Buffer.from(
-      fs.readFileSync(`./${i}.basic-${i < 10 ? "0" + i : i}.md`),
-      "utf8"
-    )
+    fs.readFileSync(`./${i}.basic-${i < 10 ? "0" + i : i}.md`)
   );
 });
 
