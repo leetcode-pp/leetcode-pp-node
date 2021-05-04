@@ -75,7 +75,7 @@ module.exports = async function checkAuth(ctx, next) {
             // path: "/",
             // secure: true,
             // sameSite: "none",
-            httpOnly: false,
+            httpOnly: true,
             expires: new Date(24 * 60 * 60 * 1000 + Date.now()), // 一天后过期，后期考虑延长时间
           }
         );

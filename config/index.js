@@ -48,6 +48,72 @@ const tobeIdentified = [
   "yuris304",
   "fangyh",
   "fyyjyx-github",
+
+  "littlesugarman",
+  "LASIWan",
+  "gitigor107",
+
+  "DADAHUI",
+  "yangjiahao106",
+  "He1xin",
+
+  "okbug",
+  // "sichenguo",
+  "zliu1413",
+  "BeBraveBeCurious",
+  "lzcyx",
+  "suikataro",
+  // "464244812@qq.com",
+  "DIUDIU110",
+  // "frostjsy",
+  // "DAXIAdaxia",
+  "tongxw",
+  // "lingquan02",
+  "taojin1992",
+  "size-of",
+  "ARe99s",
+  "agentzzz",
+
+  "longlonglu",
+  "lanceli424",
+  "saberfish",
+  "zyycode",
+
+  "911gt5",
+  "MangoJuicy",
+  "yourspeace",
+
+  "physicshi",
+  "SeventeenCui",
+  "KevinWorkSpace",
+  // "Cartie-ZhouMo",
+
+  "fenglei110",
+
+  "5837907@qq.com",
+
+  // "liuhl06",
+
+  "doubelejjyy",
+
+  "andyyxw",
+
+  "pkuphy",
+  "zhangjihu0",
+  "wz-hub",
+  "bmxbmx3",
+  "davont",
+  "Lizhao-Liu ",
+
+  "terrylijiayang",
+  "shizukanaskytree",
+  "taozi-taozi",
+  "wanyongtao1988",
+
+  "LzdFeiFei",
+
+  "angusgenius",
+  "lilyzhaoyilu",
 ];
 
 module.exports = {
