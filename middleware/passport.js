@@ -72,6 +72,7 @@ module.exports = async function checkAuth(ctx, next) {
           encrypt(Buffer.from(JSON.stringify(u), "utf8")),
           {
             domain: ".leetcode-solution.cn",
+            path: "/",
             // secure: true,
             // sameSite: "none",
             httpOnly: false,
