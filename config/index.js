@@ -7,8 +7,8 @@ startTime.setMinutes(0);
 startTime.setSeconds(0);
 
 const tobeIdentified = [
-  "Xeraphinite",
-  "rjhot",
+  // "Xeraphinite",
+  // "rjhot",
   "ssxgit",
   "sumukeio",
   "ziwh",
