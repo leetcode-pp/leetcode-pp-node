@@ -4,6 +4,10 @@ const { fail } = require("../utils/request");
 const { secret, db, clientId } = require("../config/index");
 
 module.exports = async function checkAuth(ctx, next) {
+  if (!ctx.path.startsWith("/api")) {
+    await next();
+    return;
+  }
   if (!ctx.session) {
     ctx.session = {};
   }
