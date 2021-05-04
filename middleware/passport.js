@@ -71,6 +71,7 @@ module.exports = async function checkAuth(ctx, next) {
           "token",
           encrypt(Buffer.from(JSON.stringify(u), "utf8")),
           {
+            domain: "leetcode-solution.cn",
             httpOnly: false,
             expires: new Date(24 * 60 * 60 * 1000 + Date.now()), // 一天后过期，后期考虑延长时间
           }
