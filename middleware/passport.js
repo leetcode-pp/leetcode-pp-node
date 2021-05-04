@@ -30,10 +30,10 @@ module.exports = async function checkAuth(ctx, next) {
     // 2. 如果没有 token，就必须有 code，因此这个时候需要拿 code 去 github 登录，取用户的信息。
     const code = ctx.query.code;
     if (!code) {
-      ctx.body = fail({ message: "请先登录~", code: 91 });
+      ctx.body = fail({ message: "请先登录~", code: 403 });
       return;
     } else if (code.length !== 20) {
-      ctx.body = fail({ message: "code 码无效，请重新登录", code: 92 });
+      ctx.body = fail({ message: "code 码无效，请重新登录", code: 403 });
       return;
     }
     try {
@@ -86,7 +86,7 @@ module.exports = async function checkAuth(ctx, next) {
       // 4. 登录过程中出错，会跳转至此
       ctx.body = fail({
         message: err.message || "登录失败， code 码已失效~",
-        code: 93,
+        code: 403,
       });
     }
   }

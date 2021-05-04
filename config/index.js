@@ -145,6 +145,10 @@ module.exports = {
     {
       login: "zengwmFE",
     },
+    { login: "aouos" },
+    {
+      login: "15399618796",
+    },
   ].concat(
     tobeIdentified.map((name) => ({
       login: name,
