@@ -84,7 +84,10 @@ module.exports = async function checkAuth(ctx, next) {
       await next();
     } catch (err) {
       // 4. 登录过程中出错，会跳转至此
-      ctx.body = fail({ message: "登录失败， code 码已失效~", code: 93 });
+      ctx.body = fail({
+        message: err.message || "登录失败， code 码已失效~",
+        code: 93,
+      });
     }
   }
 };
