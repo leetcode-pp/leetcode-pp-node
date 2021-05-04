@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const { Octokit } = require("@octokit/rest");
 const { encrypt, decrypt } = require("../utils/crypto");
 const { fail } = require("../utils/request");
 const { secret, db, clientId } = require("../config/index");
@@ -62,11 +63,18 @@ module.exports = async function checkAuth(ctx, next) {
           ...user,
           pay: !!db.find((q) => q.login === user.login),
         };
-        // TODO: 如果不在组织中，自动邀请进 Github 组织
-        // see #1 https://octokit.github.io/rest.js/v18#orgs-check-membership
-        // see #2 https://github.com/octokit/octokit.js
-        // see #3 https://github.com/thundergolfer/automated-github-organization-invites/blob/bb1bb3d42a330716f4dd5c49256245e4bde27489/web_app.rb
-        ctx.session.user = u;
+        try {
+          const octokit = new Octokit({ auth: process.env.token });
+
+          octokit.rest.teams.addOrUpdateMembershipForUserInOrg({
+            org: "leetcode-pp",
+            team_slug: "91algo-4",
+            username: user.login,
+          });
+        } catch (err) {
+          console.log("自动邀请失败：", err);
+        }
+
         ctx.cookies.set(
           "token",
           encrypt(Buffer.from(JSON.stringify(u), "utf8")),
