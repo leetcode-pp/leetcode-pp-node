@@ -59,20 +59,23 @@ module.exports = async function checkAuth(ctx, next) {
       // user.login 存在表示登录成功
       if (user.login) {
         // 付费用户
+        const pay = !!db.find((q) => q.login === user.login);
         const u = {
           ...user,
-          pay: !!db.find((q) => q.login === user.login),
+          pay,
         };
-        try {
-          const octokit = new Octokit({ auth: process.env.token });
+        if (pay) {
+          try {
+            const octokit = new Octokit({ auth: process.env.token });
 
-          octokit.rest.teams.addOrUpdateMembershipForUserInOrg({
-            org: "leetcode-pp",
-            team_slug: "91algo-4",
-            username: user.login,
-          });
-        } catch (err) {
-          console.log("自动邀请失败：", err);
+            octokit.rest.teams.addOrUpdateMembershipForUserInOrg({
+              org: "leetcode-pp",
+              team_slug: "91algo-4",
+              username: user.login,
+            });
+          } catch (err) {
+            console.log("自动邀请失败：", err);
+          }
         }
 
         ctx.cookies.set(
