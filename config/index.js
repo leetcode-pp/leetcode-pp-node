@@ -102,7 +102,6 @@ const tobeIdentified = [
   "zhangjihu0",
   "wz-hub",
   "bmxbmx3",
-  "davont",
   "Lizhao-Liu ",
 
   "terrylijiayang",
@@ -133,6 +132,14 @@ const tobeIdentified = [
   "ningali",
   "WIN0624",
   "Gjts",
+  "CoreJa",
+  "FontEndArt",
+  "surahe",
+  "flagyk5",
+  "QiYang03101994 ",
+  "cecilia-vu",
+  "keepchasing",
+  "Davont",
 ];
 
 module.exports = {
