@@ -140,6 +140,8 @@ const tobeIdentified = [
   "cecilia-vu",
   "keepchasing",
   "Davont",
+  "Jolins",
+  "cicihou",
 ];
 
 module.exports = {
