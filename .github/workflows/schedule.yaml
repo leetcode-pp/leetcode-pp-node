@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: daily problem and daily check
-        run: ls
+        env:
+          issueToken: ${{secrets.issueToken}}
+        run: npm run daily-schedule
