@@ -14,7 +14,7 @@ jobs:
       - name: daily problem
         env:
           issueToken: ${{secrets.issueToken}}
-        run: node daily-problem.js
+        run: ls
       - name: daily check
         env:
           issueToken: ${{secrets.issueToken}}
