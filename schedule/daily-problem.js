@@ -24,7 +24,7 @@ const generateIssueContent = ({ title, link, pres, description, whys }) => {
   [${link}](${link})
   ## 前置知识    
   ${
-    pres.reduce((acc, cur) => {
+    (pres || []).reduce((acc, cur) => {
       return `${acc}    
   - ${cur}`;
     }, "") || "暂无"
