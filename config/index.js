@@ -1,7 +1,7 @@
 const startTime = new Date();
 
 startTime.setMonth(4);
-startTime.setDate(10);
+startTime.setDate(6);
 startTime.setHours(0);
 startTime.setMinutes(0);
 startTime.setSeconds(0);
@@ -100,7 +100,7 @@ const tobeIdentified = [
 
   "pkuphy",
   "zhangjihu0",
-  "wz-hub",
+  "w-z-hub",
   "bmxbmx3",
   "Lizhao-Liu ",
 
@@ -120,7 +120,6 @@ const tobeIdentified = [
   "zhangjihu0",
   "wz-hub",
   "bmxbmx3",
-  "davont",
   "Lizhao-Liu ",
   "terrylijiayang",
   "shizukanaskytree",
@@ -142,9 +141,21 @@ const tobeIdentified = [
   "Davont",
   "Jolins",
   "cicihou",
+  "Yueqi-19",
+  "Xeraphinite",
+  "rfhklwt",
+  "Liuqibaa",
+  "Mvbbb",
+  "nanwy",
+  "zengwmFE",
+  "XiaoY0324",
+  "aouos",
+  "15399618796",
 ];
 
 module.exports = {
+  owner: "leetcode-pp",
+  repo: "91alg-4",
   startTime: startTime.getTime(),
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
@@ -153,32 +164,32 @@ module.exports = {
       login: "azl397985856",
     },
     {
-      login: "Yueqi-19",
+      login: "",
     },
     {
-      login: "rfhklwt",
+      login: "",
     },
     {
-      login: "Liuqibaa",
+      login: "",
     },
     {
-      login: "Mvbbb",
+      login: "",
     },
     {
-      login: "nanwy",
+      login: "",
     },
     {
-      login: "XiaoY0324",
+      login: "",
     },
     {
-      login: "zengwmFE",
+      login: "",
     },
-    { login: "aouos" },
+    { login: "" },
     {
-      login: "15399618796",
+      login: "",
     },
     {
-      login: "Xeraphinite",
+      login: "",
     },
   ].concat(
     tobeIdentified.map((name) => ({

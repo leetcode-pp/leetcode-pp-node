@@ -14,6 +14,7 @@ const users = require("./routes/users");
 const dailyProblem = require("./routes/dailyProblem");
 const lectures = require("./routes/lectures");
 const fallback = require("./routes/redirect");
+const my = require("./routes/my");
 const mockUserInfo = require("./middleware/mockUserInfo");
 
 // error handler
@@ -57,7 +58,7 @@ app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
 app.use(lectures.routes(), lectures.allowedMethods());
 app.use(dailyProblem.routes(), dailyProblem.allowedMethods());
-
+app.use(my.routes(), my.allowedMethods());
 // error-handling
 app.on("error", (err, ctx) => {
   console.error("server error", err, ctx);

@@ -3,14 +3,8 @@ const solutions = require("../static/solution/solutions.json");
 const { decrypt } = require("../utils/crypto");
 
 const { success, fail } = require("../utils/request");
+const { getDay } = require("../utils/day");
 const { startTime } = require("../config/index");
-
-const MS_PER_DAY = 24 * 60 * 60 * 1000;
-
-function getDay(date) {
-  return ((date - startTime + MS_PER_DAY - 1) / MS_PER_DAY) >> 0;
-}
-
 router.get("/api/v1/daily-problem", async (ctx) => {
   if (ctx.query.date && ctx.query.date > new Date().getTime()) {
     // 活动没有开始，给大家一个体验版本(两道题)

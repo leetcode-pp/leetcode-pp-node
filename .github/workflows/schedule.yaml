@@ -1,0 +1,18 @@
+name: daily
+on:
+  push:
+  schedule:
+    - cron: "0 0 0 * * *"
+jobs:
+  Daily:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+      - name: daily problem
+        env:
+          issueToken: ${{secrets.issueToken}}
+        run: node ./schedule/daily-problem
+      - name: daily check
+        env:
+          issueToken: ${{secrets.issueToken}}
+        run: node ./schedule/daily-check
