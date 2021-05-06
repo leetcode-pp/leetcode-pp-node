@@ -3,9 +3,12 @@ on:
   push:
   schedule:
     - cron: "1 0 * * *"
+defaults:
+  run:
+    working-directory: schedule
+
 jobs:
   Daily:
-    working-directory: schedule
     runs-on: ubuntu-latest
     steps:
       - run: npm install
