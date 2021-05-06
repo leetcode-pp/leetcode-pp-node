@@ -1,8 +1,11 @@
 const { Octokit } = require("@octokit/rest");
 const fs = require("fs");
+const path = require("path");
 const { getDay } = require("../utils/day");
 const { owner, repo } = require("../config/index");
+
 const solutions = require("../static/solution/solutions.json");
+
 const octokit = new Octokit({ auth: process.env.issueToken });
 
 const solution = solutions[getDay()];
@@ -48,7 +51,7 @@ async function run() {
   solution.issue_number = data.number;
 
   fs.writeFileSync(
-    "../static/solution/solutions.json",
+    path.resolve(__dirname, "../static/solution/solutions.json"),
     JSON.stringify(solutions)
   );
 }

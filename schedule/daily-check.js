@@ -1,7 +1,9 @@
 const { Octokit } = require("@octokit/rest");
 const fs = require("fs");
+const path = require("path");
 const { getDay } = require("../utils/day");
 const { owner, repo } = require("../config/index");
+
 const solutions = require("../static/solution/solutions.json");
 const mySolutions = require("../static/my/solutions.json");
 
@@ -29,7 +31,7 @@ if (problem && problem.issue_number) {
       });
 
       fs.writeFileSync(
-        "../static/my/solutions.json",
+        path.resolve(__dirname, "../static/my/solutions.json"),
         JSON.stringify(mySolutions)
       );
     });
