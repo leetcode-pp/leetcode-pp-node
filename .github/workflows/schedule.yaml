@@ -17,6 +17,6 @@ jobs:
       - run: npm install
       - name: daily problem and daily check
         env:
-          issueToken: ${{secrets.issueToken}}
+          issueToken: ${{secrets.ISSUETOKEN}}
         run: npm run daily-schedule
       - run: echo "🍏 This job's status is ${{ job.status }}."
