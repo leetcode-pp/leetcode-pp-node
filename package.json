@@ -6,7 +6,8 @@
     "start": "NODE_ENV=production node bin/www",
     "dev": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "daily-schedule": "node scedule/daily-problem.js && node scedule/daily-check.js"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",

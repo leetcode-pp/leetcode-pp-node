@@ -3,19 +3,12 @@ on:
   push:
   schedule:
     - cron: "1 0 * * *"
-defaults:
-  run:
-    working-directory: schedule
 
 jobs:
   Daily:
     runs-on: ubuntu-latest
     steps:
-      - name: daily problem
+      - name: daily problem and daily check
         env:
           issueToken: ${{secrets.issueToken}}
-        run: ls
-      - name: daily check
-        env:
-          issueToken: ${{secrets.issueToken}}
-        run: node daily-check.js
+        run: npm run daily-schedule
