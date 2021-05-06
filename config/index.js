@@ -32,7 +32,7 @@ const tobeIdentified = [
   "evil-lin",
   "NchuYJ",
   "zc-githubs",
-  // "paopaohua",
+  "paopaohua",
   "Critsu",
   "Placeholder",
   "Levix",
@@ -183,34 +183,6 @@ module.exports = {
   db: [
     {
       login: "azl397985856",
-    },
-    {
-      login: "",
-    },
-    {
-      login: "",
-    },
-    {
-      login: "",
-    },
-    {
-      login: "",
-    },
-    {
-      login: "",
-    },
-    {
-      login: "",
-    },
-    {
-      login: "",
-    },
-    { login: "" },
-    {
-      login: "",
-    },
-    {
-      login: "",
     },
   ].concat(
     tobeIdentified.map((name) => ({
