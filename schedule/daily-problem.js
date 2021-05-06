@@ -35,9 +35,7 @@ const generateIssueContent = ({ title, link, pres, description, whys }) => {
 };
 
 const generateIssueTitle = ({ day, tags, title }) =>
-  `【${tags ? tags[0] : ""} - Day ${day} 】${new Date().toLocaleDateString(
-    "en-CA"
-  )} - ${title}`;
+  `【Day ${day} 】${new Date().toLocaleDateString("en-CA")} - ${title}`;
 
 async function run() {
   const { data } = await octokit.rest.issues.create({
