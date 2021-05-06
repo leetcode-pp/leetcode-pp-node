@@ -8,9 +8,16 @@ jobs:
   Daily:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: run npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - run: npm install
       - name: daily problem and daily check
         env:
-          issueToken: ${{secrets.issueToken}}
+          issueToken: ${{secrets.ISSUETOKEN}}
         run: npm run daily-schedule
       - name: Commit static
         run: |
