@@ -87,7 +87,7 @@ const tobeIdentified = [
   "physicshi",
   "SeventeenCui",
   "KevinWorkSpace",
-  // "Cartie-ZhouMo",
+  "Cartie-ZhouMo",
 
   "fenglei110",
 
@@ -172,7 +172,10 @@ const tobeIdentified = [
   "sitequ",
   "dorothyDing",
   "BraveSage",
-  // "edge-wzw",
+  "edge-wzw",
+  "dublue24",
+  "Xyxy1722",
+  "mystoryshine",
 ];
 
 module.exports = {
