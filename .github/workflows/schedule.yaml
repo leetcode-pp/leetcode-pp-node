@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: daily problem and daily check
-        run: npm run daily-schedule
+        run: ls
