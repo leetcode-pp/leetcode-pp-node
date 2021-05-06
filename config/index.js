@@ -67,7 +67,7 @@ const tobeIdentified = [
   // "464244812@qq.com",
   "DIUDIU110",
   // "frostjsy",
-  // "DAXIAdaxia",
+  "DAXIAdaxia",
   "tongxw",
   // "lingquan02",
   "taojin1992",
@@ -170,6 +170,8 @@ const tobeIdentified = [
   "348977787@qq.com",
   "miqpalzm",
   "sitequ",
+  "dorothyDing",
+  "BraveSage",
   // "edge-wzw",
 ];
 
