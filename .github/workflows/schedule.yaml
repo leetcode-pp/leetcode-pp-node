@@ -5,14 +5,15 @@ on:
     - cron: "1 0 * * *"
 jobs:
   Daily:
+    working-directory: schedule
     runs-on: ubuntu-latest
     steps:
       - run: npm install
       - name: daily problem
         env:
           issueToken: ${{secrets.issueToken}}
-        run: node schedule/daily-problem.js
+        run: node daily-problem.js
       - name: daily check
         env:
           issueToken: ${{secrets.issueToken}}
-        run: node schedule/daily-check.js
+        run: node daily-check.js
