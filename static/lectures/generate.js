@@ -112,6 +112,15 @@ const lectures = {
       },
       id: 6,
     },
+    7: {
+      title: "07. 模拟与枚举",
+      desc: "模拟和枚举的简单介绍",
+      image: {
+        url:
+          "https://tva1.sinaimg.cn/large/008i3skNly1gq8s81iijpj308i04it92.jpg",
+      },
+      id: 7,
+    },
   },
   topic: {
     7: {
@@ -267,7 +276,7 @@ lectures.intro["-3"].content = encrypt(
 
 // 基础
 
-[1, 2, 3, 4, 5, 6].forEach((i) => {
+[1, 2, 3, 4, 5, 6, 7].forEach((i) => {
   lectures.basic[i].content = encrypt(
     fs.readFileSync(`../../91alg-4/lecture/basic-${i < 10 ? "0" + i : i}.md`)
   );
