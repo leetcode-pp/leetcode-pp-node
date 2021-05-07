@@ -10,7 +10,6 @@ router.get("/api/v1/daily-problem", async (ctx) => {
     // 活动没有开始，给大家一个体验版本(两道题)
     // TODO: 活动开始去除下面 if 代码
     if (new Date().getTime() - startTime < 0) {
-      console.log((Math.random() * 3) >>> 0);
       ctx.body = success(solutions[(Math.random() * 3 + 1) >>> 0]);
     } else {
       ctx.body = fail({
