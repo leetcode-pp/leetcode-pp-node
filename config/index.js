@@ -193,12 +193,14 @@ zhangyong-hub
 wsgouwan
 johanazhu
   HTian1997
-  bochengwan
+  Bochengwan
   shuo0314
   peacejoylove86
   joe-the-plumber
   QiuhaoLi
 xiaotuanzi999
+Eachless@gmail.com
+simplezhao
   NorthSeacoder`),
 ];
 
