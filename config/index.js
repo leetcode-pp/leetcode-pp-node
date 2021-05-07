@@ -6,7 +6,10 @@ startTime.setHours(0);
 startTime.setMinutes(0);
 startTime.setSeconds(0);
 function join(s) {
-  return s.split(/\n/).filter(Boolean);
+  return s
+    .split(/\n/)
+    .filter(Boolean)
+    .map((v) => String.prototype.trim.call(v));
 }
 const tobeIdentified = [
   // "Xeraphinite",
@@ -183,6 +186,9 @@ const tobeIdentified = [
   Nicenonecb
   LangqiZhao
   wangpengzhen
+  mmokinzhao
+zhangyong-hub
+125110072@qq.com
   HTian1997
   bochengwan
   shuo0314
