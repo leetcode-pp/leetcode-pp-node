@@ -5,7 +5,9 @@ startTime.setDate(10);
 startTime.setHours(0);
 startTime.setMinutes(0);
 startTime.setSeconds(0);
-
+function join(s) {
+  return s.split(/\n/).filter(Boolean);
+}
 const tobeIdentified = [
   // "Xeraphinite",
   // "rjhot",
@@ -176,6 +178,16 @@ const tobeIdentified = [
   "dublue24",
   "Xyxy1722",
   "mystoryshine",
+  ...join(`wangyi123456
+  mittacy
+  Nicenonecb
+  LangqiZhao
+  wangpengzhen
+  HTian1997
+  bochengwan
+  shuo0314
+  peacejoylove86
+  NorthSeacoder`),
 ];
 
 module.exports = {
