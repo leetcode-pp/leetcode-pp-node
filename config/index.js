@@ -74,7 +74,7 @@ const tobeIdentified = [
   // "frostjsy",
   "DAXIAdaxia",
   "tongxw",
-  // "lingquan02",
+  "lingquan02",
   "taojin1992",
   "size-of",
   "ARe99s",
@@ -187,7 +187,7 @@ const tobeIdentified = [
   LangqiZhao
   wangpengzhen
   falconruo
-  mmokinzhao
+  mokinzhao
 zhangyong-hub
 125110072@qq.com
 wsgouwan
@@ -209,6 +209,17 @@ devil-lin
 dmlseeing
 UCASHurui
 naomiwufzz
+dopufol
+wu529778790
+15209356689
+kofzhang
+BryanMiracle
+sichenguo
+Endeavor-Gcl
+Syan115
+xiongyujie
+qycoder
+hazelnuttt
   NorthSeacoder`),
 ];
 
