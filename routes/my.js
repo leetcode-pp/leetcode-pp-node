@@ -5,12 +5,16 @@ const { decrypt } = require("../utils/crypto");
 const { success, fail } = require("../utils/request");
 
 router.get("/api/v1/my/solutions", async (ctx) => {
-  ctx.body = success(
-    solutions[ctx.session.user.login].map((q, i) => ({
-      ...q,
-      title: (officialSolution[i + 1] || {}).title || "",
-    }))
-  );
+  if (ctx.session.user.login) {
+    ctx.body = success(
+      solutions[ctx.session.user.login].map((q, i) => ({
+        ...q,
+        title: (officialSolution[i + 1] || {}).title || "",
+      }))
+    );
+  } else {
+    ctx.body = success([]);
+  }
 });
 
 router.get("/api/v1/my/solutions/:id", async (ctx) => {
