@@ -24,7 +24,9 @@ if (problem && problem.issue_number) {
         if (!(login in mySolutions)) {
           mySolutions[login] = Array(91);
         }
-        mySolutions[login][getDay() - 2] = {
+        mySolutions[login][
+          getDay(new Date().getTime() + 24 * 60 * 60 * 1000 * 3) - 2
+        ] = {
           title: problem.title,
           url: comment.html_url,
           body: comment.body,
