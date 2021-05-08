@@ -115,7 +115,7 @@ const tobeIdentified = [
   "taozi-taozi",
   "wanyongtao1988",
 
-  "LzdFeiFei",
+  "lzdFeiFei",
 
   "angusgenius",
   "lilyzhaoyilu",
@@ -141,7 +141,7 @@ const tobeIdentified = [
   "FontEndArt",
   "surahe",
   "flagyk5",
-  "QiYang03101994 ",
+  "QiYang03101994",
   "cecilia-vu",
   "keepchasing",
   "Davont",
@@ -203,13 +203,14 @@ Eachless@gmail.com
 simplezhao
 suukii
 JohnVSD
-autumndesea
+AutumnDeSea
 yulecc
 devil-lin
 dmlseeing
 UCASHurui
 naomiwufzz
 dopufol
+yinfenglin
 wu529778790
 15209356689
 kofzhang
