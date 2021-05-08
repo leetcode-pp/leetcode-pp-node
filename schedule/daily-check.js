@@ -8,8 +8,7 @@ const solutions = require("../static/solution/solutions.json");
 const mySolutions = require("../static/my/solutions.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
-const problem =
-  solutions[getDay(new Date().getTime() + 24 * 60 * 60 * 1000 * 3) - 1]; // 获取昨天的题目
+const problem = solutions[getDay() - 1]; // 获取昨天的题目
 
 if (problem && problem.issue_number) {
   octokit.rest.issues
@@ -24,9 +23,7 @@ if (problem && problem.issue_number) {
         if (!(login in mySolutions)) {
           mySolutions[login] = Array(91);
         }
-        mySolutions[login][
-          getDay(new Date().getTime() + 24 * 60 * 60 * 1000 * 3) - 2
-        ] = {
+        mySolutions[login][getDay() - 2] = {
           title: problem.title,
           url: comment.html_url,
           body: comment.body,
