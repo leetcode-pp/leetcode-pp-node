@@ -8,8 +8,7 @@ const solutions = require("../static/solution/solutions.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
 
-const solution =
-  solutions[getDay(new Date().getTime() + 24 * 60 * 60 * 1000 * 2)];
+const solution = solutions[getDay()];
 
 // generate content for issues
 const generateIssueContent = ({ title, link, pres, description, whys }) => {
