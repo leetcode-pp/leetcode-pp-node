@@ -5,7 +5,7 @@ const { decrypt } = require("../utils/crypto");
 const { success, fail } = require("../utils/request");
 
 router.get("/api/v1/my/solutions", async (ctx) => {
-  if (ctx.session.user.login) {
+  if (ctx.session.user.login in solutions) {
     ctx.body = success(
       solutions[ctx.session.user.login].map((q, i) => ({
         ...q,
