@@ -10,6 +10,8 @@ const octokit = new Octokit({ auth: process.env.issueToken });
 
 const solution = solutions[getDay()];
 
+console.log(solution, getDay());
+
 // generate content for issues
 const generateIssueContent = ({ title, link, pres, description, whys }) => {
   return `# ${title}
