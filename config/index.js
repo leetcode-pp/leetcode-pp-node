@@ -243,6 +243,14 @@ xixi-jiu
 supermeohh
 Nbambi
 p76
+Talent-Rain
+cyk1337
+daidaidashixiong666
+hannahliu-github
+ImSingee
+QiZhongdd
+AmuroPeng
+ShunzuoWu012
 LiangZheCoder
   NorthSeacoder`),
 ];
