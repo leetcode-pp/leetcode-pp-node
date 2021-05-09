@@ -10,8 +10,6 @@ const octokit = new Octokit({ auth: process.env.issueToken });
 
 const solution = solutions[getDay()];
 
-console.log(solution, getDay());
-
 // generate content for issues
 const generateIssueContent = ({ title, link, pres, description, whys }) => {
   return `# ${title}
@@ -40,6 +38,13 @@ const generateIssueTitle = ({ day, title }) =>
   `【Day ${day} 】${new Date().toLocaleDateString("en-CA")} - ${title}`;
 
 async function run(solution) {
+  console.log({
+    owner,
+    repo,
+    title: generateIssueTitle(solution),
+    body: generateIssueContent(solution),
+    labels: solution.tags || [],
+  });
   const { data } = await octokit.rest.issues.create({
     owner,
     repo,
