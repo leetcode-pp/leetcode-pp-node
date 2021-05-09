@@ -6,7 +6,10 @@ const solutions = {};
 
 function toArray(sep = "-", txt) {
   if (!txt) return txt;
-  return txt.split(sep).slice(1);
+  return txt
+    .split(sep)
+    .slice(1)
+    .map((v) => String.prototype.trim.call(v));
 }
 
 function getParenceDataReg() {
