@@ -193,7 +193,7 @@ johanazhu
   joe-the-plumber
   QiuhaoLi
 xiaotuanzi999
-Eachless@gmail.com
+eachless@gmail.com
 simplezhao
 suukii
 JohnVSD
@@ -214,7 +214,7 @@ Endeavor-Gcl
 Syan115
 xiongyujie
 qycoder
-hazelnuttt
+Hazelnuttt
 S-T-D
 wangzqnb
 LS-King
@@ -252,6 +252,8 @@ QiZhongdd
 AmuroPeng
 ShunzuoWu012
 LiangZheCoder
+SunStrongChina
+jawn-ha
   NorthSeacoder`),
 ];
 
