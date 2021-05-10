@@ -249,7 +249,7 @@ hannahliu-github
 ImSingee
 QiZhongdd
 AmuroPeng
-ShunzuoWu012
+ShunzWu012
 LiangZheCoder
 SunStrongChina
 jawn-ha
