@@ -64,6 +64,8 @@ module.exports = async function checkAuth(ctx, next) {
           ...user,
           pay,
         };
+        // 登录成功将用户加入到会话
+        ctx.session.user = u;
         if (pay) {
           try {
             const octokit = new Octokit({ auth: process.env.token });
