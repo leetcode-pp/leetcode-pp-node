@@ -1,7 +1,7 @@
 const { Octokit } = require("@octokit/rest");
 const fs = require("fs");
 const path = require("path");
-const { getDay } = require("../utils/day");
+const { getDay, chineseDate } = require("../utils/day");
 const { owner, repo } = require("../config/index");
 
 const solutions = require("../static/solution/solutions.json");
