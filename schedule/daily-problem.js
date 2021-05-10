@@ -8,8 +8,8 @@ const solutions = require("../static/solution/solutions.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
 
-const solution = solutions[getDay()];
-console.log(getDay(), solution);
+const currentDay = getDay();
+const solution = solutions[currentDay];
 
 // generate content for issues
 const generateIssueContent = ({ title, link, pres, description, whys }) => {
@@ -51,7 +51,10 @@ async function run(solution) {
 
   fs.writeFileSync(
     path.resolve(__dirname, "../static/solution/solutions.json"),
-    JSON.stringify(solutions)
+    JSON.stringify({
+      ...solutions,
+      [currentDay]: solution,
+    })
   );
 }
 
