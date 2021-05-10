@@ -3,14 +3,17 @@ const solutions = require("../static/my/solutions.json");
 const officialSolution = require("../static/solution/solutions.json");
 const { decrypt } = require("../utils/crypto");
 const { success, fail } = require("../utils/request");
+const { getDay } = require("../utils/day");
 
 router.get("/api/v1/my/solutions", async (ctx) => {
   if (ctx.session.user.login in solutions) {
     ctx.body = success(
-      solutions[ctx.session.user.login].filter(Boolean).map((q, i) => ({
-        ...q,
-        title: (officialSolution[i + 1] || {}).title || "",
-      }))
+      solutions[ctx.session.user.login]
+        .map((q, i) => ({
+          ...q,
+          title: (officialSolution[i + 1] || {}).title || "",
+        }))
+        .slice(0, getDay() - 1)
     );
   } else {
     ctx.body = success([]);
