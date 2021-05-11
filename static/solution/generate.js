@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const { encrypt } = require("../../utils/crypto.js");
 
-const solutions = {};
+const solutions = require("./solutions.json");
 
 function toArray(sep = "-", txt) {
   if (!txt) return txt;
@@ -40,7 +40,7 @@ function matchWioutPaddingLine(reg, txt) {
 
 // 基础篇
 Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
-  solutions[i] = {};
+  solutions[i] = solutions[i] || {};
   const rawMDBuffer = fs.readFileSync(`../../91alg-4/solution/basic/d${i}.md`);
   const rawMD = rawMDBuffer.toString();
   const regs = {
@@ -55,6 +55,7 @@ Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
   const title = matchWioutPaddingLine(regs.title, rawMD);
   const whys = matchWioutPaddingLine(regs.whys, rawMD);
   solutions[i] = {
+    ...solutions[i],
     day: i,
     pres: toArray("-", pres),
     tags: toArray("-", tags),
