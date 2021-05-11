@@ -300,8 +300,18 @@ RealDuxy
 NealChristmas
 zibinanhai
 flashyy
-  NorthSeacoder`),
+NorthSeacoder`),
 ];
+
+const userList = [
+  {
+    login: "azl397985856",
+  },
+].concat(
+  tobeIdentified.map((name) => ({
+    login: name,
+  }))
+);
 
 module.exports = {
   owner: "leetcode-pp",
@@ -309,13 +319,7 @@ module.exports = {
   startTime: startTime.getTime(),
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
-  db: [
-    {
-      login: "azl397985856",
-    },
-  ].concat(
-    tobeIdentified.map((name) => ({
-      login: name,
-    }))
-  ),
+  db: userList.reduce((acc, curr) => {
+    acc[curr.login] = curr;
+  }, {}),
 };

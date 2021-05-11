@@ -19,7 +19,10 @@ module.exports = async function checkAuth(ctx, next) {
       if (duserStr) {
         try {
           const duser = JSON.parse(duserStr);
-          ctx.session.user = duser;
+          ctx.session.user = {
+            ...duser,
+            pay: !!db[duser.login],
+          };
           await next();
           return;
         } catch (err) {
@@ -59,7 +62,7 @@ module.exports = async function checkAuth(ctx, next) {
       // user.login 存在表示登录成功
       if (user.login) {
         // 付费用户
-        const pay = !!db.find((q) => q.login === user.login);
+        const pay = !!db[user.login];
         const u = {
           ...user,
           pay,
