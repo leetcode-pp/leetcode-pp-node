@@ -6,6 +6,7 @@ function join(s) {
     .map((v) => String.prototype.trim.call(v));
 }
 const tobeIdentified = [
+  "hillsonziqiu",
   // "Xeraphinite",
   // "rjhot",
   "Forschers",
@@ -297,6 +298,8 @@ ZiyangZ
 baoqin87
 RealDuxy
 NealChristmas
+zibinanhai
+flashyy
   NorthSeacoder`),
 ];
 
