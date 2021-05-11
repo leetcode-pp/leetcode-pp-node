@@ -1,8 +1,9 @@
 name: daily
 on:
+  # Run workflow automatically
   schedule:
+    # Runs every day 16:00 北京时间 24:00
     - cron: "0 16 * * *"
-
 jobs:
   Daily:
     runs-on: ubuntu-latest
