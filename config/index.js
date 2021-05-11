@@ -320,6 +320,7 @@ module.exports = {
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
   db: userList.reduce((acc, curr) => {
-    return (acc[curr.login] = curr);
+    acc[curr.login] = curr;
+    return acc;
   }, {}),
 };
