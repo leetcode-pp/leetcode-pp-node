@@ -13,6 +13,7 @@ const index = require("./routes/index");
 const users = require("./routes/users");
 const dailyProblem = require("./routes/dailyProblem");
 const lectures = require("./routes/lectures");
+const github = require("./routes/github");
 const fallback = require("./routes/redirect");
 const my = require("./routes/my");
 const mockUserInfo = require("./middleware/mockUserInfo");
@@ -59,6 +60,7 @@ app.use(users.routes(), users.allowedMethods());
 app.use(lectures.routes(), lectures.allowedMethods());
 app.use(dailyProblem.routes(), dailyProblem.allowedMethods());
 app.use(my.routes(), my.allowedMethods());
+app.use(github.routes(), github.allowedMethods());
 // error-handling
 app.on("error", (err, ctx) => {
   console.error("server error", err, ctx);
