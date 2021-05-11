@@ -1,5 +1,6 @@
 name: daily
 on:
+  push:
   # Run workflow automatically
   schedule:
     # Runs every day 16:00 北京时间 24:00
