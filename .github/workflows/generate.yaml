@@ -7,10 +7,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Check out repository code
-        uses: actions/checkout@v2
         with:
-          repository: "leetcode-pp/91alg-4"
+          submodules: "true"
       - name: run npm
         uses: actions/setup-node@v2
         with:
