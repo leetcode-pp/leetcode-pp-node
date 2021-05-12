@@ -1,5 +1,5 @@
 const fs = require("fs");
-
+const path = require("path");
 const { encrypt } = require("../../utils/crypto.js");
 
 function merge(A, B) {
@@ -267,24 +267,32 @@ const lectures = {
 
 // 先导
 lectures.intro["-4"].content = encrypt(
-  fs.readFileSync("../../91alg-4/algo.md")
+  fs.readFileSync(path.resolve(__dirname, "../../91alg-4/algo.md"))
 );
 
 lectures.intro["-3"].content = encrypt(
-  fs.readFileSync("../../91alg-4/bigO.md")
+  fs.readFileSync(path.resolve(__dirname, "../../91alg-4/bigO.md"))
 );
 
 // 基础
 
 [1, 2, 3, 4, 5, 6, 7].forEach((i) => {
   lectures.basic[i].content = encrypt(
-    fs.readFileSync(`../../91alg-4/lecture/basic-${i < 10 ? "0" + i : i}.md`)
+    fs.readFileSync(
+      path.resolve(
+        __dirname,
+        `../../91alg-4/lecture/basic-${i < 10 ? "0" + i : i}.md`
+      )
+    )
   );
 });
 
-fs.writeFileSync("./lectures-by-category.json", JSON.stringify(lectures));
+fs.writeFileSync(
+  __dirname + "/lectures-by-category.json",
+  JSON.stringify(lectures)
+);
 
 fs.writeFileSync(
-  "./lectures-by-id.json",
+  __dirname + "/lectures-by-id.json",
   JSON.stringify(merge(lectures.intro, lectures.basic))
 );

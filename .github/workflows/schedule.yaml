@@ -24,3 +24,25 @@ jobs:
           git config --global user.name 'robot'
           git commit -am "feat: from daily schedule"
           git push
+on:
+  push:
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: run npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - run: npm install
+      - name: generate users
+        env:
+            secret: ${{secrets.secret}
+        run: npm run generate
+      - name: Commit static
+        run: |
+          git config --global user.name 'robot'
+          git commit -am "feat: automate generate users"
+          git push

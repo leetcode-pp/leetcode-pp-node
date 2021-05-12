@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 
 const { encrypt } = require("../../utils/crypto.js");
 
@@ -41,7 +42,9 @@ function matchWioutPaddingLine(reg, txt) {
 // 基础篇
 Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
   solutions[i] = solutions[i] || {};
-  const rawMDBuffer = fs.readFileSync(`../../91alg-4/solution/basic/d${i}.md`);
+  const rawMDBuffer = fs.readFileSync(
+    path.resolve(__dirname, `../../91alg-4/solution/basic/d${i}.md`)
+  );
   const rawMD = rawMDBuffer.toString();
   const regs = {
     ...getSatelliteDataReg(),
@@ -67,4 +70,4 @@ Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
   };
 });
 
-fs.writeFileSync("./solutions.json", JSON.stringify(solutions));
+fs.writeFileSync(__dirname + "/solutions.json", JSON.stringify(solutions));
