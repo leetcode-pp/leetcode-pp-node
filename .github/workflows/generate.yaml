@@ -1,11 +1,8 @@
-name: daily
+name: generate
 on:
-  # Run workflow automatically
-  schedule:
-    # Runs every day 16:00 北京时间 24:00
-    - cron: "0 16 * * *"
+  push:
 jobs:
-  Daily:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -15,12 +12,12 @@ jobs:
         with:
           node-version: "14"
       - run: npm install
-      - name: daily problem and daily check
+      - name: generate users
         env:
-          issueToken: ${{secrets.ISSUETOKEN}}
-        run: npm run daily-schedule
+          secret: ${{secrets.secret}
+        run: npm run generate
       - name: Commit static
         run: |
           git config --global user.name 'robot'
-          git commit -am "feat: from daily schedule"
+          git commit -am "feat: automate generate users"
           git push
