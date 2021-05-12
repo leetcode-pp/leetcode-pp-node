@@ -33,11 +33,15 @@ app.use(logger());
 
 app.use(fallback.routes(), fallback.allowedMethods());
 if (process.env.NODE_ENV === "development") {
-  app.use(mockUserInfo);
+  app.use(mockUserInfo({ whitelist: ["/api/v1/github/content"] }));
 } else {
-  app.use(passport);
+  app.use(passport({ whitelist: ["/api/v1/github/content"] }));
 }
-app.use(pay({ whitelist: ["/api/v1/user", "/api/v1/logout"] }));
+app.use(
+  pay({
+    whitelist: ["/api/v1/user", "/api/v1/logout", "/api/v1/github/content"],
+  })
+);
 app.use(require("koa-static")(__dirname + "/public"));
 
 app.use(
