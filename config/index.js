@@ -103,7 +103,7 @@ const tobeIdentified = [
   "zhangjihu0",
   "w-z-hub",
   "bmxbmx3",
-  "Lizhao-Liu ",
+  "Lizhao-Liu",
 
   "terrylijiayang",
   "shizukanaskytree",
@@ -308,6 +308,9 @@ CelesteXiong
 maqianxiong
 mosihan
 dpgirl
+prhCSer
+rufengnanren
+Peg-008
 NorthSeacoder`),
 ];
 

@@ -3,7 +3,7 @@ module.exports = async function checkAuth(ctx, next) {
     ctx.session = {};
   }
   ctx.session.user = {
-    login: "azl397985856",
+    login: "lilyzhaoyilu",
     avatar_url: "https://avatars.githubusercontent.com/u/12479470?v=4",
     name: "lucifer",
     pay: true,
