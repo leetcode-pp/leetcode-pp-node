@@ -25,4 +25,4 @@ jobs:
         run: npm run generate
       - name: Commit static
         run: |
-          ./scripts/commit.sh
+          source ./scripts/commit.sh
