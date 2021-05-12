@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GENERATE }}
+          token: ${{ secrets.CHECKOUT }}
           submodules: "true"
       - name: run npm
         uses: actions/setup-node@v2
