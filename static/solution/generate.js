@@ -26,6 +26,7 @@ function getSatelliteDataReg() {
     description: /(?<=## .*?描述)([\s\S]*?)(?=##)/,
     tags: /(?<=## 标签)([\s\S]*?)(?=##)/,
     whys: /(?<=## 推荐理由)([\s\S]*?)(?=##)/,
+    difficulty: /(?<=## 难度)([\s\S]*?)(?=##)/,
   };
 }
 
@@ -57,12 +58,14 @@ Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
   const link = matchWioutPaddingLine(regs.link, rawMD);
   const title = matchWioutPaddingLine(regs.title, rawMD);
   const whys = matchWioutPaddingLine(regs.whys, rawMD);
+  const difficulty = matchWioutPaddingLine(regs.difficulty, rawMD);
   solutions[i] = {
     ...solutions[i],
     day: i,
     pres: toArray("-", pres),
     tags: toArray("-", tags),
     whys: toArray("-", whys),
+    difficulty,
     description,
     content: encrypt(rawMDBuffer),
     title,
