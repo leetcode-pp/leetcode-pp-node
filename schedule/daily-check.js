@@ -23,7 +23,8 @@ function getAllPages(i) {
       if (res.data.length > 0)
         return getAllPages(i + 1).then((comments) => res.data.concat(comments));
       return [];
-    });
+    })
+    .catch(console.error);
 }
 
 async function run() {

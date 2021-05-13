@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "14"
       - run: npm install
-      - name: daily problem and daily check
+      - name: daily problem
         env:
           issueToken: ${{secrets.ISSUETOKEN}}
         run: npm run daily-schedule
