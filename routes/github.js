@@ -45,14 +45,12 @@ router.all("/api/v1/github/webhook", async (ctx) => {
       body: comment.body,
     };
 
-    fs.writeFileSync(
-      path.resolve(__dirname, "../static/my/solutions.json"),
-      JSON.stringify(mySolutions)
-    );
+    // fs.writeFileSync(
+    //   path.resolve(__dirname, "../static/my/solutions.json"),
+    //   JSON.stringify(mySolutions)
+    // );
 
-    console.log(
-      process.execSync("sh " + path.resolve(__dirname, "../scripts/commit.sh"))
-    );
+    // process.execSync("sh " + path.resolve(__dirname, "../scripts/commit.sh"));
   }
 
   ctx.body = success(mySolutions[comment.user.login]);
