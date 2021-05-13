@@ -7,6 +7,7 @@ const process = require("child_process");
 const { getDay } = require("../utils/day");
 const { success, fail } = require("../utils/request");
 const mySolutions = require("../static/my/solutions.json");
+const solutions = require("../static/solution/solutions.json");
 
 router.all("/api/v1/github/content", async (ctx) => {
   const { url, ...params } = ctx.query;
@@ -14,7 +15,6 @@ router.all("/api/v1/github/content", async (ctx) => {
   Object.keys(params).forEach((key) =>
     dURL.searchParams.append(key, params[key])
   );
-  console.log(dURL);
   const res = await fetch(dURL, {
     headers: {
       Accept: "application/json",
@@ -32,7 +32,11 @@ router.all("/api/v1/github/content", async (ctx) => {
 });
 
 router.all("/api/v1/github/webhook", async (ctx) => {
-  const { action, comment } = ctx.request.body;
+  const { action, comment, issue } = ctx.request.body;
+  if (issue.number === solutions[getDay() - 1].issue_number) {
+    ctx.body = success("只处理当天的打卡信息");
+    return;
+  }
   if (action === "created" && comment.body.length > 20) {
     mySolutions[comment.user.login][getDay() - 1] = {
       // title: problem.title,
