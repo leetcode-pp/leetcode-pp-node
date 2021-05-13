@@ -1,7 +1,7 @@
 name: daily
 on:
   # Run workflow automatically
-  push:
+  # push:
   schedule:
     # Runs every hour
     - cron: "0 * * * *"

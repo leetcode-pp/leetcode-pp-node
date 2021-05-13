@@ -1,6 +1,6 @@
 name: generate data automatically
 on:
-  push:
+  # push:
   # Run workflow automatically
   schedule:
     # Runs every hour
