@@ -31,7 +31,11 @@ app.use(cors({ credentials: true }));
 app.use(json());
 app.use(logger());
 
-const loginWhiteList = ["/api/v1/github/content", "/api/v1/github/webhook"];
+const loginWhiteList = [
+  "/api/v1/github/content",
+  "/api/v1/github/webhook",
+  "/api/v1/daily-problem/ranking",
+];
 
 app.use(fallback.routes(), fallback.allowedMethods());
 if (process.env.NODE_ENV === "development") {
