@@ -58,6 +58,7 @@ async function run(solution) {
   );
 }
 
-if (solution) {
+// 当前有题解，并且今天的题目还没发布，就自动创建一个 issue
+if (solution && !solution.issue_number) {
   run(solution);
 }
