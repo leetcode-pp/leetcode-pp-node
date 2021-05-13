@@ -1,9 +1,5 @@
 const router = require("koa-router")();
 const fetch = require("node-fetch");
-const fs = require("fs");
-const path = require("path");
-const process = require("child_process");
-
 const { getDay } = require("../utils/day");
 const { success, fail } = require("../utils/request");
 const mySolutions = require("../static/my/solutions.json");
