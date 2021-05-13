@@ -1,10 +1,12 @@
 const router = require("koa-router")();
 const solutions = require("../static/solution/solutions.json");
 const { decrypt } = require("../utils/crypto");
-
+const mySolutions = require("../static/my/solutions.json");
+const users = require("../static/users/index.json");
 const { success, fail } = require("../utils/request");
 const { getDay } = require("../utils/day");
 const { startTime } = require("../config/index");
+
 router.get("/api/v1/daily-problem", async (ctx) => {
   if (ctx.query.date && ctx.query.date > new Date().getTime()) {
     // 活动没有开始，给大家一个体验版本(两道题)
@@ -46,6 +48,17 @@ router.get("/api/v1/daily-problem/solution", async (ctx) => {
       message: "当前暂时没有官方题解，请联系当前讲师进行处理~",
     });
   }
+});
+
+const A = [];
+for (const [login, solution] of Object.entries(mySolutions)) {
+  A.push({ count: solution.filter(Boolean).length, ...users[login] });
+}
+
+const rankings = A.sort((a, b) => b.count - a.count);
+
+router.get("/api/v1/daily-problem/ranking", async (ctx) => {
+  ctx.body = success(rankings);
 });
 
 module.exports = router;
