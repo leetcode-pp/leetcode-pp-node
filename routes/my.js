@@ -15,7 +15,7 @@ router.get("/api/v1/my/solutions", async (ctx) => {
           tags: (officialSolution[i + 1] || {}).tags || [],
           difficulty: (officialSolution[i + 1] || {}).difficulty || "",
         }))
-        .slice(0, getDay() - 1)
+        .slice(0, getDay())
     );
   } else {
     ctx.body = success([]);

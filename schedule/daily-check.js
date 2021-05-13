@@ -8,7 +8,10 @@ const solutions = require("../static/solution/solutions.json");
 const mySolutions = require("../static/my/solutions.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
-const problem = solutions[getDay()]; // 获取昨天的题目
+
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+const TODAY = getDay(new Date().getTime() - MS_PER_DAY);
+const problem = solutions[TODAY]; // 获取今天‘的题目。 为了照顾一些人， 我们凌晨一点统计昨天的，而不是当天的。
 
 function getAllPages(i) {
   return octokit.rest.issues
@@ -35,7 +38,7 @@ async function run() {
       if (!(login in mySolutions)) {
         mySolutions[login] = Array(91);
       }
-      mySolutions[login][getDay() - 1] = {
+      mySolutions[login][TODAY - 1] = {
         // title: problem.title,
         url: comment.html_url,
         body: comment.body,
