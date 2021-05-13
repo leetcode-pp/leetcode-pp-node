@@ -22,6 +22,4 @@ jobs:
         run: npm run daily-schedule
       - name: Commit static
         run: |
-          git config --global user.name 'robot'
-          git commit -am "feat: from daily schedule"
-          git push
+          source ./scripts/commit.sh
