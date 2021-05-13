@@ -35,11 +35,11 @@ async function run() {
       if (!(login in mySolutions)) {
         mySolutions[login] = Array(91);
       }
-      mySolutions[login][getDay() - 2] = {
+      mySolutions[login][getDay() - 1] = {
         // title: problem.title,
         url: comment.html_url,
         body: comment.body,
-      }; // getDay() - 1 表示昨天，另外由于索引从 1 开始，因此需要再减去 1。
+      }; // 由于索引从 1 开始，因此需要再减去 1。
     });
     fs.writeFileSync(
       path.resolve(__dirname, "../static/my/solutions.json"),
