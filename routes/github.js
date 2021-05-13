@@ -45,10 +45,13 @@ router.all("/api/v1/github/webhook", async (ctx) => {
       JSON.stringify(mySolutions)
     );
 
-    process.exec("sh " + path.resolve(__dirname, "../scripts/commit.sh"));
+    process.exec(
+      "sh " + path.resolve(__dirname, "../scripts/commit.sh"),
+      console.log
+    );
   }
 
-  ctx.body = success(mySolutions[comment.user.login], console.log);
+  ctx.body = success(mySolutions[comment.user.login]);
 });
 
 module.exports = router;
