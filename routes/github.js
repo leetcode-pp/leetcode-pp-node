@@ -50,9 +50,8 @@ router.all("/api/v1/github/webhook", async (ctx) => {
       JSON.stringify(mySolutions)
     );
 
-    process.exec(
-      "sh " + path.resolve(__dirname, "../scripts/commit.sh"),
-      console.log
+    console.log(
+      process.execSync("sh " + path.resolve(__dirname, "../scripts/commit.sh"))
     );
   }
 
