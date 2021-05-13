@@ -31,15 +31,25 @@ app.use(cors({ credentials: true }));
 app.use(json());
 app.use(logger());
 
+const loginWhiteList = ["/api/v1/github/content", "/api/v1/github/webhook"];
+
 app.use(fallback.routes(), fallback.allowedMethods());
 if (process.env.NODE_ENV === "development") {
-  app.use(mockUserInfo({ whitelist: ["/api/v1/github/content"] }));
+  app.use(
+    mockUserInfo({
+      whitelist: loginWhiteList,
+    })
+  );
 } else {
-  app.use(passport({ whitelist: ["/api/v1/github/content"] }));
+  app.use(
+    passport({
+      whitelist: loginWhiteList,
+    })
+  );
 }
 app.use(
   pay({
-    whitelist: ["/api/v1/user", "/api/v1/logout", "/api/v1/github/content"],
+    whitelist: ["/api/v1/user", "/api/v1/logout"].concat(loginWhiteList),
   })
 );
 app.use(require("koa-static")(__dirname + "/public"));
