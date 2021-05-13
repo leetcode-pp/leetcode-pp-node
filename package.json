@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "daily-schedule": "node ./schedule/daily-problem.js",
+    "daily-schedule": "node ./schedule/daily-problem.js && node ./schedule/daily-check.js",
     "generate": "node ./static/users/generate.js && node ./static/solution/generate.js && node ./static/lectures/generate.js"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
+    "mongodb": "^3.6.6",
     "node-fetch": "^2.6.1",
     "pug": "^2.0.3"
   },

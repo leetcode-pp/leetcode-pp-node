@@ -1,13 +1,10 @@
 const router = require("koa-router")();
 const fetch = require("node-fetch");
-const fs = require("fs");
-const path = require("path");
-const process = require("child_process");
 
 const { getDay } = require("../utils/day");
 const { success, fail } = require("../utils/request");
-const mySolutions = require("../static/my/solutions.json");
 const solutions = require("../static/solution/solutions.json");
+const mySolutions = require("../database");
 
 router.all("/api/v1/github/content", async (ctx) => {
   const { url, ...params } = ctx.query;
@@ -38,24 +35,8 @@ router.all("/api/v1/github/webhook", async (ctx) => {
     return;
   }
   if (action === "created" && comment.body.length > 20) {
-    mySolutions[comment.user.login][getDay() - 1] = {
-      // title: problem.title,
-      url: comment.html_url,
-      body: comment.body,
-    };
-
-    fs.writeFileSync(
-      path.resolve(__dirname, "../static/my/solutions.json"),
-      JSON.stringify(mySolutions)
-    );
-
-    process.exec(
-      "sh " + path.resolve(__dirname, "../scripts/commit.sh"),
-      console.log
-    );
+    ctx.body = success("收到！");
   }
-
-  ctx.body = success(mySolutions[comment.user.login]);
 });
 
 module.exports = router;
