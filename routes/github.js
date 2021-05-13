@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 const { getDay } = require("../utils/day");
 const { success, fail } = require("../utils/request");
 const solutions = require("../static/solution/solutions.json");
-const mySolutions = require("../database");
+// const mySolutions = require("../database");
 
 router.all("/api/v1/github/content", async (ctx) => {
   const { url, ...params } = ctx.query;
