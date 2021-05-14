@@ -93,7 +93,7 @@ module.exports = ({ whitelist = [] }) =>
                 // secure: true,
                 // sameSite: "none",
                 httpOnly: true,
-                expires: new Date(24 * 60 * 60 * 1000 + Date.now()), // 一天后过期，后期考虑延长时间
+                expires: new Date(7 * 24 * 60 * 60 * 1000 + Date.now()), // 7 天后过期，后期考虑延长时间
               }
             );
           }
