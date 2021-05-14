@@ -8,36 +8,36 @@ const solutions = require("../static/solution/solutions.json");
 const mySolutions = require("../static/my/solutions.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
-
-const MS_PER_HOUR = 1 * 60 * 60 * 1000;
-const TODAY = getDay(new Date().getTime() - MS_PER_HOUR);
-const problem = solutions[TODAY]; // 获取今天‘的题目。 为了照顾一些人， 我们凌晨一点统计昨天的，而不是当天的。
-function getAllPages(i) {
+function getAllPages(i, issue_number) {
   return octokit.rest.issues
     .listComments({
       owner,
       page: i,
       per_page: 100,
       repo,
-      issue_number: problem.issue_number,
+      issue_number,
     })
     .then((res) => {
       if (res.data.length > 0)
-        return getAllPages(i + 1).then((comments) => res.data.concat(comments));
+        return getAllPages(i + 1, issue_number).then((comments) =>
+          res.data.concat(comments)
+        );
       return [];
     })
     .catch(console.error);
 }
+async function run(d) {
+  const problem = solutions[d];
 
-async function run() {
   if (problem && problem.issue_number) {
-    const comments = await getAllPages(1);
+    const comments = await getAllPages(1, problem.issue_number);
     comments.forEach((comment) => {
       const login = comment.user.login;
       if (!(login in mySolutions)) {
         mySolutions[login] = Array(91);
       }
-      mySolutions[login][TODAY - 1] = {
+      if (getDay(new Date(comment.created_at).getTime()) !== d) return;
+      mySolutions[login][d - 1] = {
         // title: problem.title,
         url: comment.html_url,
         body: comment.body,
@@ -49,5 +49,9 @@ async function run() {
     );
   }
 }
+const MS_PER_HOUR = 1 * 60 * 60 * 1000;
+const TODAY = getDay(new Date().getTime() - MS_PER_HOUR); // 获取今天‘的题目。 为了照顾一些人， 我们凌晨一点统计昨天的，而不是当天的。
+run(TODAY);
 
-run();
+// fix: 用于修正之前的数据错误
+// run(3);
