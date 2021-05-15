@@ -4,7 +4,8 @@ on:
   # Run workflow automatically
   schedule:
     # Runs every hour
-    - cron: "0 * * * *"
+    # 每个小时 10 分执行，目的是为了和其他 crob 岔开时间，避免脚本执行一半其他 cron 推送了 origin 报错（报错：你需要先 git pull）。
+    - cron: "10 * * * *"
 jobs:
   generate:
     runs-on: ubuntu-latest
