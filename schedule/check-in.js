@@ -6,27 +6,43 @@ const mySolutions = require("../static/my/solutions.json");
 const allUsers = JSON.parse(JSON.stringify(us));
 
 function run(n) {
-  // 返回7天内所有已经打卡的
-  // false 表示是否满勤
-  function fullCheckIn() {
+  // 返回目前为止满勤的人（连续七天可获取补签卡）
+  function fullCheckIn(from = 1, to = getDay()) {
     const users = [];
-    const day = getDay();
+    const day = to;
+    const DAYS_TO_GET_CARD = 7;
 
     for (const name in mySolutions) {
       const solutions = mySolutions[name];
-      let i = 1;
-
+      let i = from;
+      let card = 0; // 补签卡数量
+      let continuousDays = 0; // 连续打卡的天数
       while (i <= day) {
         if (!solutions || !solutions[i - 1]) {
-          break;
-        } else if (i == day) {
-          users.push(name);
+          continuousDays = 0;
+          if (card > 0) {
+            card--;
+          } else {
+            break;
+          }
+        } else {
+          continuousDays++;
+          if (continuousDays == DAYS_TO_GET_CARD) {
+            card++;
+          }
+          if (i == day) {
+            users.push({
+              name,
+              card,
+            });
+          }
         }
         i++;
       }
     }
     return users;
   }
+  // 返回7天内所有已经打卡的
   function checkWithinNDays(n) {
     const users = {};
     const day = getDay();
