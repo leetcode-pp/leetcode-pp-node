@@ -7,6 +7,26 @@ const allUsers = JSON.parse(JSON.stringify(us));
 
 function run(n) {
   // 返回7天内所有已经打卡的
+  // false 表示是否满勤
+  function fullCheckIn() {
+    const users = [];
+    const day = getDay();
+
+    for (const name in mySolutions) {
+      const solutions = mySolutions[name];
+      let i = 1;
+
+      while (i <= day) {
+        if (!solutions || !solutions[i - 1]) {
+          break;
+        } else if (i == day) {
+          users.push(name);
+        }
+        i++;
+      }
+    }
+    return users;
+  }
   function checkWithinNDays(n) {
     const users = {};
     const day = getDay();
@@ -43,7 +63,8 @@ function run(n) {
     return Object.keys(A);
   }
 
-  console.log(diff(allUsers, checkWithinNDays(n)));
+  console.log(`no check within ${n} days`, diff(allUsers, checkWithinNDays(n)));
+  console.log(`full check`, fullCheckIn());
 }
 
 run(7);
