@@ -11,18 +11,14 @@ function run(n) {
     const users = {};
     const day = getDay();
     if (day <= n) return allUsers;
-    for (const name in mySolutions) {
+    for (const name in allUsers) {
       const solutions = mySolutions[name];
-      if (!(name in allUsers)) {
-        console.log(`震惊! ${name} 竟然发生了这种事情，真相令人唏嘘！`);
-        continue;
-      }
       let i = Math.max(day - n, getDay(allUsers[name].createTime));
 
       let count = 0;
 
-      while (i < day) {
-        if (!solutions[i]) {
+      while (i <= day) {
+        if (!solutions || !solutions[i]) {
           count += 1;
         } else {
           count = 0;
@@ -50,4 +46,4 @@ function run(n) {
   console.log(diff(allUsers, checkWithinNDays(n)));
 }
 
-run(4);
+run(7);
