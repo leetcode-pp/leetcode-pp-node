@@ -14,6 +14,7 @@ router.get("/api/v1/my/solutions", async (ctx) => {
           title: (officialSolution[i + 1] || {}).title || "",
           tags: (officialSolution[i + 1] || {}).tags || [],
           difficulty: (officialSolution[i + 1] || {}).difficulty || "",
+          issue_number: (officialSolution[i + 1] || {}).issue_number || "",
         }))
         .slice(0, getDay())
     );
