@@ -1,8 +1,9 @@
+const fs = require("fs");
+const path = require("path");
 const { getDay } = require("../utils/day");
 const us = require("../static/users/index");
 const mySolutions = require("../static/my/solutions.json");
 
-// 下面代码没有考虑一个人中途加入，那么他没有加入之前也会被统计为未打卡。
 const allUsers = JSON.parse(JSON.stringify(us));
 
 function run(n) {
@@ -12,8 +13,8 @@ function run(n) {
     const day = to;
     const DAYS_TO_GET_CARD = 7;
 
-    for (const name in mySolutions) {
-      const solutions = mySolutions[name];
+    for (const login in mySolutions) {
+      const solutions = mySolutions[login];
       let i = from;
       let card = 0; // 补签卡数量
       let continuousDays = 0; // 连续打卡的天数
@@ -32,7 +33,7 @@ function run(n) {
           }
           if (i == day) {
             users.push({
-              name,
+              login,
               card,
             });
           }
@@ -49,7 +50,8 @@ function run(n) {
     if (day <= n) return allUsers;
     for (const name in allUsers) {
       const solutions = mySolutions[name];
-      if (getDay(allUsers[name].createTime <= n)) {
+      // 如果注册时间不满 n 天，则算打过卡。
+      if (day - getDay(allUsers[name].createTime) + 1 <= n) {
         users[name] = true;
         continue;
       }
@@ -82,9 +84,19 @@ function run(n) {
     }
     return Object.keys(A);
   }
+  const blacklist = diff(allUsers, checkWithinNDays(n));
+  const redlist = fullCheckIn();
+  console.log(`no check within ${n} days`, blacklist);
+  console.log(`full check`, redlist);
 
-  console.log(`no check within ${n} days`, diff(allUsers, checkWithinNDays(n)));
-  console.log(`full check`, fullCheckIn());
+  for (red of redlist) {
+    us[red.login].allCheck = true;
+  }
+
+  fs.writeFileSync(
+    path.resolve(__dirname, "../static/users/index.json"),
+    JSON.stringify(us)
+  );
 }
 
 run(7);
