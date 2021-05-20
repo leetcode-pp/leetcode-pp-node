@@ -49,7 +49,11 @@ function run(n) {
     if (day <= n) return allUsers;
     for (const name in allUsers) {
       const solutions = mySolutions[name];
-      let i = Math.max(day - n, getDay(allUsers[name].createTime));
+      if (getDay(allUsers[name].createTime <= n)) {
+        users[name] = true;
+        continue;
+      }
+      let i = day - n;
 
       let count = 0;
 
