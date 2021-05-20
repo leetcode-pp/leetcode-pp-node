@@ -47,19 +47,23 @@ function run(n) {
   function checkWithinNDays(n) {
     const users = {};
     const day = getDay();
-    if (day <= n) return allUsers;
-    for (const name in allUsers) {
+    // 至少第 n + 1 天才能开始统计前 n 天
+    if (day <= n) return us;
+    for (const name in us) {
+      us[name].noCheck = false;
+      us[name].allCheck = false;
       const solutions = mySolutions[name];
       // 如果注册时间不满 n 天，则算打过卡。
-      if (day - getDay(allUsers[name].createTime) + 1 <= n) {
+      if (day - getDay(us[name].createTime) + 1 <= n) {
         users[name] = true;
         continue;
       }
-      let i = day - n;
+      // [day - n - 2, day - 2]
+      let i = day - n - 1;
 
       let count = 0;
-
-      while (i <= day) {
+      // 今天也不统计
+      while (i < day - 1) {
         if (!solutions || !solutions[i]) {
           count += 1;
         } else {
