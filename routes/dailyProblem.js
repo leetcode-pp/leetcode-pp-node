@@ -57,6 +57,14 @@ for (const [login, solution] of Object.entries(mySolutions)) {
 
 const rankings = A.sort((a, b) => b.count - a.count);
 
+for (let i = 0; i < rankings.length; i++) {
+  if (i > 0 && rankings[i].count === rankings[i - 1].count) {
+    rankings[i].rank = rankings[i - 1].rank;
+  } else {
+    rankings[i].rank = i + 1;
+  }
+}
+
 router.get("/api/v1/daily-problem/ranking", async (ctx) => {
   ctx.body = success(rankings);
 });
