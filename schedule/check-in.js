@@ -89,8 +89,11 @@ function run(n) {
   console.log(`no check within ${n} days`, blacklist);
   console.log(`full check`, redlist);
 
-  for (red of redlist) {
+  for (const red of redlist) {
     us[red.login].allCheck = true;
+  }
+  for (const login of blacklist) {
+    us[login].noCheck = true;
   }
 
   fs.writeFileSync(
