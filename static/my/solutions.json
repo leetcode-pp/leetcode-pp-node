@@ -2333,7 +2333,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843693773",
       "body": "思路：得到两个链表的长度，将链表长度对齐，然后遍历找到相同节点，没有相同节点，返回空；\r\n时间复杂度：O(max(m, n))\r\n空间复杂度：O(1)\r\n\r\n```\r\n/**\r\n * Definition for singly-linked list.\r\n * public class ListNode {\r\n *     int val;\r\n *     ListNode next;\r\n *     ListNode(int x) {\r\n *         val = x;\r\n *         next = null;\r\n *     }\r\n * }\r\n */\r\npublic class Solution {\r\n    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {\r\n        int len1 = getLength(headA);\r\n        int len2 = getLength(headB);\r\n        ListNode res = null ;\r\n        if(len1 > len2){\r\n            res = getResult(headA, headB, len1, len2);\r\n        }else{\r\n            res = getResult(headB, headA, len2, len1);\r\n        }\r\n\r\n        return res;\r\n        \r\n    }\r\n    public ListNode getResult(ListNode headA, ListNode headB, int len1, int len2){  \r\n        int count = len1 - len2;\r\n        while(count > 0 && headA != null){\r\n            count --;\r\n            headA = headA.next;\r\n        }\r\n        while(headA != null && headB != null){\r\n            if(headB == headA){\r\n                return headA;\r\n            }\r\n            headA = headA.next;\r\n            headB = headB.next;\r\n        }\r\n\r\n        return null;\r\n    }\r\n\r\n    public int getLength(ListNode node){\r\n        int len = 0;\r\n        ListNode tmp = node ;\r\n        while(tmp != null){\r\n            tmp = tmp.next;\r\n            len ++ ;\r\n        }\r\n\r\n        return len ;\r\n    }\r\n}\r\n```"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844656354",
+      "body": "以前写过，还是想用数组存储，今天就偷懒了\r\n\r\n```\r\npublic class Solution {\r\n    public ListNode detectCycle(ListNode head) {\r\n        ListNode h1 = head;\r\n        ListNode h2 = head;\r\n        ListNode h3 = head;\r\n        while(h1 != null && h2 != null){\r\n            h1 = h1.next;\r\n            h2 = h2.next; \r\n            if(h2 != null){\r\n                h2 = h2.next ;\r\n            }else{\r\n                return null;\r\n            }\r\n            if(h1 == h2){\r\n                break ;\r\n            }\r\n        }\r\n\r\n        while(h1! = null&&h3!=null){\r\n            if(h1 == h3){\r\n                return h1;\r\n            }\r\n            h1 = h1.next;\r\n            h3 = h3.next;\r\n        }\r\n        \r\n        return null ;\r\n    }\r\n}\r\n```"
+    },
     null,
     null,
     null,
@@ -3410,7 +3413,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843700813",
       "body": "### 思路\r\n双指针\r\n### 代码\r\n```python\r\nclass Solution:\r\n    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:\r\n        a = headA\r\n        b = headB\r\n        while a!=b:\r\n            if a == None:\r\n                a = headB\r\n            else:\r\n                a = a.next\r\n            if b == None:\r\n                b = headA\r\n            else:\r\n                b = b.next\r\n        return a\r\n```"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844668636",
+      "body": "### 思路\r\n两次相遇\r\n### 代码\r\n```python\r\nclass Solution:\r\n    def detectCycle(self, head: ListNode) -> ListNode:\r\n        if not head or not head.next:\r\n            return None\r\n        f = head.next.next\r\n        s = head.next\r\n        while s!=f:\r\n            if not f or not f.next:\r\n                return None\r\n            else:\r\n                f = f.next.next\r\n                s = s.next\r\n        f = head\r\n        while s!=f:\r\n            f = f.next\r\n            s = s.next\r\n        return s\r\n```"
+    },
     null,
     null,
     null,
@@ -5547,7 +5553,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843705650",
       "body": "# 思路\r\nhash表法\r\n\r\n```java\r\npublic class Solution {\r\n    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {\r\n        Set<ListNode> set = new HashSet<ListNode>();\r\n        ListNode pa = headA;\r\n        while(pa!=null){\r\n            set.add(pa);\r\n            pa = pa.next;\r\n        }\r\n\r\n        ListNode pb = headB;\r\n        while(pb!=null){\r\n            if(set.contains(pb)){\r\n                return pb;\r\n            }\r\n            pb = pb.next;\r\n        }\r\n        return null;\r\n    }\r\n}\r\n```\r\n\r\n时间复杂度 O(n+m)\r\n\r\n双指针法\r\n\r\n```java\r\npublic class Solution {\r\n    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {\r\n        if(headB==null||headB==null){\r\n            return null;\r\n        }\r\n        ListNode pa = headA;\r\n        ListNode pb = headB;\r\n        while(pa!=pb){\r\n            if(pa!=null){\r\n                pa=pa.next;\r\n            }else{\r\n                pa = headB;\r\n            }\r\n            if(pb!=null){\r\n                pb = pb.next;\r\n            }else{\r\n                pb = headA;\r\n            }\r\n        }\r\n        return pa;\r\n    }\r\n}\r\n```\r\n\r\n时间复杂度 O(n+m)\r\n\r\n感觉明天出这道题更合适 hhh"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844660231",
+      "body": "# 快慢指针\r\n不仅仅要确定是否存在环形链表，还需要确定环形链表的环入口。\r\n1. 使用快慢指针找到两个指针交汇的位置\r\n2. 另外用一个指针从头开始向后遍历，步长为1. 慢指针也向后遍历. 两个指针交汇的位置就是环入口\r\n\r\n证明见官方题解\r\n\r\n# 代码\r\n```java\r\npublic class Solution {\r\n    public ListNode detectCycle(ListNode head) {\r\n        ListNode slow = head,fast = head;\r\n        while(true){\r\n            if(fast==null||fast.next==null){\r\n                return null;\r\n            }\r\n            slow = slow.next;\r\n            fast = fast.next.next;\r\n            if(fast==slow){\r\n                break;\r\n            }\r\n        }\r\n        ListNode p = head;\r\n        while(p!=slow){\r\n            p=p.next;\r\n            slow = slow.next;\r\n        }\r\n        return slow;\r\n    }\r\n}\r\n```\r\n\r\n# 时间复杂度\r\n慢指针走过的步数不会超过链表的长度, 时间复杂度是 O(n)\r\n\r\n空间复杂度为 O(1)\r\n"
+    },
     null,
     null,
     null,
@@ -6371,7 +6380,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843805691",
       "body": "\r\n\r\n思路：\r\n        假设 pa 是短指针，如果短指针遍历完毕，就从更长的那一个 linked list 重新开始走\r\n\r\n        如果有相交\r\n        这样 相当于拼了一个超长的链表 A(a_start + common) + B(b_start + common)\r\n        也就是无论 a_start 和 b_start 有多长，两个指针遍历结果的都是一样的\r\n        pa 的遍历为：a_start + common + b_start + common\r\n        pb 的遍历为：b_start + common + a_start + common\r\n        如果有相交，在最后一段 common 时，pointer 一定会达成 pa == pb 的循环推出条件\r\n\r\n        如果没有相交，\r\n        相当于遍历了两个链表\r\n\r\n代码：\r\n```\r\n# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, x):\r\n#         self.val = x\r\n#         self.next = None\r\n\r\nclass Solution:\r\n    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:\r\n        ''' method1\r\n        假设 pa 是短指针，如果短指针遍历完毕，就从更长的那一个 linked list 重新开始走\r\n\r\n        如果有相交\r\n        这样 相当于拼了一个超长的链表 A(a_start + common) + B(b_start + common)\r\n        也就是无论 a_start 和 b_start 有多长，两个指针遍历结果的都是一样的\r\n        pa 的遍历为：a_start + common + b_start + common\r\n        pb 的遍历为：b_start + common + a_start + common\r\n        如果有相交，在最后一段 common 时，pointer 一定会达成 pa == pb 的循环推出条件\r\n\r\n        如果没有相交，\r\n        相当于遍历了两个链表\r\n        '''\r\n        if not headA or not headB:\r\n            return\r\n\r\n        pa = headA\r\n        pb = headB\r\n\r\n        while pa != pb:\r\n            if pa:\r\n                pa = pa.next\r\n            else:\r\n                pa = headB\r\n            if pb:\r\n                pb = pb.next\r\n            else:\r\n                pb = headA\r\n        return pa\r\n```\r\n\r\n复杂度：\r\n时间O(n)\r\n空间O(n)"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844666610",
+      "body": "思路：hash 表，\r\n快慢指针：注意只有有环的时候快慢指针才会相遇，相遇后将fast指针拨回到起点，速度变成跟慢指针一样，再次相遇的时候，返回 fast/slow 所在的节点，即为环的起点\r\n\r\n代码：\r\n```\r\n# Definition for singly-linked list.\r\n# class ListNode:\r\n#     def __init__(self, x):\r\n#         self.val = x\r\n#         self.next = None\r\n\r\nclass Solution:\r\n    def detectCycle(self, head: ListNode) -> ListNode:\r\n        ''' method 1 via hash'''\r\n        # i = 0\r\n        # dic = {}\r\n        # while head:\r\n        #     if head in dic:\r\n        #         return head\r\n        #     else:\r\n        #         dic[head] = i\r\n        #         i += 1\r\n        #     head = head.next\r\n\r\n        ''' method 2 via fast/slow pointer'''\r\n        fast = slow = head\r\n        while fast:\r\n            if not (fast and fast.next and fast.next.next):\r\n                return\r\n            fast = fast.next.next\r\n            slow = slow.next\r\n            if fast == slow:\r\n                fast = head\r\n                break\r\n        while fast != slow:\r\n            fast = fast.next\r\n            slow = slow.next\r\n        return fast\r\n\r\n```\r\n\r\n复杂度：\r\n方法一：时间O(n)，空间O(n)\r\n方法二：时间O(n)，空间O(1)"
+    },
     null,
     null,
     null,
@@ -8685,7 +8697,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843521713",
       "body": "## 思路\r\n使用哈希表存第一个链表的节点，然后再循环查找第二个链表的节点。\r\n\r\n## 代码\r\n- python\r\n```python\r\nclass Solution:\r\n    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:\r\n        set_node = set()\r\n        while headA:\r\n            set_node.add(headA)\r\n            headA = headA.next\r\n        \r\n        while headB:\r\n            if headB in set_node:\r\n                return headB\r\n            headB = headB.next\r\n        \r\n        return None\r\n```\r\n\r\n## 复杂度\r\n- 时间: O(m+n)\r\n- 空间: O(m)\r\n其中m,n是两个链表的长度"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844656369",
+      "body": "## 思路\r\n哈希表\r\n\r\n## 代码\r\n- python\r\n```python\r\nclass Solution:\r\n    def detectCycle(self, head: ListNode) -> ListNode:\r\n        set_node = set()\r\n        while head:\r\n            if head in set_node:\r\n                return head\r\n            if head.next is None:\r\n                return None\r\n            set_node.add(head)\r\n            head = head.next\r\n```\r\n\r\n## 复杂度\r\n- 时间: O(n)\r\n- 空间: O(n)"
+    },
     null,
     null,
     null,
@@ -9265,7 +9280,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843694539",
       "body": "```\r\n/**\r\n * Definition for singly-linked list.\r\n * function ListNode(val) {\r\n *     this.val = val;\r\n *     this.next = null;\r\n * }\r\n */\r\n\r\n/**\r\n * @param {ListNode} headA\r\n * @param {ListNode} headB\r\n * @return {ListNode}\r\n */\r\nvar getIntersectionNode = function(headA, headB) {\r\n  let currentA = headA, currentB = headB;\r\n  if (!headA || !headB) return null;\r\n  while (currentA !== currentB) {\r\n    if (!currentA) {\r\n      currentA = headB;\r\n    } else {\r\n      currentA = currentA.next;\r\n    }\r\n    if (!currentB) {\r\n      currentB = headA;\r\n    } else {\r\n      currentB = currentB.next;\r\n    }\r\n  }\r\n  return currentA;\r\n};"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844658321",
+      "body": "```\r\n/**\r\n * Definition for singly-linked list.\r\n * function ListNode(val) {\r\n *     this.val = val;\r\n *     this.next = null;\r\n * }\r\n */\r\n\r\n/**\r\n * @param {ListNode} head\r\n * @return {ListNode}\r\n */\r\nvar detectCycle = function (head) {\r\n  let fast = head, slow = head;\r\n  if (!head) return null;\r\n  while (fast) {\r\n    slow = slow.next;\r\n    if (fast.next) {\r\n      fast = fast.next.next;\r\n    } else {\r\n      return null;\r\n    }\r\n    if (fast === slow) {\r\n      let ptr = head;\r\n      while (ptr !== slow) {\r\n        ptr = ptr.next;\r\n        slow = slow.next;\r\n      }\r\n      return ptr;\r\n    }\r\n  }\r\n  return null;\r\n};"
+    },
     null,
     null,
     null,
@@ -20338,7 +20356,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843811311",
       "body": "```js\r\n/**\r\n * 思路 \r\n * @param {ListNode} headA\r\n * @param {ListNode} headB\r\n * @return {ListNode}\r\n */\r\nvar getIntersectionNode = function(headA, headB) {\r\n    let curA = headA, curB = headB;\r\n  \r\n    // 理解成两个跑道，分别是 A + B 的长度 和 B + A 的长度，因为跑步速度相同，所以有两种情况\r\n    // 要么同时结束(null == null) 要么在公共跑道相遇(走到公共节点) \r\n    // 注意此刻用的是节点之间的对比是否相等 比的是内存地址\r\n    // 比如给定 8 为公共节点(同一个节点)  即便前面遇到节点值 1 跟 1 的对比 也是不等的 因为在不同跑道 没碰到面\r\n    while (curA !== curB) {\r\n      curA = curA ? curA.next : headB;\r\n      curB = curB ? curB.next : headA;\r\n    }\r\n  \r\n    return curA;\r\n};\r\n```"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844670358",
+      "body": "```js\r\n/**\r\n * @desc 直接上哈希大法\r\n * @param {ListNode} head\r\n * @return {ListNode}\r\n */\r\nvar detectCycle = function(head) {\r\n    let cur = head;\r\n    let hashSet = new Set();\r\n  \r\n    // 收集节点，直到 hash 表中存在节点 说明成环\r\n    while(cur && !hashSet.has(cur)) {\r\n      hashSet.add(cur);\r\n      cur = cur.next;\r\n    }\r\n  \r\n    return cur;\r\n};\r\n```"
+    },
     null,
     null,
     null,
@@ -22760,7 +22781,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-843532507",
       "body": "- Using Hash Table. Time complexity O(N+M). Space complexity O(N).\r\n``` Java\r\npublic class Solution {\r\n    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {\r\n        Set<ListNode> nodeA = new HashSet<>();\r\n        ListNode curA = headA;\r\n        ListNode curB = headB;\r\n        \r\n        while (curA != null) {\r\n            nodeA.add(curA);\r\n            curA = curA.next;\r\n        }\r\n        \r\n        while (curB != null) {\r\n            if (nodeA.contains(curB)) {\r\n                break;\r\n            }\r\n            curB= curB.next;\r\n        }\r\n        \r\n        return curB;\r\n    }\r\n}\r\n```\r\n- Using two pointers. Time complexity O(N+M). Space complexity O(1).\r\n``` Java\r\npublic class Solution {\r\n    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {\r\n        ListNode pointerA = headA;\r\n        ListNode pointerB = headB;\r\n        \r\n        while (pointerA != pointerB) {\r\n            pointerA = (pointerA == null)? headB:pointerA.next;\r\n            pointerB = (pointerB == null)? headA:pointerB.next;\r\n        }\r\n        \r\n        return pointerA;\r\n    }\r\n}\r\n```"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844662534",
+      "body": "- Haven't figured out how Floyd's algorithm works.\r\n- For the hash table method, the time and space complexity are both O(N).\r\n``` Java\r\npublic class Solution {\r\n    public ListNode detectCycle(ListNode head) {\r\n        Set<ListNode> set = new HashSet<>();\r\n        while (!set.contains(head)) {\r\n            if (head == null) break;\r\n            set.add(head);\r\n            head = head.next;\r\n        }\r\n        return head;\r\n    }\r\n}\r\n```"
+    },
     null,
     null,
     null,
@@ -24560,7 +24584,10 @@
       "url": "https://github.com/leetcode-pp/91alg-4/issues/59#issuecomment-844201980",
       "body": "‘’‘class Solution(object):\r\n    def getIntersectionNode(self, headA, headB):\r\n        if not headA or not headB:\r\n            return None\r\n        h1,h2= headA, headB\r\n        l1,l2=0,0\r\n        while h1:\r\n            l1+=1\r\n            h1=h1.next\r\n        while h2:\r\n            l2+=1\r\n            h2=h2.next\r\n        if l1 < l2:\r\n            shorter,longer= headA, headB\r\n        else:\r\n            shorter,longer= headB, headA\r\n        for i in range(max(l1,l2)-min(l1,l2)):\r\n            longer=longer.next\r\n        while shorter and longer and shorter!=longer:\r\n            shorter=shorter.next\r\n            longer=longer.next\r\n        return shorter\r\n\r\n’‘’"
     },
-    null,
+    {
+      "url": "https://github.com/leetcode-pp/91alg-4/issues/60#issuecomment-844667445",
+      "body": "'''\r\n先找到计算出环的长度l，然后让头结点开始走l步，记为tmp，然后让头和tmp同时出发，相遇点就是入口\r\nclass Solution(object):\r\n\r\n    def detectCycle(self, head):\r\n        if head==None or head.next==None:\r\n            return None\r\n        fast,slow=head.next,head\r\n        while slow!=None and fast!=None:\r\n            if slow==fast:\r\n                break\r\n            slow=slow.next\r\n            fast=fast.next\r\n            if fast!=None and fast.next!=None:\r\n                fast=fast.next\r\n            else:\r\n                return None\r\n        tmp=slow\r\n        length=1\r\n        slow=slow.next\r\n        while slow!=tmp:\r\n            length+=1\r\n            slow=slow.next\r\n        tmp=head\r\n        for i in range(length):\r\n            tmp=tmp.next\r\n        while head!=tmp:\r\n            head=head.next\r\n            tmp=tmp.next\r\n        return head\r\n'''"
+    },
     null,
     null,
     null,
