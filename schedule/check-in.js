@@ -10,45 +10,41 @@ function run(n) {
   // 返回目前为止满勤的人（连续七天可获取补签卡）
   function fullCheckIn(from = 1, to = getDay()) {
     const users = [];
-    const day = to;
     const DAYS_TO_GET_CARD = 7;
 
     for (const login in mySolutions) {
       const solutions = mySolutions[login];
-      let i = from;
+      let i = from - 1;
       let card = 0; // 补签卡数量
+      let noCheckDays = 0;
       let continuousDays = 0; // 连续打卡的天数
-      while (i <= day) {
-        if (!solutions || !solutions[i - 1]) {
+      while (i < to) {
+        if (!solutions || !solutions[i]) {
           continuousDays = 0;
-          if (card > 0) {
-            card--;
-          } else {
-            break;
-          }
+          noCheckDays++;
         } else {
           continuousDays++;
           if (continuousDays == DAYS_TO_GET_CARD) {
             card++;
-          }
-          if (i == day) {
-            users.push({
-              login,
-              card,
-            });
+            continuousDays = 0;
           }
         }
         i++;
       }
+      if (card >= noCheckDays) {
+        users.push({
+          login,
+          card: card - noCheckDays,
+        });
+      }
     }
     return users;
   }
-  // 返回7天内所有已经打卡的
+  // 返回7天内(不包括今天)所有已经打卡的
   function checkWithinNDays(n) {
     const users = {};
     const day = getDay();
-    // 至少第 n + 1 天才能开始统计前 n 天
-    if (day <= n) return us;
+    if (day <= n) return us; // 至少第 n + 1 天才能开始统计前 n 天
     for (const name in us) {
       us[name].noCheck = false;
       us[name].allCheck = false;
@@ -62,15 +58,12 @@ function run(n) {
       let i = day - n - 1;
 
       let count = 0;
-      // 今天也不统计
+
       while (i < day - 1) {
         if (!solutions || !solutions[i]) {
           count += 1;
         } else {
           count = 0;
-        }
-        if (count == n) {
-          break;
         }
         i++;
       }
