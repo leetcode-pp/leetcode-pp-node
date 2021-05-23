@@ -167,7 +167,6 @@ const tobeIdentified = [
   "Forschers",
   "LeiLeiW825",
   "joriscai",
-  "348977787@qq.com",
   "miqpalzm",
   "sitequ",
   "dorothyDing",
