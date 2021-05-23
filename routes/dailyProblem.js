@@ -7,6 +7,21 @@ const { success, fail } = require("../utils/request");
 const { getDay } = require("../utils/day");
 const { startTime } = require("../config/index");
 
+const A = [];
+for (const [login, solution] of Object.entries(mySolutions)) {
+  A.push({ count: solution.filter(Boolean).length, ...users[login] });
+}
+
+const rankings = A.sort((a, b) => b.count - a.count);
+
+for (let i = 0; i < rankings.length; i++) {
+  if (i > 0 && rankings[i].count === rankings[i - 1].count) {
+    rankings[i].rank = rankings[i - 1].rank;
+  } else {
+    rankings[i].rank = i + 1;
+  }
+}
+
 router.get("/api/v1/daily-problem", async (ctx) => {
   if (ctx.query.date && ctx.query.date > new Date().getTime()) {
     // 活动没有开始，给大家一个体验版本(两道题)
@@ -49,21 +64,6 @@ router.get("/api/v1/daily-problem/solution", async (ctx) => {
     });
   }
 });
-
-const A = [];
-for (const [login, solution] of Object.entries(mySolutions)) {
-  A.push({ count: solution.filter(Boolean).length, ...users[login] });
-}
-
-const rankings = A.sort((a, b) => b.count - a.count);
-
-for (let i = 0; i < rankings.length; i++) {
-  if (i > 0 && rankings[i].count === rankings[i - 1].count) {
-    rankings[i].rank = rankings[i - 1].rank;
-  } else {
-    rankings[i].rank = i + 1;
-  }
-}
 
 router.get("/api/v1/daily-problem/ranking", async (ctx) => {
   ctx.body = success(rankings);
