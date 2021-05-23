@@ -37,7 +37,11 @@ async function run(d) {
         mySolutions[login] = Array(91);
       }
       // 由于下面的一行代码，导致了会插入一个完全空的行。这就是因为打过卡，但是都不是当天打的
-      if (getDay(new Date(comment.created_at).getTime()) > d) return;
+      if (
+        getDay(new Date(comment.created_at).getTime()) > d ||
+        comment.body.length < 20
+      )
+        return;
       mySolutions[login][d - 1] = {
         // title: problem.title,
         url: comment.html_url,
