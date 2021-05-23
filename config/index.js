@@ -371,6 +371,8 @@ maggiexie00
 clairexia123
 yamftod
 RigoYao
+yiwchen
+bugMarker
 NorthSeacoder`),
 ];
 
@@ -405,7 +407,6 @@ const blacklist = [
   "yaofaqian",
   "XUHUIisxh",
   "peterolive",
-  "348977787@qq.com",
   "dublue24",
   "wangyi123456",
   "Nicenonecb",
