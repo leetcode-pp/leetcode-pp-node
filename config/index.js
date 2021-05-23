@@ -373,13 +373,15 @@ yamftod
 RigoYao
 yiwchen
 bugMarker
+wlsqhydfy
+kbfx1234
+wlsqhydfy
 NorthSeacoder`),
 ];
 
 const blacklist = [
   "7971128",
   "hillsonziqiu",
-  "sunshineliu6",
   "mozro0327",
   "liucy0417",
   "evil-lin",
