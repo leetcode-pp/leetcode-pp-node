@@ -5,8 +5,8 @@ module.exports = ({ whitelist = [] }) =>
     }
     ctx.session.user = {
       // login: "lilyzhaoyilu",
-      login: "zliu1413",
-      // login: "shuo0314",
+      // login: "zliu1413",
+      login: "shuo0314",
       // login: "azl397985856",
       avatar_url: "https://avatars.githubusercontent.com/u/12479470?v=4",
       name: "lucifer",
