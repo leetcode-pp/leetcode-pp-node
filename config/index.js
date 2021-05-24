@@ -231,6 +231,9 @@ thisisandygl
 Yvonne1231-Wang
 Gentlemancj
 bolunzhang2021
+superFlowerLiao
+boy-new-2019
+rufengnanren
 minuet-red
 jmaStella
 caoyuyuyu
@@ -314,7 +317,6 @@ mosihan
 dpgirl
 jz1433
 Panruihua
-rufengnanren
 theonebemine 
 Moin-Jer
 Peg-008
@@ -429,7 +431,6 @@ const blacklist = [
   "luckyyangrun",
   "a-enll1",
   "kernelSue",
-  "RealDuxy",
   "flashyy",
   "caimaoy",
   "mosihan",

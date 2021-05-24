@@ -60,6 +60,7 @@ async function run(d) {
     );
   }
 }
+
 const MS_PER_HOUR = 1 * 60 * 60 * 1000;
 const TODAY = getDay(new Date().getTime() - MS_PER_HOUR); // 获取今天‘的题目。 为了照顾一些人， 我们凌晨一点统计昨天的，而不是当天的。
 
