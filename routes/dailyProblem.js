@@ -9,7 +9,16 @@ const { startTime } = require("../config/index");
 
 const A = [];
 for (const [login, solution] of Object.entries(mySolutions)) {
-  A.push({ count: solution.filter(Boolean).length, ...users[login] });
+  const { bio, name, noCheck, allCheck, avatar_url } = users[login];
+  A.push({
+    count: solution.filter(Boolean).length,
+    bio,
+    name,
+    login,
+    noCheck,
+    avatar_url,
+    allCheck,
+  });
 }
 
 const rankings = A.sort((a, b) => b.count - a.count);

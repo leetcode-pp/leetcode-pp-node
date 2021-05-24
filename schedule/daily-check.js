@@ -37,16 +37,14 @@ async function run(d) {
         mySolutions[login] = Array(91);
       }
       // 由于下面的一行代码，导致了会插入一个完全空的行。这就是因为打过卡，但是都不是当天打的
-      if (
-        getDay(new Date(comment.created_at).getTime()) > d ||
-        comment.body.length < 20
-      )
-        return;
+      if (comment.body.length < 20) return;
+      // 由于索引从 1 开始，因此需要再减去 1。
       mySolutions[login][d - 1] = {
         // title: problem.title,
         url: comment.html_url,
         body: comment.body,
-      }; // 由于索引从 1 开始，因此需要再减去 1。
+        onTime: getDay(new Date(comment.created_at).getTime()) <= d,
+      };
     });
     fs.writeFileSync(
       path.resolve(__dirname, "../static/my/solutions.json"),
@@ -56,7 +54,10 @@ async function run(d) {
 }
 const MS_PER_HOUR = 1 * 60 * 60 * 1000;
 const TODAY = getDay(new Date().getTime() - MS_PER_HOUR); // 获取今天‘的题目。 为了照顾一些人， 我们凌晨一点统计昨天的，而不是当天的。
-run(TODAY);
 
-// fix: 用于修正之前的数据错误
-// run(3);
+// 1. 记录打卡数据
+// 2. 修正之前的数据错误
+// 3. 登记补卡信息
+for (let d = 1; d <= TODAY; d++) {
+  run(d);
+}
