@@ -1,8 +1,9 @@
 const fs = require("fs");
+const path = require("path");
 const { Octokit } = require("@octokit/rest");
 const { db } = require("../../config/index");
 const users = require("./index.json");
-const { getDay } = require("../../utils/day");
+// const { getDay } = require("../../utils/day");
 const meta = require("../meta.json");
 
 async function run(incremental = true) {
@@ -15,7 +16,7 @@ async function run(incremental = true) {
         .getByUsername({ username: name })
         .then((res) => res.data)
         .then((user) => {
-          if (incremental && !(name in users)) {
+          if (!(name in users)) {
             users[name] = {
               ...user,
               createTime: new Date().getTime(),
@@ -29,7 +30,13 @@ async function run(incremental = true) {
             };
           }
         })
-        .catch(() => console.log(`name ${name} is invalid`))
+        .catch((err) =>
+          console.log(
+            `name ${name} is invalid. detail: ${
+              err && err.message ? err.message : err
+            }`
+          )
+        )
     );
   }
 
@@ -37,10 +44,10 @@ async function run(incremental = true) {
 }
 let incremental = true;
 
-// 七天全量更新一次
-if (getDay() - getDay(meta.users.lastUpdateTime) >= 7) {
-  incremental = false;
-}
+// // 七天全量更新一次
+// if (getDay() - getDay(meta.users.lastUpdateTime) >= 7) {
+//   incremental = false;
+// }
 run(incremental).then(() => {
   fs.writeFileSync(__dirname + "/index.json", JSON.stringify(users));
   fs.writeFileSync(
