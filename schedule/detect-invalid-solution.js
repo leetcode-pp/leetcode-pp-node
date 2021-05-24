@@ -9,6 +9,14 @@ for (const name in mySolutions) {
       console.log(solution);
       mySolutions[name][i] = null;
     }
+
+    if (
+      solution &&
+      solution.body.includes("129. 求根节点到叶节点数字之和") &&
+      !solution.onTime
+    ) {
+      console.log(slution);
+    }
   }
 }
 
