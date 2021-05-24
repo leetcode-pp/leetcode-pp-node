@@ -1,3 +1,4 @@
+const blacklist = require("./blacklist.json");
 const startTime = new Date("2021-05-09 16:00:00 GMT");
 function join(s) {
   return s
@@ -378,77 +379,8 @@ bugMarker
 wlsqhydfy
 kbfx1234
 wlsqhydfy
+hamish66889
 NorthSeacoder`),
-];
-
-const blacklist = [
-  "7971128",
-  "hillsonziqiu",
-  "mozro0327",
-  "liucy0417",
-  "evil-lin",
-  "NchuYJ",
-  "zc-githubs",
-  "Placeholder",
-  "Levix",
-  "Erika2001",
-  "LexieLiu01",
-  "fangyh",
-  "gitigor107",
-  "size-of",
-  "ARe99s",
-  "zyycode",
-  "zhangjihu0",
-  "w-z-hub",
-  "wanyongtao1988",
-  "lzdFeiFei",
-  "wz-hub",
-  "Lizhao-Liu ",
-  "LzdFeiFei",
-  "ningali",
-  "CoreJa",
-  "LeiLeiW825",
-  "yaofaqian",
-  "XUHUIisxh",
-  "peterolive",
-  "dublue24",
-  "wangyi123456",
-  "Nicenonecb",
-  "mokinzhao",
-  "zhangyong-hub",
-  "125110072@qq.com",
-  "peacejoylove86",
-  "dmlseeing",
-  "Endeavor-Gcl",
-  "S-T-D",
-  "MellonGuan",
-  "daidaidashixiong666",
-  "ImSingee",
-  "Siomarry",
-  "sun-unc",
-  "youyoumx",
-  "AMANKB",
-  "luckyyangrun",
-  "a-enll1",
-  "kernelSue",
-  "flashyy",
-  "caimaoy",
-  "mosihan",
-  "prhCSer",
-  "theonebemine",
-  "ZZWHU",
-  "zeningc",
-  "Christina-Soda",
-  "terryxing",
-  "liuyangqiqaq",
-  "guohui1992",
-  "lsxlsxxslxsl",
-  "learnprogram2",
-  "lvhaohua",
-  "fangyinghua",
-  "for123jth",
-  "sszqdz",
-  "jenny08",
 ];
 
 const userList = [

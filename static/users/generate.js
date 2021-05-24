@@ -41,6 +41,10 @@ let incremental = true;
 if (getDay() - getDay(meta.users.lastUpdateTime) >= 7) {
   incremental = false;
 }
-run(incremental).then(() =>
-  fs.writeFileSync(__dirname + "/index.json", JSON.stringify(users))
-);
+run(incremental).then(() => {
+  fs.writeFileSync(__dirname + "/index.json", JSON.stringify(users));
+  fs.writeFileSync(
+    path.resolve(__dirname, "../meta.json"),
+    JSON.stringify(meta)
+  );
+});
