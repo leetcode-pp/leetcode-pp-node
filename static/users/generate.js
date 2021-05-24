@@ -33,9 +33,12 @@ async function run(incremental = true) {
 
   return Promise.all(ps);
 }
+let incremental = true;
 
-const incremental = true;
-
+// 七天全量更新一次
+if (getDay(TODAY) - getDay(meta.dailyCheck.lastUpdateTime) >= 7) {
+  incremental = false;
+}
 run(incremental).then(() =>
   fs.writeFileSync(__dirname + "/index.json", JSON.stringify(users))
 );
