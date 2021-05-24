@@ -9,7 +9,7 @@ const { startTime } = require("../config/index");
 
 const A = [];
 for (const [login, solution] of Object.entries(mySolutions)) {
-  const { bio, name, noCheck, allCheck, avatar_url } = users[login];
+  const { bio, name, noCheck, allCheck, avatar_url, card } = users[login];
   A.push({
     count: solution.filter(Boolean).length,
     bio,
@@ -17,6 +17,7 @@ for (const [login, solution] of Object.entries(mySolutions)) {
     login,
     noCheck,
     avatar_url,
+    card,
     allCheck,
   });
 }

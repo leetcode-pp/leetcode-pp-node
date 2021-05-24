@@ -6,7 +6,7 @@ const { owner, repo } = require("../config/index");
 
 const solutions = require("../static/solution/solutions.json");
 const mySolutions = require("../static/my/solutions.json");
-const { get } = require("http");
+const meta = require("../static/meta.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
 function getAllPages(i, issue_number) {
@@ -47,9 +47,13 @@ async function run(d) {
         onTime: getDay(new Date(comment.created_at).getTime()) <= d,
       };
     });
-    mySolutions["_meta_"] = {
-      lastUpdateTime: new Date().getTime(),
-    };
+    meta.dailyCheck.lastUpdateTime = new Date().getTime();
+
+    fs.writeFileSync(
+      path.resolve(__dirname, "../static/meta.json"),
+      JSON.stringify(meta)
+    );
+
     fs.writeFileSync(
       path.resolve(__dirname, "../static/my/solutions.json"),
       JSON.stringify(mySolutions)
@@ -60,11 +64,7 @@ const MS_PER_HOUR = 1 * 60 * 60 * 1000;
 const TODAY = getDay(new Date().getTime() - MS_PER_HOUR); // 获取今天‘的题目。 为了照顾一些人， 我们凌晨一点统计昨天的，而不是当天的。
 
 // 仅更新当天的
-if (
-  getDay(TODAY) -
-    getDay((mySolutions["__meta__"] || { lastUpdateTime: -1 }).lastUpdateTime) <
-  1
-) {
+if (getDay(TODAY) - getDay(meta.dailyCheck.lastUpdateTime) < 1) {
   run(TODAY);
 } else {
   // 更新历史所有的，每天仅全量更新一次
