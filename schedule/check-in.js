@@ -19,7 +19,7 @@ function run(n) {
       let noCheckDays = 0;
       let continuousDays = 0; // 连续打卡的天数
       while (i < to) {
-        if (!solutions || !solutions[i]) {
+        if (!solutions || !solutions[i] || !solutions[i].onTime) {
           continuousDays = 0;
           noCheckDays++;
         } else {
@@ -60,7 +60,7 @@ function run(n) {
       let count = 0;
 
       while (i < day - 1) {
-        if (!solutions || !solutions[i]) {
+        if (!solutions || !solutions[i] || !solutions[i].onTime) {
           count += 1;
         } else {
           count = 0;
