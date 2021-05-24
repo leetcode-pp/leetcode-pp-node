@@ -435,7 +435,6 @@ const blacklist = [
   "caimaoy",
   "mosihan",
   "prhCSer",
-  "rufengnanren",
   "theonebemine",
   "ZZWHU",
   "zeningc",
