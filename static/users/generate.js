@@ -2,6 +2,8 @@ const fs = require("fs");
 const { Octokit } = require("@octokit/rest");
 const { db } = require("../../config/index");
 const users = require("./index.json");
+const { getDay } = require("../../utils/day");
+const meta = require("../meta.json");
 
 async function run(incremental = true) {
   const octokit = new Octokit({ auth: process.env.issueToken });
@@ -36,7 +38,7 @@ async function run(incremental = true) {
 let incremental = true;
 
 // 七天全量更新一次
-if (getDay(TODAY) - getDay(meta.dailyCheck.lastUpdateTime) >= 7) {
+if (getDay() - getDay(meta.users.lastUpdateTime) >= 7) {
   incremental = false;
 }
 run(incremental).then(() =>
