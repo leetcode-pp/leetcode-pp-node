@@ -48,8 +48,8 @@ async function run(d) {
       };
     });
     mySolutions["_meta_"] = {
-      lastUpdateTime = new Date().getTime()
-    }
+      lastUpdateTime: new Date().getTime(),
+    };
     fs.writeFileSync(
       path.resolve(__dirname, "../static/my/solutions.json"),
       JSON.stringify(mySolutions)
@@ -61,15 +61,13 @@ const TODAY = getDay(new Date().getTime() - MS_PER_HOUR); // 获取今天‘的�
 
 // 仅更新当天的
 if (getDay(TODAT) - getDay(mySolutions["__meta__"].lastUpdateTime) < 1) {
-  run(TODAY)
+  run(TODAY);
 } else {
-// 更新历史所有的，每天仅全量更新一次
-// 1. 记录打卡数据
-// 2. 修正之前的数据错误
-// 3. 登记补卡信息
-for (let d = 1; d <= TODAY; d++) {
-  run(d);
+  // 更新历史所有的，每天仅全量更新一次
+  // 1. 记录打卡数据
+  // 2. 修正之前的数据错误
+  // 3. 登记补卡信息
+  for (let d = 1; d <= TODAY; d++) {
+    run(d);
+  }
 }
-} 
-
-
