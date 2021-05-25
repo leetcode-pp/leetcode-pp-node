@@ -25,6 +25,7 @@ async function run(incremental = true) {
             //  createTime 字段不能更新，其他都可以更新
             const c = users[name].createTime;
             users[name] = {
+              ...users[name],
               ...user,
               createTime: c,
             };
