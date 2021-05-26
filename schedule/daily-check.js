@@ -43,7 +43,11 @@ async function run(d) {
       }
       // 由于下面的一行代码，导致了会插入一个完全空的行。这就是因为打过卡，但是都不是当天打的
       if (comment.body.length < 20) return;
-      if (mySolutions[login][d - 1].onTime !== void 0) return; // 如果打卡过或者补卡过就不同步了
+      if (
+        mySolutions[login][d - 1] &&
+        mySolutions[login][d - 1].onTime !== void 0
+      )
+        return; // 如果打卡过或者补卡过就不同步了
       // 由于索引从 1 开始，因此需要再减去 1。
       mySolutions[login][d - 1] = {
         // title: problem.title,
