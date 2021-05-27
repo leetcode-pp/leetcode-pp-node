@@ -1,13 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const typehole = require("typehole");
 const { Octokit } = require("@octokit/rest");
 const { db } = require("../../config/index");
 const users = require("./index.json");
 // const { getDay } = require("../../utils/day");
 const meta = require("../meta.json");
-
-typehole.t(db);
 
 async function run(incremental = true) {
   const octokit = new Octokit({ auth: process.env.issueToken });
