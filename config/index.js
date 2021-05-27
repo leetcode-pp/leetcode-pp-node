@@ -396,6 +396,9 @@ const userList = [
 );
 
 module.exports = {
+  baseUrl: 'https://leetcode-cn.com',
+  submitUrl: 'https://leetcode-cn.com/problems/$slug/submit/',
+  loginUrl: 'https://leetcode-cn.com/accounts/login/',
   owner: "leetcode-pp",
   repo: "91alg-4",
   startTime: startTime.getTime(),
