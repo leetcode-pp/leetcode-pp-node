@@ -385,6 +385,7 @@ yiwchen
 bugMarker
 wlsqhydfy
 fdy696
+seyvoue
 guangsizhongbin
 kbfx1234
 wlsqhydfy
@@ -404,14 +405,14 @@ const userList = [
 );
 
 const leetcodeConfig = {
-  baseUrl: 'https://leetcode-cn.com',
-  submitUrl: 'https://leetcode-cn.com/problems/$slug/submit/',
-  loginUrl: 'https://leetcode-cn.com/accounts/login/',
-  _91UsernameCookieName: 'login', // 在91网站中存lc用户名的cookie的键名
-  _91PwdCookieName: 'password', // 在91网站中存lc密码的cookie的键名
-  lcSeesionCookieName: 'LEETCODE_SESSION', // lc存seesionid的 cookie键名
-  lcCsrftokenCookieName: 'csrftoken' // lc存csrf的 cookie键名
-}
+  baseUrl: "https://leetcode-cn.com",
+  submitUrl: "https://leetcode-cn.com/problems/$slug/submit/",
+  loginUrl: "https://leetcode-cn.com/accounts/login/",
+  _91UsernameCookieName: "login", // 在91网站中存lc用户名的cookie的键名
+  _91PwdCookieName: "password", // 在91网站中存lc密码的cookie的键名
+  lcSeesionCookieName: "LEETCODE_SESSION", // lc存seesionid的 cookie键名
+  lcCsrftokenCookieName: "csrftoken", // lc存csrf的 cookie键名
+};
 
 module.exports = {
   leetcodeConfig,
