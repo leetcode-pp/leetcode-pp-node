@@ -16,7 +16,7 @@ const lectures = require("./routes/lectures");
 const github = require("./routes/github");
 const fallback = require("./routes/redirect");
 const my = require("./routes/my");
-const lc = require("./routes/lc");
+// const lc = require("./routes/lc");
 const mockUserInfo = require("./middleware/mockUserInfo");
 
 // error handler
@@ -80,7 +80,7 @@ app.use(lectures.routes(), lectures.allowedMethods());
 app.use(dailyProblem.routes(), dailyProblem.allowedMethods());
 app.use(my.routes(), my.allowedMethods());
 app.use(github.routes(), github.allowedMethods());
-app.use(lc.routes(), lc.allowedMethods());
+// app.use(lc.routes(), lc.allowedMethods());
 // error-handling
 app.on("error", (err, ctx) => {
   console.error("server error", err, ctx);
