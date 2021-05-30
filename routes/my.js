@@ -6,22 +6,18 @@ const { success, fail } = require("../utils/request");
 const { getDay } = require("../utils/day");
 
 router.get("/api/v1/my/solutions", async (ctx) => {
-  if (ctx.session.user.login in solutions) {
-    ctx.body = success(
-      solutions[ctx.session.user.login]
-        .map((q, i) => ({
-          ...q,
-          body: void 0,
-          title: (officialSolution[i + 1] || {}).title || "",
-          tags: (officialSolution[i + 1] || {}).tags || [],
-          difficulty: (officialSolution[i + 1] || {}).difficulty || "",
-          issue_number: (officialSolution[i + 1] || {}).issue_number || "",
-        }))
-        .slice(0, getDay())
-    );
-  } else {
-    ctx.body = success([]);
-  }
+  ctx.body = success(
+    Array(getDay())
+      .fill(null)
+      .map((_, i) => ({
+        ...solutions[ctx.session.user.login]?.[i],
+        body: void 0,
+        title: (officialSolution[i + 1] || {}).title || "",
+        tags: (officialSolution[i + 1] || {}).tags || [],
+        difficulty: (officialSolution[i + 1] || {}).difficulty || "",
+        issue_number: (officialSolution[i + 1] || {}).issue_number || "",
+      }))
+  );
 });
 
 router.get("/api/v1/my/solutions/:id", async (ctx) => {
