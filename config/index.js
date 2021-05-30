@@ -360,7 +360,6 @@ zhengxinshuo
 for123s
 HaoOneBin
 learnprogram2
-Christy-zhou
 BUBBLEbubbleBUBBLEbubble
 jz1433
 sszqdz
