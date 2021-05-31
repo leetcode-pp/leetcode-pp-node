@@ -98,7 +98,7 @@ function run(n) {
     us[red.login].card = red.card;
   }
   for (const login of blacklist) {
-    if (whitelist.includs(login)) continue;
+    if (whitelist.includes(login)) continue;
     us[login].noCheck = true;
   }
 
