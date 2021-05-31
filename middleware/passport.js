@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const { Octokit } = require("@octokit/rest");
-const { encrypt, decrypt } = require("../utils/crypto");
+const { decrypt } = require("../utils/crypto");
 const { fail } = require("../utils/request");
 const { secret, db, clientId } = require("../config/index");
 
@@ -15,7 +15,7 @@ module.exports = ({ whitelist = [] }) =>
         await next();
       } else {
         // 1. 如果有 token ，则说明是之前种植过的，直接解析（如果是别人伪造的则会解析失败）
-        const token = ctx.cookies.get("token");
+        const token = ctx.get("token");
 
         if (token) {
           const duserStr = decrypt(token);
@@ -85,17 +85,6 @@ module.exports = ({ whitelist = [] }) =>
                 console.log("自动邀请失败：", err);
               }
             }
-
-            ctx.cookies.set(
-              "token",
-              encrypt(Buffer.from(JSON.stringify(u), "utf8")),
-              {
-                // secure: true,
-                // sameSite: "none",
-                httpOnly: true,
-                expires: new Date(7 * 24 * 60 * 60 * 1000 + Date.now()), // 7 天后过期，后期考虑延长时间
-              }
-            );
           }
 
           await next();

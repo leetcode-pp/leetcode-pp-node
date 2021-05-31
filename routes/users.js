@@ -1,10 +1,15 @@
 const router = require("koa-router")();
 
+const { encrypt } = require("../utils/crypto");
 const { success, fail } = require("../utils/request");
 
 router.get("/api/v1/user", async (ctx) => {
   if (ctx.session && ctx.session.user) {
-    ctx.body = success(ctx.session.user);
+    const u = ctx.session.user;
+    ctx.body = success({
+      ...u,
+      token: encrypt(Buffer.from(JSON.stringify(u), "utf8")),
+    });
   } else {
     ctx.body = fail({
       code: 91,

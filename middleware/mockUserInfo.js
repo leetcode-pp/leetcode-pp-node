@@ -1,5 +1,8 @@
+const { decrypt } = require("../utils/crypto");
+
 module.exports = ({ whitelist = [] }) =>
   async function checkAuth(ctx, next) {
+    console.log(decrypt(ctx.get("token")));
     if (!ctx.session) {
       ctx.session = {};
     }
