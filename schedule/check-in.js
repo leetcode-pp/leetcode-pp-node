@@ -5,6 +5,13 @@ const us = require("../static/users/index");
 const mySolutions = require("../static/my/solutions.json");
 
 const allUsers = JSON.parse(JSON.stringify(us));
+const whitelist = [
+  "unclegem",
+  "feikerwu",
+  "threedayAAAAA",
+  "suukii",
+  "azl397985856",
+];
 
 function run(n) {
   // 返回目前为止满勤的人（连续七天可获取补签卡）
@@ -91,6 +98,7 @@ function run(n) {
     us[red.login].card = red.card;
   }
   for (const login of blacklist) {
+    if (whitelist.includs(login)) continue;
     us[login].noCheck = true;
   }
 
