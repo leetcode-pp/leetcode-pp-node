@@ -53,6 +53,10 @@ function run(n) {
     const day = getDay();
     if (day <= n) return us; // 至少第 n + 1 天才能开始统计前 n 天
     for (const name in us) {
+      if (whitelist.includes(name)) {
+        users[name] = true;
+        continue;
+      }
       us[name].noCheck = false;
       us[name].allCheck = false;
       const solutions = mySolutions[name];
@@ -90,7 +94,7 @@ function run(n) {
   }
   const blacklist = diff(allUsers, checkWithinNDays(n));
   const redlist = fullCheckIn();
-  console.log(`no check within ${n} days`, blacklist);
+  console.log(`no check within ${n} days`, JSON.stringify(blacklist));
   console.log(`full check`, redlist);
 
   for (const red of redlist) {
@@ -98,7 +102,6 @@ function run(n) {
     us[red.login].card = red.card;
   }
   for (const login of blacklist) {
-    if (whitelist.includes(login)) continue;
     us[login].noCheck = true;
   }
 
