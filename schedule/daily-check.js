@@ -49,13 +49,13 @@ async function run(d) {
       )
         return; // 如果打卡过或者补卡过就不同步了
       // 由于索引从 1 开始，因此需要再减去 1。
+
       mySolutions[login][d - 1] = {
         // title: problem.title,
         url: comment.html_url,
         body: comment.body,
         // 只有当天的才标记为 onTime。防止创建一个空白的 comment，之后再编辑
-        onTime:
-          TODAY === d && getDay(new Date(comment.created_at).getTime()) <= d, // 有可能早出题，防止早打卡的人没被统计进去，所以用 <= 。
+        onTime: getDay(new Date(comment.created_at).getTime()) <= d, // 有可能早出题，防止早打卡的人没被统计进去，所以用 <= 。
       };
     });
     meta.dailyCheck.lastUpdateTime = new Date().getTime();
@@ -73,7 +73,8 @@ async function run(d) {
 }
 
 // 仅更新当天的
-if (getDay(TODAY) - getDay(meta.dailyCheck.lastUpdateTime) < 1) {
+
+if (TODAY - getDay(meta.dailyCheck.lastUpdateTime) < 1) {
   run(TODAY);
 } else {
   // 更新历史所有的，每天仅全量更新一次
