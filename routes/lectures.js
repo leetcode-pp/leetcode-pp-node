@@ -23,6 +23,7 @@ router.get("/api/v1/lectures/intro", async (ctx) => {
 router.get("/api/v1/lectures/:id", async (ctx) => {
   const id = ctx.params.id;
   const lecture = lecturesId[id];
+  console.log(id, lecturesId);
   if (!lecture) {
     ctx.body = fail({ message: "讲义不存在" });
   } else {
