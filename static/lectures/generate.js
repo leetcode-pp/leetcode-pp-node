@@ -139,7 +139,7 @@ const lectures = {
       title: "04. 背包",
       desc: "主要介绍了常见的背包问题及其对应套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6bsumtx7j30gq01zjra.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6byqpl1ij30m80m8q4p.jpg",
       },
       id: 3004,
     },
@@ -171,7 +171,7 @@ const lectures = {
       title: "08. 位运算",
       desc: "主要介绍了位运算是什么，种类有哪些，这是状态压缩的基础。",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6buj0aklj30te0633zg.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6bzd54kij30pc0bcmxx.jpg",
       },
       id: 3008,
     },
