@@ -139,7 +139,7 @@ const lectures = {
       title: "04. 背包",
       desc: "主要介绍了常见的背包问题及其对应套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1goss2vq59dj30c407rgm0.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6bsumtx7j30gq01zjra.jpg",
       },
       id: 3004,
     },
@@ -147,7 +147,7 @@ const lectures = {
       title: "05. 动态规划",
       desc: "主要介绍了动态规划的本质，常见类型以及常见的套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1goss2vq59dj30c407rgm0.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6btdzgsbj31ak0p0gpj.jpg",
       },
       id: 3005,
     },
@@ -155,7 +155,7 @@ const lectures = {
       title: "06. 分治",
       desc: "主要介绍了分治的基本解题思路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1goss2vq59dj30c407rgm0.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6btwbwt0j30jv0gf0u7.jpg",
       },
       id: 3006,
     },
@@ -163,7 +163,7 @@ const lectures = {
       title: "07. 贪心",
       desc: "主要介绍了贪心的常见问题",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1goss2vq59dj30c407rgm0.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6bvgz7c4j30c10390sq.jpg",
       },
       id: 3007,
     },
@@ -171,7 +171,7 @@ const lectures = {
       title: "08. 位运算",
       desc: "主要介绍了位运算是什么，种类有哪些，这是状态压缩的基础。",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1goss2vq59dj30c407rgm0.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6buj0aklj30te0633zg.jpg",
       },
       id: 3008,
     },
