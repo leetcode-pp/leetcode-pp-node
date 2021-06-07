@@ -40,13 +40,7 @@ function matchWioutPaddingLine(reg, txt) {
   );
 }
 
-// 基础篇
-Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
-  solutions[i] = solutions[i] || {};
-  const rawMDBuffer = fs.readFileSync(
-    path.resolve(__dirname, `../../91alg-4/solution/basic/d${i}.md`)
-  );
-  const rawMD = rawMDBuffer.toString();
+function generate(rawMD, rawMDBuffer, i) {
   const regs = {
     ...getSatelliteDataReg(),
     ...getParenceDataReg(),
@@ -71,6 +65,46 @@ Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
     title,
     link,
   };
-});
+}
+// 基础篇
+function generateBasic() {
+  Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
+    solutions[i] = solutions[i] || {};
+
+    const rawMDBuffer = fs.readFileSync(
+      path.resolve(__dirname, `../../91alg-4/solution/basic/d${i}.md`)
+    );
+    const rawMD = rawMDBuffer.toString();
+    generate(rawMD, rawMDBuffer, i);
+  });
+}
+// 专题篇
+function generateTopic() {
+  Array.from({ length: 36 }, (_, i) => i + 29).forEach((i) => {
+    solutions[i] = solutions[i] || {};
+
+    const rawMDBuffer = fs.readFileSync(
+      path.resolve(__dirname, `../../91alg-4/solution/topic/d${i}.md`)
+    );
+    const rawMD = rawMDBuffer.toString();
+    generate(rawMD, rawMDBuffer, i);
+  });
+}
+// 进阶篇
+function generateAdvance() {
+  Array.from({ length: 27 }, (_, i) => i + 65).forEach((i) => {
+    solutions[i] = solutions[i] || {};
+
+    const rawMDBuffer = fs.readFileSync(
+      path.resolve(__dirname, `../../91alg-4/solution/advanced/d${i}.md`)
+    );
+    const rawMD = rawMDBuffer.toString();
+    generate(rawMD, rawMDBuffer, i);
+  });
+}
+
+generateBasic();
+generateTopic();
+generateAdvance();
 
 fs.writeFileSync(__dirname + "/solutions.json", JSON.stringify(solutions));
