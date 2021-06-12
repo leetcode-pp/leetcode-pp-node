@@ -7,6 +7,16 @@ const solutions = require("./solutions.json");
 
 function toArray(sep = "-", txt) {
   if (!txt) return txt;
+  // 兼容形如  - [dfs](https://www.xxxxxx)
+
+  if (/\[(.+)\](.+)/.test(txt)) {
+    try {
+      txt = /\[(.+)\](.+)/.exec(txt)[1];
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return txt
     .split(sep)
     .slice(1)
