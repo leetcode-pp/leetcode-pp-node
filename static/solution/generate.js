@@ -1,9 +1,12 @@
 const fs = require("fs");
 const path = require("path");
+const fetch = require('node-fetch')
 
+const { leetcodeConfig:{ allProblem } } = require('../../config/index')
 const { encrypt } = require("../../utils/crypto.js");
 
 const solutions = require("./solutions.json");
+let lcProblemIdMap = {}
 
 function toArray(sep = "-", txt) {
   if (!txt) return txt;
@@ -50,6 +53,15 @@ function matchWioutPaddingLine(reg, txt) {
   );
 }
 
+function getQuestionId(link = "") {
+  if(!link) return null
+  let slug = link
+      .split('/')
+      .reverse()
+      .find(item => item)
+  return lcProblemIdMap[slug]
+}
+
 function generate(rawMD, rawMDBuffer, i) {
   const regs = {
     ...getSatelliteDataReg(),
@@ -73,8 +85,9 @@ function generate(rawMD, rawMDBuffer, i) {
     description,
     content: encrypt(rawMDBuffer),
     title,
-    link,
+    link
   };
+  solutions[i]['question_id'] = getQuestionId(link) || solutions[i]['question_id']
 }
 // 基础篇
 function generateBasic() {
@@ -113,8 +126,36 @@ function generateAdvance() {
   });
 }
 
-generateBasic();
-generateTopic();
-generateAdvance();
+function getLcProblemIdMap() {
+  return fetch(allProblem)
+      .then(res => res.json())
+      .then(res => {
+        let result = {}
+        let data = res.stat_status_pairs
+        if(data){
+          result = data.reduce((pre, item) => {
+            let { stat: { question__title_slug, question_id } = {} } = item || {}
+            if(question__title_slug && question_id){
+              pre[question__title_slug] = question_id
+            }
+            return pre
+          }, {})
+        }
+        return result
+      })
+}
 
-fs.writeFileSync(__dirname + "/solutions.json", JSON.stringify(solutions));
+async function main() {
+  try {
+    lcProblemIdMap = await getLcProblemIdMap()
+  } catch (err) {
+    console.log(err);
+  }
+  generateBasic();
+  generateTopic();
+  generateAdvance();
+
+  fs.writeFileSync(__dirname + "/solutions.json", JSON.stringify(solutions));
+}
+
+main()

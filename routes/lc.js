@@ -136,7 +136,6 @@ function formateSubmitData(problem = {}){
     return Object.assign(problem, {
         judge_type: 'large',
         lang:        problem.lang,
-        question_id: parseInt(problem.id, 10),
         test_mode:   false,
         typed_code:  problem.code
     })
