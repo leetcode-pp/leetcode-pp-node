@@ -135,19 +135,20 @@ const lectures = {
       },
       id: 3003,
     },
+
     3004: {
-      title: "04. 背包",
-      desc: "主要介绍了常见的背包问题及其对应套路",
+      title: "04. 动态规划",
+      desc: "主要介绍了动态规划的本质，常见类型以及常见的套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6byqpl1ij30m80m8q4p.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6btdzgsbj31ak0p0gpj.jpg",
       },
       id: 3004,
     },
     3005: {
-      title: "05. 动态规划",
-      desc: "主要介绍了动态规划的本质，常见类型以及常见的套路",
+      title: "05. 背包",
+      desc: "主要介绍了常见的背包问题及其对应套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6btdzgsbj31ak0p0gpj.jpg",
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6byqpl1ij30m80m8q4p.jpg",
       },
       id: 3005,
     },
