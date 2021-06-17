@@ -47,7 +47,7 @@ async function run(solution) {
     repo,
     title: generateIssueTitle(solution),
     body: generateIssueContent(solution),
-    labels: solution.tags || [],
+    labels: (solution.tags || []).concat(String(solution.day)),
   });
 
   solution.issue_number = data.number;

@@ -1,6 +1,7 @@
 const router = require("koa-router")();
 const fetch = require("node-fetch");
 const { getDay } = require("../utils/day");
+const { decrypt, encrypt } = require("../utils/crypto");
 const { success, fail } = require("../utils/request");
 const mySolutions = require("../static/my/solutions.json");
 const solutions = require("../static/solution/solutions.json");
@@ -25,6 +26,16 @@ router.all("/api/v1/github/content", async (ctx) => {
       message: "请求失败",
     });
   }
+});
+
+router.all("/api/v1/github/comment-app", async (ctx) => {
+  ctx.body = success(
+    JSON.parse(
+      decrypt(
+        "5163624a909f020e009f354521d8217823802591162a9076d7d9bda6ff8e80e8853a28e0a00273dcf6985bbe6afdac46f97d4d90c22e4f88bf7cf92fe3b2fb23a46a3b33ce8495aa082696f7d0cf5b796eb37cd4c2f20a9866e1708cfa"
+      )
+    )
+  );
 });
 
 router.all("/api/v1/github/webhook", async (ctx) => {
