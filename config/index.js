@@ -240,6 +240,8 @@ rufengnanren
 minuet-red
 jmaStella
 caoyuyuyu
+Mahalasu
+xingchen77
 yolo-jane
 xmlb88
 Auto-SK
