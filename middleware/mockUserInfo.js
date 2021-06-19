@@ -1,7 +1,13 @@
-const { decrypt } = require("../utils/crypto");
-
+// const { decrypt } = require("../utils/crypto");
+const sleep = (timeout) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
+};
 module.exports = ({ whitelist = [] }) =>
   async function checkAuth(ctx, next) {
+    // await sleep(3000);
+    // throw new Error('意料之内')
     if (!ctx.session) {
       ctx.session = {};
     }
