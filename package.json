@@ -2,6 +2,9 @@
   "name": "leetcode-pp-node",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=14.4.0"
+  },
   "scripts": {
     "start": "NODE_ENV=production node bin/www",
     "dev": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
