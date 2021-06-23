@@ -1,0 +1,8 @@
+.DS_Store
+_book/
+.idea/*
+node_modules/
+book*.pdf
+book*.mobi
+book*.epub
+book*.zip
