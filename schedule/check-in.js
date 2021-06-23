@@ -93,7 +93,7 @@ function run(n) {
     return Object.keys(A);
   }
   const blacklist = diff(allUsers, checkWithinNDays(n));
-  const redlist = fullCheckIn();
+  const redlist = fullCheckIn(29);
   console.log(`no check within ${n} days`, JSON.stringify(blacklist));
   console.log(`full check`, redlist);
 
