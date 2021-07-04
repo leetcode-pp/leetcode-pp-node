@@ -266,6 +266,16 @@ lectures.intro["1002"].content = encrypt(
   );
 });
 
+// 进阶
+
+[4001, 4002, 4003, 4004, 4005, 4006, 4007].forEach((id, i) => {
+  lectures.advance[id].content = encrypt(
+    fs.readFileSync(
+      path.resolve(__dirname, `../../91alg-4/lecture/advanced-0${i + 1}.md`)
+    )
+  );
+});
+
 fs.writeFileSync(
   __dirname + "/lectures-by-category.json",
   JSON.stringify(lectures)
@@ -273,5 +283,7 @@ fs.writeFileSync(
 
 fs.writeFileSync(
   __dirname + "/lectures-by-id.json",
-  JSON.stringify(merge(lectures.intro, lectures.basic, lectures.topic))
+  JSON.stringify(
+    merge(lectures.intro, lectures.basic, lectures.topic, lectures.advance)
+  )
 );
