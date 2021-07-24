@@ -11,7 +11,7 @@
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "daily-schedule": "node ./schedule/daily-problem.js && node ./schedule/daily-check.js && node ./schedule/check-in.js",
-    "generate": "node ./static/users/generate.js && node ./static/solution/generate.js && node ./static/lectures/generate.js"
+    "generate": "node ./static/solution/generate.js && node ./static/lectures/generate.js && node ./static/users/generate.js"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
