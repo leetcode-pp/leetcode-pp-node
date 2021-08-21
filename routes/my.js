@@ -7,7 +7,7 @@ const { getDay } = require("../utils/day");
 
 router.get("/api/v1/my/solutions", async (ctx) => {
   ctx.body = success(
-    Array(getDay())
+    Array(Math.min(getDay(), 91))
       .fill(null)
       .map((_, i) => ({
         ...solutions[ctx.session.user.login]?.[i],

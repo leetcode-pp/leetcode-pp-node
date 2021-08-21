@@ -47,6 +47,11 @@ router.get("/api/v1/daily-problem", async (ctx) => {
     const date = getDay(ctx.query.date || new Date().getTime()); // 用户指定的实际
     if (date in solutions) {
       ctx.body = success(solutions[date]);
+    } else if (date > 91) {
+      ctx.body = fail({
+        message:
+          "本期活动已经结束，请耐心等待下期~ 活动开始报名会第一时间在公众号《力扣加加》同步!",
+      });
     } else {
       ctx.body = fail({
         message: "当前暂时没有每日一题，请联系当前讲师进行处理~",
