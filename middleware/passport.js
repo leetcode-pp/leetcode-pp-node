@@ -2,10 +2,18 @@ const fetch = require("node-fetch");
 const { Octokit } = require("@octokit/rest");
 const { decrypt } = require("../utils/crypto");
 const { fail } = require("../utils/request");
+const { getDay } = require("../utils/day");
 const { secret, db, clientId } = require("../config/index");
 
 module.exports = ({ whitelist = [] }) =>
   async function checkAuth(ctx, next) {
+    if (getDay() > 91) {
+      ctx.body = fail({
+        message:
+          "本期活动已经结束，请耐心等待下期~ 活动开始报名会第一时间在公众号《力扣加加》同步!",
+      });
+      return;
+    }
     if (whitelist.includes(ctx.path)) await next();
     else {
       if (!ctx.session) {
