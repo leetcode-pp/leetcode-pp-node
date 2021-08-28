@@ -1,0 +1,34 @@
+exports.users = `
+yqy1ybyq
+BigBossssu
+MarkStokesXK
+petardation
+yoci642
+yanjyumoso
+jfsyjy
+w549261270
+real-gzb
+xiezhengyun95
+sumu54010918
+Y_C9696
+feng_t
+kidexp
+DevenDai99
+fat_xin26
+q815101630
+lxy030988
+wx1398633077
+nocoder1999
+Hkneverbeangry_
+tongxw
+liu_hang_yu
+CangGia9527
+wizard1616
+God111WYQ
+f1234
+reeleo1126
+King_Uranus
+Joey__Cheng
+`
+  .split("\n")
+  .filter(Boolean);

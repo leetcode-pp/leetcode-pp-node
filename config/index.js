@@ -1,12 +1,12 @@
 const blacklist = require("./blacklist.json");
 const startTime = new Date("2021-05-09 16:00:00 GMT");
+const { users } = require("./users-5");
 function join(s) {
   return s
     .split(/\n/)
     .filter(Boolean)
     .map((v) => String.prototype.trim.call(v));
 }
-const users = [];
 
 const userList = [
   {
@@ -17,6 +17,8 @@ const userList = [
     login: name,
   }))
 );
+
+console.log(userList);
 
 const leetcodeConfig = {
   baseUrl: "https://leetcode-cn.com",
