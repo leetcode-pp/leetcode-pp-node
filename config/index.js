@@ -12,8 +12,6 @@ const userList = [
   }))
 );
 
-console.log(userList);
-
 const leetcodeConfig = {
   baseUrl: "https://leetcode-cn.com",
   submitUrl: "https://leetcode-cn.com/problems/$slug/submit/",
@@ -28,7 +26,7 @@ const leetcodeConfig = {
 module.exports = {
   leetcodeConfig,
   owner: "leetcode-pp",
-  repo: "91alg-4",
+  repo: "91alg-5",
   startTime: startTime.getTime(),
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",

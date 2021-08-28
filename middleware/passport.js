@@ -73,7 +73,7 @@ module.exports = ({ whitelist = [] }) =>
           // user.login 存在表示登录成功
           if (user.login) {
             // 付费用户
-            const pay = !!db[user.login];
+            const pay = !!db[user.login.toLocaleLowerCase()];
             const u = {
               ...user,
               pay,
