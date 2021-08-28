@@ -1,12 +1,6 @@
 const blacklist = require("./blacklist.json");
-const startTime = new Date("2021-05-09 16:00:00 GMT");
+const startTime = new Date("2021-09-10T00:00:00.000+08:00");
 const { users } = require("./users-5");
-function join(s) {
-  return s
-    .split(/\n/)
-    .filter(Boolean)
-    .map((v) => String.prototype.trim.call(v));
-}
 
 const userList = [
   {

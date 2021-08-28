@@ -1,4 +1,11 @@
-exports.users = `
+function join(s) {
+  return s
+    .split(/\n/)
+    .filter(Boolean)
+    .map((v) => String.prototype.trim.call(v));
+}
+
+exports.users = join(`
 yqy1ybyq
 BigBossssu
 MarkStokesXK
@@ -29,6 +36,44 @@ f1234
 reeleo1126
 King_Uranus
 Joey__Cheng
-`
-  .split("\n")
-  .filter(Boolean);
+Jean-Tao
+suukii7991
+on1tw2thre3fou4
+WhiteBirch201
+wjp2265668431
+jy19990917
+sjc60885
+octopus_and_milk0917
+ab1569381830
+north-sea-coder
+czhucheng
+kyle4win
+surfactants 
+moxiaoji_
+lryyy011
+AnonymousBit
+zilinaaaaaa
+Pzl233p
+acelinguo
+bwai95
+wanghelloworld
+xiaocao041
+ihkx1231
+oujinsai666
+baoqin8711
+OvOZhghdQ_o2927
+onlydlln
+luojiawhu
+zz1194365836
+XQ-F0824
+kitkwanL
+Suett520-Mcd
+firequefire
+jie6595
+yankang233
+luoman359988852
+s9006811
+k13482813304
+ziyu6507
+EmilyTao1026
+`);
