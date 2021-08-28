@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const { Octokit } = require("@octokit/rest");
+// const { Octokit } = require("@octokit/rest");
 const { decrypt } = require("../utils/crypto");
 const { fail } = require("../utils/request");
 const { getDay } = require("../utils/day");
@@ -19,20 +19,21 @@ module.exports = ({ whitelist = [] }) =>
       if (!ctx.session) {
         ctx.session = {};
       }
-      if (ctx.session.user) {
+      // 只有支付过的才 next。 没有支付的需要更新一下防止（付费后 pay 还是 false）
+      if (ctx.session.user && ctx.session.user.pay) {
         await next();
       } else {
         // 1. 如果有 token ，则说明是之前种植过的，直接解析（如果是别人伪造的则会解析失败）
         const token = ctx.get("token");
 
         if (token) {
-          const duserStr = decrypt(token);
-          if (duserStr) {
+          const dUserStr = decrypt(token);
+          if (dUserStr) {
             try {
-              const duser = JSON.parse(duserStr);
+              const dUser = JSON.parse(dUserStr);
               ctx.session.user = {
-                ...duser,
-                pay: !!db[duser.login],
+                ...dUser,
+                pay: !!db[dUser.login],
               };
               await next();
               return;
