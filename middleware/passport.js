@@ -33,7 +33,7 @@ module.exports = ({ whitelist = [] }) =>
               const dUser = JSON.parse(dUserStr);
               ctx.session.user = {
                 ...dUser,
-                pay: !!db[dUser.login],
+                pay: !!db[dUser.login.toLocaleLowerCase()],
               };
               await next();
               return;
