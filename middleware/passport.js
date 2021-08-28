@@ -80,19 +80,19 @@ module.exports = ({ whitelist = [] }) =>
             };
             // 登录成功将用户加入到会话
             ctx.session.user = u;
-            if (pay) {
-              try {
-                const octokit = new Octokit({ auth: process.env.token });
+            // if (pay) {
+            //   try {
+            //     const octokit = new Octokit({ auth: process.env.token });
 
-                octokit.rest.teams.addOrUpdateMembershipForUserInOrg({
-                  org: "leetcode-pp",
-                  team_slug: "91algo-4",
-                  username: user.login,
-                });
-              } catch (err) {
-                console.log("自动邀请失败：", err);
-              }
-            }
+            //     octokit.rest.teams.addOrUpdateMembershipForUserInOrg({
+            //       org: "leetcode-pp",
+            //       team_slug: "91algo-5",
+            //       username: user.login,
+            //     });
+            //   } catch (err) {
+            //     console.log("自动邀请失败：", err);
+            //   }
+            // }
           }
 
           await next();
