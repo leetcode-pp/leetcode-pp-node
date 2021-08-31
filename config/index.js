@@ -26,7 +26,7 @@ const leetcodeConfig = {
 module.exports = {
   leetcodeConfig,
   owner: "leetcode-pp",
-  repo: "91alg-5",
+  repo: "91alg-5-daily-check",
   startTime: startTime.getTime(),
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
