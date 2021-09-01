@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.CHECKOUT }}
-          # submodules: "true"
+          submodules: "true"
       - name: run npm
         uses: actions/setup-node@v2
         with:
@@ -24,6 +24,13 @@ jobs:
         env:
           secret: ${{secrets.GENERATE}}
         run: npm run generate
+      - name: Commit static
+        run: |
+          source ./scripts/commit.sh
+      - name: generate lectures
+        env:
+          secret: ${{secrets.GENERATE}}
+        run: npm run lecture
       - name: Commit static
         run: |
           source ./scripts/commit.sh
