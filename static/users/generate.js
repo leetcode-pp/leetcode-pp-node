@@ -46,14 +46,16 @@ async function run(incremental = true) {
 let incremental = true;
 
 // 七天全量更新一次
-if (
-  new Date().getTime() - meta.users.lastUpdateTime >=
-  7 * 24 * 60 * 60 * 1000
-) {
+const lastUpdateTime = meta.users ? meta.users.lastUpdateTime : -1;
+
+if (new Date().getTime() - lastUpdateTime >= 7 * 24 * 60 * 60 * 1000) {
   incremental = false;
 }
 run(incremental).then(() => {
   fs.writeFileSync(__dirname + "/index.json", JSON.stringify(users));
+  if (!meta.users) {
+    meta.users = {};
+  }
   meta.users.lastUpdateTime = new Date().getTime();
   fs.writeFileSync(
     path.resolve(__dirname, "../meta.json"),

@@ -5,6 +5,7 @@ const iv = Buffer.alloc(16, "-");
 const secret = process.env.secret;
 module.exports = {
   encrypt(text) {
+    if (!secret) throw new Error("please specify secret!");
     const cipher = crypto.createCipheriv(algorithm, secret.slice(0, 32), iv);
     const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
     return encrypted.toString("hex");

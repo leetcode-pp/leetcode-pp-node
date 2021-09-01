@@ -73,8 +73,8 @@ async function run(d) {
 }
 
 // 仅更新当天的
-
-if (TODAY - getDay(meta.dailyCheck.lastUpdateTime) < 1) {
+const lastUpdateTime = meta.dailyCheck ? meta.dailyCheck.lastUpdateTime : -1;
+if (TODAY - getDay(lastUpdateTime) < 1) {
   run(TODAY);
 } else {
   // 更新历史所有的，每天仅全量更新一次
