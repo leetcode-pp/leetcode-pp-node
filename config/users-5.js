@@ -372,7 +372,7 @@ WeiWri-CC
 ThreeGold-yxh
 grapefruit-hellomonday
 mixtureve
-rebel-ly(均小写）
+rebel-ly
 Daniel-Zheng
 leolisgit
 cy-sues
