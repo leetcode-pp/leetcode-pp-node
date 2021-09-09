@@ -98,6 +98,9 @@ function run(n) {
   console.log(`full check`, redlist);
 
   for (const red of redlist) {
+    if (!us[red.login]) {
+      us[red.login] = {};
+    }
     us[red.login].allCheck = true;
     us[red.login].card = red.card;
   }
