@@ -1,12 +1,14 @@
 const fs = require("fs");
 const path = require("path");
-const fetch = require('node-fetch')
+const fetch = require("node-fetch");
 
-const { leetcodeConfig:{ allProblem } } = require('../../config/index')
+const {
+  leetcodeConfig: { allProblem },
+} = require("../../config/index");
 const { encrypt } = require("../../utils/crypto.js");
 
 const solutions = require("./solutions.json");
-let lcProblemIdMap = {}
+let lcProblemIdMap = {};
 
 function toArray(sep = "-", txt) {
   if (!txt) return txt;
@@ -54,12 +56,12 @@ function matchWioutPaddingLine(reg, txt) {
 }
 
 function getQuestionId(link = "") {
-  if(!link) return null
+  if (!link) return null;
   let slug = link
-      .split('/')
-      .reverse()
-      .find(item => item)
-  return lcProblemIdMap[slug]
+    .split("/")
+    .reverse()
+    .find((item) => item);
+  return lcProblemIdMap[slug];
 }
 
 function generate(rawMD, rawMDBuffer, i) {
@@ -85,9 +87,10 @@ function generate(rawMD, rawMDBuffer, i) {
     description,
     content: encrypt(rawMDBuffer),
     title,
-    link
+    link,
   };
-  solutions[i]['question_id'] = getQuestionId(link) || solutions[i]['question_id']
+  solutions[i]["question_id"] =
+    getQuestionId(link) || solutions[i]["question_id"];
 }
 // 基础篇
 function generateBasic() {
@@ -95,7 +98,7 @@ function generateBasic() {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
-      path.resolve(__dirname, `../../91alg-4/solution/basic/d${i}.md`)
+      path.resolve(__dirname, `../../91alg-5/solution/basic/d${i}.md`)
     );
     const rawMD = rawMDBuffer.toString();
     generate(rawMD, rawMDBuffer, i);
@@ -107,7 +110,7 @@ function generateTopic() {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
-      path.resolve(__dirname, `../../91alg-4/solution/topic/d${i}.md`)
+      path.resolve(__dirname, `../../91alg-5/solution/topic/d${i}.md`)
     );
     const rawMD = rawMDBuffer.toString();
     generate(rawMD, rawMDBuffer, i);
@@ -119,7 +122,7 @@ function generateAdvance() {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
-      path.resolve(__dirname, `../../91alg-4/solution/advanced/d${i}.md`)
+      path.resolve(__dirname, `../../91alg-5/solution/advanced/d${i}.md`)
     );
     const rawMD = rawMDBuffer.toString();
     generate(rawMD, rawMDBuffer, i);
@@ -128,26 +131,26 @@ function generateAdvance() {
 
 function getLcProblemIdMap() {
   return fetch(allProblem)
-      .then(res => res.json())
-      .then(res => {
-        let result = {}
-        let data = res.stat_status_pairs
-        if(data){
-          result = data.reduce((pre, item) => {
-            let { stat: { question__title_slug, question_id } = {} } = item || {}
-            if(question__title_slug && question_id){
-              pre[question__title_slug] = question_id
-            }
-            return pre
-          }, {})
-        }
-        return result
-      })
+    .then((res) => res.json())
+    .then((res) => {
+      let result = {};
+      let data = res.stat_status_pairs;
+      if (data) {
+        result = data.reduce((pre, item) => {
+          let { stat: { question__title_slug, question_id } = {} } = item || {};
+          if (question__title_slug && question_id) {
+            pre[question__title_slug] = question_id;
+          }
+          return pre;
+        }, {});
+      }
+      return result;
+    });
 }
 
 async function main() {
   try {
-    lcProblemIdMap = await getLcProblemIdMap()
+    lcProblemIdMap = await getLcProblemIdMap();
   } catch (err) {
     console.log(err);
   }
@@ -158,4 +161,4 @@ async function main() {
   fs.writeFileSync(__dirname + "/solutions.json", JSON.stringify(solutions));
 }
 
-main()
+main();

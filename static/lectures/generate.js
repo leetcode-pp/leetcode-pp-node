@@ -239,11 +239,11 @@ const lectures = {
 
 // 先导
 lectures.intro["1001"].content = encrypt(
-  fs.readFileSync(path.resolve(__dirname, "../../91alg-4/algo.md"))
+  fs.readFileSync(path.resolve(__dirname, "../../91alg-5/algo.md"))
 );
 
 lectures.intro["1002"].content = encrypt(
-  fs.readFileSync(path.resolve(__dirname, "../../91alg-4/bigO.md"))
+  fs.readFileSync(path.resolve(__dirname, "../../91alg-5/bigO.md"))
 );
 
 // 基础
@@ -251,7 +251,7 @@ lectures.intro["1002"].content = encrypt(
 [2001, 2002, 2003, 2004, 2005, 2006, 2007].forEach((id, i) => {
   lectures.basic[id].content = encrypt(
     fs.readFileSync(
-      path.resolve(__dirname, `../../91alg-4/lecture/basic-0${i + 1}.md`)
+      path.resolve(__dirname, `../../91alg-5/lecture/basic-0${i + 1}.md`)
     )
   );
 });
@@ -261,7 +261,7 @@ lectures.intro["1002"].content = encrypt(
 [3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008].forEach((id, i) => {
   lectures.topic[id].content = encrypt(
     fs.readFileSync(
-      path.resolve(__dirname, `../../91alg-4/lecture/topic-0${i + 1}.md`)
+      path.resolve(__dirname, `../../91alg-5/lecture/topic-0${i + 1}.md`)
     )
   );
 });
@@ -271,7 +271,7 @@ lectures.intro["1002"].content = encrypt(
 [4001, 4002, 4003, 4004, 4005, 4006, 4007].forEach((id, i) => {
   lectures.advance[id].content = encrypt(
     fs.readFileSync(
-      path.resolve(__dirname, `../../91alg-4/lecture/advanced-0${i + 1}.md`)
+      path.resolve(__dirname, `../../91alg-5/lecture/advanced-0${i + 1}.md`)
     )
   );
 });
