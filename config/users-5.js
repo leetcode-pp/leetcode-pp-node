@@ -475,4 +475,6 @@ razor1895
 Jding0
 guangshisong
 fzzfgbw
+AnkiDord
+Master-guang
 `);
