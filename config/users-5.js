@@ -477,6 +477,6 @@ guangshisong
 fzzfgbw
 AnkiDord
 Master-guang
-for123jth
+for123s
 taoyr722
 `);
