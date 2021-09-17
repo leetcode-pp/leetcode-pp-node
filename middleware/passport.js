@@ -31,9 +31,13 @@ module.exports = ({ whitelist = [] }) =>
           if (dUserStr) {
             try {
               const dUser = JSON.parse(dUserStr);
+              const parts = dUser.url.split("/");
+              const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
+              // 付费用户
+              const pay = !!db[login.toLocaleLowerCase()];
               ctx.session.user = {
                 ...dUser,
-                pay: !!db[dUser.login.toLocaleLowerCase()],
+                pay,
               };
               await next();
               return;
