@@ -31,8 +31,9 @@ module.exports = ({ whitelist = [] }) =>
           if (dUserStr) {
             try {
               const dUser = JSON.parse(dUserStr);
-              const parts = dUser.url.split("/");
-              const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
+              const login = dUser.login;
+              // const parts = dUser.url.split("/");
+              // const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
               // 付费用户
               const pay = !!db[login.toLocaleLowerCase()];
               ctx.session.user = {
@@ -76,12 +77,12 @@ module.exports = ({ whitelist = [] }) =>
           }).then((res) => res.json());
 
           // user.login 存在表示登录成功
-
-          if (user.login) {
-            const parts = user.url.split("/");
-            const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
+          const login = user.login;
+          if (login) {
+            // const parts = user.url.split("/");
+            // const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
             // 付费用户
-            const pay = !!db[user.login.toLocaleLowerCase()];
+            const pay = !!db[login.toLocaleLowerCase()];
             const u = {
               ...user,
               login,
