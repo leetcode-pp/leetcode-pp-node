@@ -6,6 +6,7 @@ const { owner, repo } = require("../config/index");
 
 const solutions = require("../static/solution/solutions.json");
 const mySolutions = require("../static/my/solutions.json");
+const backup = require("../static/my/backup.json");
 const meta = require("../static/meta.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
