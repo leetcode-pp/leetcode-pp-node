@@ -36,8 +36,16 @@ async function run(d) {
 
   if (problem && problem.issue_number) {
     const comments = await getAllPages(1, problem.issue_number);
+    if (!comments) return;
     comments.forEach((comment) => {
       const login = comment.user.login.toLowerCase();
+      if (
+        comment.user.login in mySolutions &&
+        comment.user.login !== comment.user.login.toLowerCase()
+      ) {
+        // 清理老数据
+        mySolutions[comment.user.login] = void 0;
+      }
       if (!(login in mySolutions)) {
         mySolutions[login] = Array(91);
       }
