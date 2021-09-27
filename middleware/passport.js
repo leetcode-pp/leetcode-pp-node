@@ -39,6 +39,7 @@ module.exports = ({ whitelist = [] }) =>
               const pay = db[login] && !us[login].noCheck;
               ctx.session.user = {
                 ...dUser,
+                login,
                 pay,
               };
               await next();
