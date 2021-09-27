@@ -37,7 +37,7 @@ async function run(d) {
   if (problem && problem.issue_number) {
     const comments = await getAllPages(1, problem.issue_number);
     comments.forEach((comment) => {
-      const login = comment.user.login;
+      const login = comment.user.login.toLowerCase();
       if (!(login in mySolutions)) {
         mySolutions[login] = Array(91);
       }
