@@ -94,7 +94,7 @@ function generate(rawMD, rawMDBuffer, i) {
 }
 // 基础篇
 function generateBasic() {
-  Array.from({ length: 28 }, (_, i) => i + 1).forEach((i) => {
+  Array.from({ length: 36 }, (_, i) => i + 1).forEach((i) => {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
@@ -106,7 +106,7 @@ function generateBasic() {
 }
 // 专题篇
 function generateTopic() {
-  Array.from({ length: 36 }, (_, i) => i + 29).forEach((i) => {
+  Array.from({ length: 36 }, (_, i) => i + 37).forEach((i) => {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
@@ -118,7 +118,7 @@ function generateTopic() {
 }
 // 进阶篇
 function generateAdvance() {
-  Array.from({ length: 27 }, (_, i) => i + 65).forEach((i) => {
+  Array.from({ length: 19 }, (_, i) => i + 73).forEach((i) => {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
