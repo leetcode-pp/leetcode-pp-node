@@ -8,7 +8,7 @@ const allUsers = JSON.parse(JSON.stringify(us));
 const whitelist = [
   "unclegem",
   "feikerwu",
-  "threedayAAAAA",
+  "threedayaaaaa",
   "suukii",
   "azl397985856",
 ];
@@ -88,7 +88,7 @@ function run(n) {
 
   function diff(A, B) {
     for (const name in B) {
-      delete A[name];
+      delete A[name.toLocaleLowerCase()];
     }
     return Object.keys(A);
   }
