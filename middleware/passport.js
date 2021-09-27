@@ -32,11 +32,10 @@ module.exports = ({ whitelist = [] }) =>
           if (dUserStr) {
             try {
               const dUser = JSON.parse(dUserStr);
-              const login = dUser.login;
+              const login = dUser.login.toLocaleLowerCase();
               // const parts = dUser.url.split("/");
               // const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
               // 付费用户
-              const login = login.toLocaleLowerCase();
               const pay = db[login] && !us[login].noCheck;
               ctx.session.user = {
                 ...dUser,
@@ -79,12 +78,11 @@ module.exports = ({ whitelist = [] }) =>
           }).then((res) => res.json());
 
           // user.login 存在表示登录成功
-          const login = user.login;
+          const login = user.login.toLocaleLowerCase();
           if (login) {
             // const parts = user.url.split("/");
             // const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
             // 付费用户
-            const login = login.toLocaleLowerCase();
             const pay = db[login] && !us[login].noCheck;
             const u = {
               ...user,
