@@ -40,17 +40,17 @@ async function run(d) {
     if (!comments) return;
     comments.forEach((comment) => {
       const login = comment.user.login.toLowerCase();
-      if (
-        comment.user.login in mySolutions &&
-        comment.user.login !== comment.user.login.toLowerCase()
-      ) {
-        // 清理老数据
-        mySolutions[comment.user.login] = void 0;
-      }
-      // 恢复误删除数据
-      if (comment.user.login in backup && !(login in mySolutions)) {
-        mySolutions[login] = backup[comment.user.login];
-      }
+      // if (
+      //   comment.user.login in mySolutions &&
+      //   comment.user.login !== comment.user.login.toLowerCase()
+      // ) {
+      //   // 清理老数据
+      //   mySolutions[comment.user.login] = void 0;
+      // }
+      // // 恢复误删除数据
+      // if (comment.user.login in backup && !(login in mySolutions)) {
+      //   mySolutions[login] = backup[comment.user.login];
+      // }
       if (!(login in mySolutions)) {
         mySolutions[login] = Array(91);
       }
