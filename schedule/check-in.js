@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { getDay } = require("../utils/day");
 const us = require("../static/users/index");
+const meta = require("../static/meta.json");
 const mySolutions = require("../static/my/solutions.json");
 
 const allUsers = JSON.parse(JSON.stringify(us));
@@ -114,6 +115,24 @@ function run(n) {
     path.resolve(__dirname, "../static/users/index.json"),
     JSON.stringify(us)
   );
+
+  if (!meta.checkIn) {
+    meta.checkIn = {};
+  }
+
+  meta.checkIn.lastUpdateTime = new Date().getTime();
+
+  fs.writeFileSync(
+    path.resolve(__dirname, "../static/meta.json"),
+    JSON.stringify(meta)
+  );
 }
 
-run(7);
+const lastUpdateTime = meta.checkIn ? meta.checkIn.lastUpdateTime : -1;
+const MS_PER_HOUR = 1 * 60 * 60 * 1000;
+const TODAY = getDay(new Date().getTime() - MS_PER_HOUR);
+// 一天仅检查一次
+if (TODAY - getDay(lastUpdateTime) > 0) {
+  console.log("object");
+  run(7);
+}
