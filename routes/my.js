@@ -12,6 +12,7 @@ router.get("/api/v1/my/solutions", async (ctx) => {
       .map((_, i) => ({
         ...solutions[ctx.session.user.login]?.[i],
         body: void 0,
+        day: (officialSolution[i + 1] || {}).day || "",
         title: (officialSolution[i + 1] || {}).title || "",
         tags: (officialSolution[i + 1] || {}).tags || [],
         difficulty: (officialSolution[i + 1] || {}).difficulty || "",
