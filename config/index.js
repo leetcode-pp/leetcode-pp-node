@@ -8,7 +8,7 @@ const userList = [
   },
 ].concat(
   users.map((name) => ({
-    login: name,
+    login: name.toLocaleLowerCase(),
   }))
 );
 
