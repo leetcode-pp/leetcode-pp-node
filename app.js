@@ -34,6 +34,7 @@ app.use(logger());
 
 const loginWhiteList = [
   "/api/v1/github/content",
+  "/api/v1/user/logout",
   "/api/v1/github/webhook",
   "/api/v1/daily-problem/ranking",
 ];
