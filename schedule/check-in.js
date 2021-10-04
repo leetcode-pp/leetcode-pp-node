@@ -96,7 +96,7 @@ function run(n) {
   const blacklist = diff(allUsers, checkWithinNDays(n)).filter(
     (name) => !/[A-Z]/.test(name)
   );
-  const redlist = fullCheckIn(29);
+  const redlist = fullCheckIn();
   console.log(`no check within ${n} days`, JSON.stringify(blacklist));
   console.log(`full check`, redlist);
 
@@ -133,6 +133,5 @@ const MS_PER_HOUR = 1 * 60 * 60 * 1000;
 const TODAY = getDay(new Date().getTime() - MS_PER_HOUR);
 // 一天仅检查一次
 if (TODAY - getDay(lastUpdateTime) > 0) {
-  console.log("object");
   run(7);
 }
