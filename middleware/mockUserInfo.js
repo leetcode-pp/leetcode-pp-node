@@ -13,7 +13,7 @@ module.exports = ({ whitelist = [] }) =>
     }
     ctx.session.user = {
       // login: "Zz10044",
-      login: "mayqiu",
+      login: "chenbihao",
       // login: "wangzehan123",
       // login: "rfhklwt",
       // login: "azl397985856",
