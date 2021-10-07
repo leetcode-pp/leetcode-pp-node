@@ -82,7 +82,8 @@ if (TODAY - getDay(lastUpdateTime) < 1) {
   // 1. 记录打卡数据
   // 2. 修正之前的数据错误
   // 3. 登记补卡信息
-  for (let d = Math.min(TODAY - 7 , 1); d <= TODAY; d++) {
+  // for (let d = Math.min(TODAY - 7 , 1); d <= TODAY; d++) { 同步一周时间以加快时间
+    for (let d = 1; d <= TODAY; d++) {
     run(d);
   }
 }
