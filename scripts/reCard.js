@@ -1,17 +1,18 @@
-const fs = require('fs')
-const path = require('path')
-const name = 'guochiscoding';
+const fs = require("fs");
+const path = require("path");
+const name = "cdd111";
 
 const us = require("../static/users/index");
 
-us[name].noCheck = false
+if (!us[name]) {
+  console.log("用户名错误");
+}
 
+us[name].noCheck = false;
 
-
-us[name].createTime = new Date().getTime()
-
+us[name].createTime = new Date().getTime();
 
 fs.writeFileSync(
-    path.resolve(__dirname, "../static/users/index.json"),
-    JSON.stringify(us)
-  );
+  path.resolve(__dirname, "../static/users/index.json"),
+  JSON.stringify(us)
+);
