@@ -16,7 +16,7 @@ const whitelist = [
 
 function run(n) {
   // 返回目前为止满勤的人（连续七天可获取补签卡）
-  function fullCheckIn(from = 1, to = getDay()) {
+  function fullCheckIn(from = 37, to = getDay()) {
     const users = [];
     const DAYS_TO_GET_CARD = 7;
 
