@@ -128,7 +128,7 @@ function run(n) {
   );
 }
 
-const lastUpdateTime = meta.checkIn ? meta.checkIn.lastUpdateTime : -1;
+const lastUpdateTime = meta.checkIn ? -1 : -1;
 const MS_PER_HOUR = 1 * 60 * 60 * 1000;
 const TODAY = getDay(new Date().getTime() - MS_PER_HOUR);
 // 一天仅检查一次
