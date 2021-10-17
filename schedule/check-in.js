@@ -18,7 +18,6 @@ const whitelist = [
 function resetCards() {
   for (const name in allUsers) {
     allUsers[name].card = 0;
-    console.log(allUsers[name]);
   }
   fs.writeFileSync(
     path.resolve(__dirname, "../static/users/index.json"),
