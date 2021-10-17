@@ -25,8 +25,6 @@ function resetCards() {
   );
 }
 
-resetCards();
-
 function run(n) {
   // 返回目前为止满勤的人（连续七天可获取补签卡）
   function fullCheckIn(from = 37, to = getDay()) {
@@ -148,3 +146,5 @@ const TODAY = getDay(new Date().getTime() - MS_PER_HOUR);
 if (TODAY - getDay(lastUpdateTime) > 0) {
   run(7);
 }
+
+// resetCards();
