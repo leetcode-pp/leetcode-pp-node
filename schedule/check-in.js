@@ -14,6 +14,20 @@ const whitelist = [
   "azl397985856",
 ];
 
+// 清空补签卡
+function resetCards() {
+  for (const name in allUsers) {
+    allUsers[name].card = 0;
+    console.log(allUsers[name]);
+  }
+  fs.writeFileSync(
+    path.resolve(__dirname, "../static/users/index.json"),
+    JSON.stringify(allUsers)
+  );
+}
+
+resetCards();
+
 function run(n) {
   // 返回目前为止满勤的人（连续七天可获取补签卡）
   function fullCheckIn(from = 37, to = getDay()) {
