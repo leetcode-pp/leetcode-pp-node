@@ -13,6 +13,14 @@ function merge(A, ...B) {
 
 const lectures = {
   intro: {
+    1000: {
+      title: "00. 学前必读",
+      desc: "活动的基本介绍以及大家需要准备的东西",
+      image: {
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gvjurc1by8j60u012iaef02.jpg",
+      },
+      id: 1000,
+    },
     1001: {
       title: "01. 数据结构与算法概述",
       desc: "主要介绍了数据结构与算法是在研究什么",
@@ -238,6 +246,10 @@ const lectures = {
 };
 
 // 先导
+lectures.intro["1000"].content = encrypt(
+  fs.readFileSync(path.resolve(__dirname, "../../91alg-5/introduction.md"))
+);
+
 lectures.intro["1001"].content = encrypt(
   fs.readFileSync(path.resolve(__dirname, "../../91alg-5/algo.md"))
 );
