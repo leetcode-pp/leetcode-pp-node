@@ -31,11 +31,11 @@ function getAllPages(i, issue_number) {
     })
     .catch(console.error);
 }
-async function run(d) {
+async function run(d, issue_number) {
   const problem = solutions[d];
 
   if (problem && problem.issue_number) {
-    const comments = await getAllPages(1, problem.issue_number);
+    const comments = await getAllPages(1, issue_number || problem.issue_number);
     if (!comments) return;
     comments.forEach((comment) => {
       const login = comment.user.login.toLowerCase();
@@ -83,7 +83,12 @@ if (TODAY - getDay(lastUpdateTime) < 1) {
   // 2. 修正之前的数据错误
   // 3. 登记补卡信息
   // for (let d = Math.min(TODAY - 7 , 1); d <= TODAY; d++) { 同步一周时间以加快时间
-    for (let d = 1; d <= TODAY; d++) {
+  for (let d = 1; d <= TODAY; d++) {
     run(d);
   }
+}
+
+
+module.exports = {
+  run
 }

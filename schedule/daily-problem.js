@@ -42,6 +42,16 @@ const generateIssueTitle = ({ day, title }) =>
   ).toLocaleDateString("en-CA")} - ${title}`;
 
 async function run(solution) {
+  await octokit.rest.issues.listForRepo({
+    labels: String(solution.day),
+    owner,
+    repo
+  }).then(async (res) => {
+    const { data } = res;
+    if (data.length > 0) {
+      throw new Error(`Day ${solution.day} has been published.`);
+    }
+  });
   const { data } = await octokit.rest.issues.create({
     owner,
     repo,
