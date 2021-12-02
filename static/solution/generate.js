@@ -4,11 +4,16 @@ const fetch = require("node-fetch");
 
 const {
   leetcodeConfig: { allProblem },
+  startTime
 } = require("../../config/index");
 const { encrypt } = require("../../utils/crypto.js");
 
 const solutions = require("./solutions.json");
 let lcProblemIdMap = {};
+
+const BASIC_DAYS = 36
+const TOPIC_DAYS = 36
+const ADVANCED_DAYS = 19
 
 function toArray(sep = "-", txt) {
   if (!txt) return txt;
@@ -94,7 +99,7 @@ function generate(rawMD, rawMDBuffer, i) {
 }
 // 基础篇
 function generateBasic() {
-  Array.from({ length: 36 }, (_, i) => i + 1).forEach((i) => {
+  Array.from({ length: BASIC_DAYS }, (_, i) => i + 1).forEach((i) => {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
@@ -106,7 +111,7 @@ function generateBasic() {
 }
 // 专题篇
 function generateTopic() {
-  Array.from({ length: 36 }, (_, i) => i + 37).forEach((i) => {
+  Array.from({ length: TOPIC_DAYS }, (_, i) => i + 37).forEach((i) => {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
@@ -118,7 +123,7 @@ function generateTopic() {
 }
 // 进阶篇
 function generateAdvance() {
-  Array.from({ length: 19 }, (_, i) => i + 73).forEach((i) => {
+  Array.from({ length: ADVANCED_DAYS }, (_, i) => i + 73).forEach((i) => {
     solutions[i] = solutions[i] || {};
 
     const rawMDBuffer = fs.readFileSync(
@@ -162,3 +167,20 @@ async function main() {
 }
 
 main();
+
+
+// getAgenda
+
+// function getAgenda() {
+//   const MS_PER_DAY = 24 * 60 * 60 * 1000
+//   const basic = [startTime, startTime + (BASIC_DAYS - 1) * MS_PER_DAY]
+//   const topic = [basic[1] + MS_PER_DAY, basic[1] + MS_PER_DAY + (TOPIC_DAYS - 1) * MS_PER_DAY]
+//   const advanced = [topic[1] + MS_PER_DAY, topic[1] + MS_PER_DAY + (ADVANCED_DAYS - 1) * MS_PER_DAY]
+//   return {
+//     basic: basic.map(time => { return new Date(time).toLocaleDateString('zn-CH') }),
+//     topic: topic.map(time => { return new Date(time).toLocaleDateString('zn-CH') }),
+//     advanced: advanced.map(time => { return new Date(time).toLocaleDateString('zn-CH') }),
+//   }
+// }
+
+// console.log(getAgenda())
