@@ -6,15 +6,18 @@ module.exports = function ({ whitelist = [], nextSeasonWhiteList = [] }) {
     else {
       if (ctx?.session?.user) {
         if (ctx.session.user.pay) {
-          if (nextSeasonWhiteList.includes(ctx.path)) {
-            await next();
-          } else {
-            ctx.body = fail({
-              message: "活动尚未开始，部分接口无法访问",
-              code: 93,
-            });
-            return
+          if (ctx.session.user.next) {
+            if (nextSeasonWhiteList.includes(ctx.path)) {
+              await next();
+            } else {
+              ctx.body = fail({
+                message: "活动尚未开始，部分接口无法访问",
+                code: 93,
+              });
+              return
+            }
           }
+
           await next();
         } else {
           ctx.body = fail({
