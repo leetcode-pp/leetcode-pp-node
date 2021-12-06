@@ -8,15 +8,15 @@ const userList = [
     login: "azl397985856",
   },
 ].concat(
-  users.map((name) => ({
-    login: name,
-  }))
-).concat(
   S6.map((name) => ({
     login: name,
     next: true
   }))
-);
+).concat(
+  users.map((name) => ({
+    login: name,
+  }))
+)
 
 const leetcodeConfig = {
   baseUrl: "https://leetcode-cn.com",
