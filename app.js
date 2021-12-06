@@ -56,6 +56,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(
   pay({
     whitelist: ["/api/v1/user", "/api/v1/logout"].concat(loginWhiteList),
+    nextSeasonWhiteList: ["/api/v1/lectures/basic", "/api/v1/lectures/intro"],
   })
 );
 app.use(require("koa-static")(__dirname + "/public"));

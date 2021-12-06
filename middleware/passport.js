@@ -20,6 +20,7 @@ module.exports = ({ whitelist = [] }) =>
       if (!ctx.session) {
         ctx.session = {};
       }
+      // 第六期的先看先导和基础篇
       // 只有支付过的才 next。 没有支付的需要更新一下防止（付费后 pay 还是 false）
       if (ctx.session.user && ctx.session.user.pay) {
         await next();
