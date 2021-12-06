@@ -3,16 +3,16 @@ const startTime = new Date("2021-09-10T00:00:00.000+08:00");
 const { users } = require("./users-5");
 const { users: S6 } = require("./users-6");
 
-const userList = [
-  {
-    login: "azl397985856",
-  },
-].concat(
+const userList = [].concat(
   S6.map((name) => ({
     login: name,
     next: true
   }))
-).concat(
+).concat([
+  {
+    login: "azl397985856",
+  },
+]).concat(
   users.map((name) => ({
     login: name,
   }))
