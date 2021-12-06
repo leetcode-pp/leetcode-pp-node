@@ -33,7 +33,7 @@ module.exports = {
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
   db: userList.reduce((acc, curr) => {
-    if (blacklist.includes(curr.login)) return acc;
+    if (blacklist.includes(curr.login) && !(S6.includes(curr.login))) return acc;
     acc[curr.login] = curr;
     return acc;
   }, {}),
