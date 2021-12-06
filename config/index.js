@@ -8,11 +8,7 @@ const userList = [].concat(
     login: name,
     next: true
   }))
-).concat([
-  {
-    login: "azl397985856",
-  },
-]).concat(
+).concat(
   users.map((name) => ({
     login: name,
   }))
