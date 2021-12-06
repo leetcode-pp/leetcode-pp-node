@@ -56,7 +56,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(
   pay({
     whitelist: ["/api/v1/user", "/api/v1/logout"].concat(loginWhiteList),
-    nextSeasonWhiteList: ["/api/v1/lectures/basic", "/api/v1/lectures/intro"],
+    nextSeasonWhiteList: ["/api/v1/lectures/basic", "/api/v1/lectures/intro", "/api/v1/lectures/2001", "/api/v1/lectures/2002", "/api/v1/lectures/2003", "/api/v1/lectures/2004", "/api/v1/lectures/2005", "/api/v1/lectures/2006", "/api/v1/lectures/2007", "/api/v1/lectures/1000", "/api/v1/lectures/1001", "/api/v1/lectures/1002", "/api/v1/lectures/1003", "/api/v1/lectures/1004"],
   })
 );
 app.use(require("koa-static")(__dirname + "/public"));
