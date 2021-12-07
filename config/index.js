@@ -16,8 +16,6 @@ const userList = [].concat(
   }))
 )
 
-console.log(userList.find(user => user.login === "yanglr"))
-
 const leetcodeConfig = {
   baseUrl: "https://leetcode-cn.com",
   submitUrl: "https://leetcode-cn.com/problems/$slug/submit/",
