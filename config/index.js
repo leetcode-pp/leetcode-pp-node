@@ -21,7 +21,6 @@ const db = userList.reduce((acc, curr) => {
   return acc;
 }, {})
 
-console.log(db.azl397985856)
 
 const leetcodeConfig = {
   baseUrl: "https://leetcode-cn.com",
