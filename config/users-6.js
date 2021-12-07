@@ -7,7 +7,6 @@ function join(s) {
 }
 
 exports.users = join(`
-azl397985856
 Alice52
 testeducative
 GaoMinghao
