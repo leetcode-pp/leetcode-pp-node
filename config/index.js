@@ -16,6 +16,13 @@ const userList = [].concat(
   }))
 )
 
+const db = userList.reduce((acc, curr) => {
+  acc[curr.login] = curr;
+  return acc;
+}, {})
+
+console.log(db.chakochako)
+
 const leetcodeConfig = {
   baseUrl: "https://leetcode-cn.com",
   submitUrl: "https://leetcode-cn.com/problems/$slug/submit/",
@@ -35,8 +42,5 @@ module.exports = {
   startTime: startTime.getTime(),
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
-  db: userList.reduce((acc, curr) => {
-    acc[curr.login] = curr;
-    return acc;
-  }, {}),
+  db,
 };
