@@ -8,7 +8,7 @@ const userList = [].concat(
     login: name,
   }))
 ).filter(user => {
-  return user.login in us && !us[user.login].noCheck
+  return user.login in us && (!us[user.login].noCheck || user.login in S6)
 }).concat(
   S6.map((name) => ({
     login: name,
@@ -21,7 +21,7 @@ const db = userList.reduce((acc, curr) => {
   return acc;
 }, {})
 
-console.log(db.chakochako)
+console.log(db.azl397985856)
 
 const leetcodeConfig = {
   baseUrl: "https://leetcode-cn.com",
