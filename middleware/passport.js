@@ -37,7 +37,7 @@ module.exports = ({ whitelist = [] }) =>
               // const parts = dUser.url.split("/");
               // const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
               // 付费用户
-              const pay = !!us[login]
+              const pay = !!db[login]
               ctx.session.user = {
                 ...dUser,
                 login,
@@ -86,7 +86,7 @@ module.exports = ({ whitelist = [] }) =>
             // const parts = user.url.split("/");
             // const login = parts[parts.length - 1]; // login 字段可能和 issue comment 的login 对不上，这个时候就有问题。比如无法统计打卡
             // 付费用户
-            const pay = !!us[login]
+            const pay = db[login]
             const u = {
               ...user,
               login,
