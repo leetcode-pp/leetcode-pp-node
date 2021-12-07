@@ -8,7 +8,7 @@ const userList = [].concat(
     login: name,
   }))
 ).filter(user => {
-  return user.login in us && (!us[user.login].noCheck || user.login in S6)
+  return user.login in us && (!us[user.login].noCheck || S6.includes(user.login))
 }).concat(
   S6.map((name) => ({
     login: name,
