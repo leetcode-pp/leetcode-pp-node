@@ -1,16 +1,18 @@
-const blacklist = require("./blacklist.json");
 const startTime = new Date("2021-09-10T00:00:00.000+08:00");
 const { users } = require("./users-5");
-const { users: S6 } = require("./users-6");
+const { users: S6 } = require("./users-6")
+const us = require("../static/users/index");
 
 const userList = [].concat(
+  users.map((name) => ({
+    login: name,
+  }))
+).filter(user => {
+  return user.loin in us && !us[user.login].noCheck
+}).concat(
   S6.map((name) => ({
     login: name,
     next: true
-  }))
-).concat(
-  users.map((name) => ({
-    login: name,
   }))
 )
 
@@ -25,9 +27,6 @@ const leetcodeConfig = {
   lcCsrftokenCookieName: "csrftoken", // lc存csrf的 cookie键名
 };
 
-function shouldBlock(curr) {
-  return blacklist.includes(curr.login) && !(S6.includes(curr.login))
-}
 
 module.exports = {
   leetcodeConfig,
@@ -37,7 +36,6 @@ module.exports = {
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
   db: userList.reduce((acc, curr) => {
-    if (shouldBlock(curr)) return acc;
     acc[curr.login] = curr;
     return acc;
   }, {}),
