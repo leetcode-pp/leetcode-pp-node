@@ -1,16 +1,19 @@
-const startTime = new Date("2021-09-10T00:00:00.000+08:00");
-const { users } = require("./users-5");
-const { users: S6 } = require("./users-6")
+const startTime = new Date("2021-12-12T00:00:00.000+08:00");
+// const { users } = require("./users-5");
+const { users } = require("./users-6")
 const us = require("../static/users/index");
+
+
+const S7 = []
 
 const userList = [].concat(
   users.map((name) => ({
     login: name,
   }))
 ).filter(user => {
-  return user.login in us && (!us[user.login].noCheck || S6.includes(user.login))
+  return user.login in us && (!us[user.login].noCheck || S7.includes(user.login))
 }).concat(
-  S6.map((name) => ({
+  S7.map((name) => ({
     login: name,
     next: true
   }))

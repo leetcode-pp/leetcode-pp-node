@@ -177,9 +177,9 @@ main();
 //   const topic = [basic[1] + MS_PER_DAY, basic[1] + MS_PER_DAY + (TOPIC_DAYS - 1) * MS_PER_DAY]
 //   const advanced = [topic[1] + MS_PER_DAY, topic[1] + MS_PER_DAY + (ADVANCED_DAYS - 1) * MS_PER_DAY]
 //   return {
-//     basic: basic.map(time => { return new Date(time).toLocaleDateString('zn-CH') }),
-//     topic: topic.map(time => { return new Date(time).toLocaleDateString('zn-CH') }),
-//     advanced: advanced.map(time => { return new Date(time).toLocaleDateString('zn-CH') }),
+//     basic: basic.map(time => { return new Date(time).toLocaleDateString('zh-CN') }),
+//     topic: topic.map(time => { return new Date(time).toLocaleDateString('zh-CN') }),
+//     advanced: advanced.map(time => { return new Date(time).toLocaleDateString('zh-CN') }),
 //   }
 // }
 
