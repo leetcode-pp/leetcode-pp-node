@@ -42,7 +42,7 @@ module.exports = ({ whitelist = [] }) =>
                 ...dUser,
                 login,
                 pay,
-                next: us[login].noCheck === true ? db[login] && db[login].next || false : false
+                next: us[login] && us[login].noCheck === true ? db[login] && db[login].next || false : false
               };
               await next();
               return;
@@ -91,7 +91,7 @@ module.exports = ({ whitelist = [] }) =>
               ...user,
               login,
               pay,
-              next: us[login].noCheck === true ? db[login] && db[login].next || false : false
+              next: us[login] && us[login].noCheck === true ? db[login] && db[login].next || false : false
             };
             // 登录成功将用户加入到会话
             ctx.session.user = u;
