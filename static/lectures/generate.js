@@ -117,6 +117,14 @@ const lectures = {
       },
       id: 2007,
     },
+    2008: {
+      title: "08. 排序",
+      desc: "经典排序的实现以及思想",
+      image: {
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gwzne4sdw7j31hc0u0gnc.jpg",
+      },
+      id: 2008,
+    },
   },
   topic: {
     3001: {
@@ -260,7 +268,7 @@ lectures.intro["1002"].content = encrypt(
 
 // 基础
 
-[2001, 2002, 2003, 2004, 2005, 2006, 2007].forEach((id, i) => {
+[2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008].forEach((id, i) => {
   lectures.basic[id].content = encrypt(
     fs.readFileSync(
       path.resolve(__dirname, `../../91alg-5/lecture/basic-0${i + 1}.md`)
