@@ -11,7 +11,11 @@ const userList = [].concat(
     login: name,
   }))
 ).filter(user => {
-  return user.login in us && (!us[user.login].noCheck || S7.includes(user.login))
+  if (user in us) {
+    return !us[user.login].noCheck
+  }
+  return true;
+  // return user.login in us && (!us[user.login].noCheck || S7.includes(user.login))
 }).concat(
   S7.map((name) => ({
     login: name,
@@ -36,6 +40,7 @@ const leetcodeConfig = {
   lcCsrftokenCookieName: "csrftoken", // lc存csrf的 cookie键名
 };
 
+console.log(db)
 
 module.exports = {
   leetcodeConfig,
