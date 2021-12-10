@@ -1,11 +1,1 @@
-{
-    "users": {
-        "lastUpdateTime": 1639112604127
-    },
-    "dailyCheck": {
-        "lastUpdateTime": 1639066651729
-    },
-    "checkIn": {
-        "lastUpdateTime": 1639109711685
-    }
-}
+{"users":{"lastUpdateTime":1639113745548},"dailyCheck":{"lastUpdateTime":1639066651729},"checkIn":{"lastUpdateTime":1639109711685}}
