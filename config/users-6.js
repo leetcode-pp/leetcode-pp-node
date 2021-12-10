@@ -238,7 +238,7 @@ yulion28
 potatoMa
 shrM0ri4uAGvEv9Tj 
 ginnydyy
-kevint1989
+// kevint1989 退赛
 Nerders
 YiJunXing
 k0e1y
@@ -269,4 +269,16 @@ iceburgs
 LiFuQuan1208
 Tesla-1i
 shibingchao123
+tian-pengfei
+ThreeGold-yxh
+xj-yan
+zjsuper
+pengfeicchen
+feifan-bai
+Jay214
+liling@usc.edu
+naomiwufzz
+zhy3213
+hdyhdy
+lonkang
   `);
