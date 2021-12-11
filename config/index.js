@@ -40,8 +40,6 @@ const leetcodeConfig = {
   lcCsrftokenCookieName: "csrftoken", // lc存csrf的 cookie键名
 };
 
-console.log(db)
-
 module.exports = {
   leetcodeConfig,
   owner: "leetcode-pp",

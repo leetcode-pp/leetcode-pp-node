@@ -16,21 +16,19 @@ const solution = solutions[currentDay];
 const generateIssueContent = ({ title, link, pres, description, whys }) => {
   return `# ${title}
   ## 入选理由    
-  ${
-    (whys || []).reduce((acc, cur, index) => {
-      return `${acc}    
+  ${(whys || []).reduce((acc, cur, index) => {
+    return `${acc}    
   ${index + 1}. ${cur}`;
-    }, "") || "暂无"
-  }
+  }, "") || "暂无"
+    }
   ## 题目地址    
   [${link}](${link})
   ## 前置知识    
-  ${
-    (pres || []).reduce((acc, cur) => {
+  ${(pres || []).reduce((acc, cur) => {
       return `${acc}    
   - ${cur}`;
     }, "") || "暂无"
-  }
+    }
   ## 题目描述    
   ${description}
     `;
