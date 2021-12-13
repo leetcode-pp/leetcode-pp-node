@@ -262,7 +262,7 @@ watermelonDrip
 Bingbinxu
 wxj783428795
 chenyaohn
-Sparkling_Penny
+Sparkling-Penny
 ggohem
 Bingbinxu
 iceburgs
@@ -347,4 +347,9 @@ ivangin
 yetfan
 feikerwu
 jax-van
+Rex-Zh
+li65943930
+MonkofEast
+davidcaoyh
+yingliufilms
   `);
