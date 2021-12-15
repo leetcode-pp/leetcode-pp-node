@@ -250,6 +250,14 @@ const lectures = {
       },
       id: 4007,
     },
+    4008: {
+      title: "08. 线段树",
+      desc: "区间算法题用线段树可以秒解？",
+      image: {
+        url: "https://tva1.sinaimg.cn/large/008i3skNly1gxeuwtgg9oj30u00vvmym.jpg",
+      },
+      id: 4008,
+    },
   },
 };
 
@@ -288,7 +296,7 @@ lectures.intro["1002"].content = encrypt(
 
 // 进阶
 
-[4001, 4002, 4003, 4004, 4005, 4006, 4007].forEach((id, i) => {
+[4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008].forEach((id, i) => {
   lectures.advance[id].content = encrypt(
     fs.readFileSync(
       path.resolve(__dirname, `../../91alg-5/lecture/advanced-0${i + 1}.md`)
