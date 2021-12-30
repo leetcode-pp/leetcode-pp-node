@@ -102,7 +102,7 @@ const lectures = {
       id: 2005,
     },
     2006: {
-      title: "06. 图（加餐）",
+      title: "06. 图",
       desc: "主要介绍了图基本原理，表示方式，常见算法。",
       image: {
         url: "https://tva1.sinaimg.cn/large/0081Kckwly1gk3qh59semj30ec05ptab.jpg",
@@ -118,7 +118,7 @@ const lectures = {
       id: 2007,
     },
     2008: {
-      title: "08. 排序",
+      title: "08. 排序（加餐）",
       desc: "经典排序的实现以及思想",
       image: {
         url: "https://tva1.sinaimg.cn/large/008i3skNly1gwzne4sdw7j31hc0u0gnc.jpg",
@@ -251,7 +251,7 @@ const lectures = {
       id: 4007,
     },
     4008: {
-      title: "08. 线段树",
+      title: "08. 线段树（加餐）",
       desc: "区间算法题用线段树可以秒解？",
       image: {
         url: "https://tva1.sinaimg.cn/large/008i3skNly1gxeuwtgg9oj30u00vvmym.jpg",
