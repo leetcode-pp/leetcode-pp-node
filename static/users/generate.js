@@ -10,13 +10,14 @@ async function run(incremental = true) {
   const octokit = new Octokit({ auth: process.env.issueToken });
   const ps = [];
   for (const name in db) {
-    if (users[name] && users[name].avatar_url && incremental) continue;
+    if (users[name] && users[name].createTime && incremental) continue;
+
     ps.push(
       octokit.rest.users
         .getByUsername({ username: name })
         .then((res) => res.data)
         .then((user) => {
-          if (!(name in users)) {
+          if (!(name in users) || !users[name].createTime) {
             users[name] = {
               ...user,
               createTime: new Date().getTime(),
