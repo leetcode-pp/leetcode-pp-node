@@ -72,11 +72,15 @@ function run(n) {
       us[name].noCheck = false;
       us[name].allCheck = false;
       const solutions = mySolutions[name];
+      if (!us[name].createTime) {
+        us[name].createTime = new Date().getTime()
+      }
       // 如果注册时间不满 n 天，则算打过卡。
       if (day - getDay(us[name].createTime) + 1 <= n) {
         users[name] = true;
         continue;
       }
+
       // [day - n - 2, day - 2]
       let i = day - n - 1;
 
