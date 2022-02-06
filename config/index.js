@@ -12,6 +12,7 @@ const userList = [].concat(
   }))
 ).filter(user => {
   if (user.login in us) {
+    // 过滤 7 天没有打卡的
     return !us[user.login].noCheck
   }
   return true;
