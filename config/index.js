@@ -11,7 +11,7 @@ const userList = [].concat(
     login: name,
   }))
 ).filter(user => {
-  if (user in us) {
+  if (user.login in us) {
     return !us[user.login].noCheck
   }
   return true;
