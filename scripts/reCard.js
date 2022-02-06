@@ -1,13 +1,12 @@
 const fs = require("fs");
 const path = require("path");
-const name = "wxj783428795".trim().toLocaleLowerCase();
+const name = "biscuit279".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
 if (!us[name]) {
   console.log("用户名错误");
 }
-
 us[name].noCheck = false;
 
 us[name].createTime = new Date().getTime();
