@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "pwqgithub-cqu".trim().toLocaleLowerCase();
+const name = "rockydale".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
