@@ -136,7 +136,6 @@ Leonalhq
 DoubleW2w
 kkstudycoding
 Yrtryannn
-Yrtryannn
 lcncufe@gmail.com
 JuliaShiweiHuang
 Brent-Liu
