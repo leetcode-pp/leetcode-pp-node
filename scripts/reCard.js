@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "Yrtryannn".trim().toLocaleLowerCase();
+const name = "bltnever".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
