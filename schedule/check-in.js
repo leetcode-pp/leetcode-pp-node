@@ -12,6 +12,7 @@ const whitelist = [
   "threedayaaaaa",
   "suukii",
   "azl397985856",
+  "bltneve"
 ];
 
 // 清空补签卡
