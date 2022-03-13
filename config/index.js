@@ -1,10 +1,10 @@
 const startTime = new Date("2022-04-01T00:00:00.000+08:00");
 // const { users } = require("./users-5");
-const { users } = require("./users-6")
+const { users } = require("./users-7")
 const us = require("../static/users/index");
 
 
-const S7 = []
+// const S7 = []
 
 const userList = [].concat(
   users.map((name) => ({
@@ -17,12 +17,13 @@ const userList = [].concat(
   }
   return true;
   // return user.login in us && (!us[user.login].noCheck || S7.includes(user.login))
-}).concat(
-  S7.map((name) => ({
-    login: name,
-    next: true
-  }))
-)
+})
+// .concat(
+//   S7.map((name) => ({
+//     login: name,
+//     next: true
+//   }))
+// )
 
 const db = userList.reduce((acc, curr) => {
   acc[curr.login] = curr;
