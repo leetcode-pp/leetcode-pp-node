@@ -4,16 +4,9 @@ const { getDay } = require("../utils/day");
 const us = require("../static/users/index");
 const meta = require("../static/meta.json");
 const mySolutions = require("../static/my/solutions.json");
+const { whitelist } = require("../config/index")
 
 const allUsers = JSON.parse(JSON.stringify(us));
-const whitelist = [
-  "unclegem",
-  "feikerwu",
-  "threedayaaaaa",
-  "suukii",
-  "azl397985856",
-  "bltnever"
-];
 
 // 清空补签卡
 function resetCards() {

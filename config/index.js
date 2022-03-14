@@ -3,10 +3,19 @@ const startTime = new Date("2022-04-01T00:00:00.000+08:00");
 const { users } = require("./users-7")
 const us = require("../static/users/index");
 
+const whitelist = [
+  "unclegem",
+  "feikerwu",
+  "threedayaaaaa",
+  "suukii",
+  "azl397985856",
+  "bltnever"
+]
+
 
 // const S7 = []
 
-const userList = [].concat(
+const userList = whitelist.concat(
   users.map((name) => ({
     login: name,
   }))
@@ -50,4 +59,5 @@ module.exports = {
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",
   db,
+  whitelist
 };

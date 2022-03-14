@@ -8,5 +8,4 @@ function join(s) {
 }
 
 exports.users = join(`
-    azl397985856
     `);
