@@ -119,6 +119,7 @@ const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
   const [wechat, github] = line.split(/\t/)
+  if (!wechat || !github) continue
   if (unknowns.includes(wechat)) continue
   users[wechat] = github
 }
