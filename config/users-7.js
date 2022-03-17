@@ -114,9 +114,16 @@ Omos	okbug
 饼干	biscuit279
 All-Sunday	All-Sunday
 wzq_2008_wzq	winrunwang
+寻	lenhxue
+TLee_17	TonyLee017
+maoer123oooo	caterpillar-0
+liu	liuguang520-lab
+gzgzgz	gzgzgzgzgzgz
+gmhcn95	GaoMinghao
+Oision	oision-hub
 `
 
-const unknowns = ['18273011839', '15396053927', 'hiklsabc', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['15396053927', 'hiklsabc', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
