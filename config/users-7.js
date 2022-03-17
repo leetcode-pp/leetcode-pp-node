@@ -112,6 +112,8 @@ Moon	MoonLee001
 Bonnenut	Bonnenut
 Omos	okbug
 饼干	biscuit279
+All-Sunday	All-Sunday
+wzq_2008_wzq	winrunwang
 `
 
 const unknowns = ['18273011839', '15396053927', 'hiklsabc', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
