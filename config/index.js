@@ -15,10 +15,9 @@ const whitelist = [
 
 // const S7 = []
 
-const userList = whitelist.concat(
-  users.map((name) => ({
-    login: name,
-  }))
+const userList = whitelist.concat(users).map((name) => ({
+  login: name,
+})
 ).filter(user => {
   if (user.login in us) {
     // 过滤 7 天没有打卡的
