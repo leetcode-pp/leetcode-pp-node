@@ -141,7 +141,7 @@ AHUECAR1216	Muhongfan
 闻山意	kwdfw
 `
 
-const unknowns = ['yolo', 'xiaohanlliu.0730', '15396053927', 'hiklsabc', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
