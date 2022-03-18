@@ -129,9 +129,19 @@ Shin	shin-guid
 Ling	XXjo
 Ben蛋啊•﹏•	rzhao010
 Steins	LQyt2012
+薛定谔的汪	MrOrz0914
+forestie9	forestie9
+kg	KelvinG-611
+xiaohanlliu.0730	xil324
+hiklsabc	lskong
+小笼包子馅	xqy97
+萝卜啾	Ellie-Wu05
+yolo	liuajingliu
+AHUECAR1216	Muhongfan
+闻山意	kwdfw
 `
 
-const unknowns = ['15396053927', 'hiklsabc', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['yolo', 'xiaohanlliu.0730', '15396053927', 'hiklsabc', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
