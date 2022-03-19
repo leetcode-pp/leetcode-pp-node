@@ -145,9 +145,18 @@ LUCIEN_0	ZETAVI
 wxid_gebmw5exn1lc22	bey11-h
 Simple_TYJ	yyyujintang
 zz1194365836	HZHENGZHI
+我是白菜不是小白	christ36
+Joey	zywang0
+Theo	DivingCub
+SunStrong	SunStrongChina
+木白	aibotao
+Brainlds	Brainlds
+hhcrjb	zguannnnn
+Joyce	Joyce94
+鱼鱼鱼吃猫	Venchyluo
 `
 
-const unknowns = ['wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['木白', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
