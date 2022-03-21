@@ -155,6 +155,12 @@ hhcrjb	zguannnnn
 Joyce	Joyce94
 鱼鱼鱼吃猫	Venchyluo
 🍓	YuyingLiu2021
+zhou	zjsuper
+dr.who	liyubin117
+觅	meemx
+JaredKenneth	KennethAlgol
+周可可	sallyrubyjade
+いちかわ	nineis7
 `
 
 const unknowns = ['wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
