@@ -161,9 +161,11 @@ dr.who	liyubin117
 JaredKenneth	KennethAlgol
 周可可	sallyrubyjade
 いちかわ	nineis7
+have-belief-to-live	gentleman-goodman
+c	flaming-cl
 `
 
-const unknowns = ['wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
