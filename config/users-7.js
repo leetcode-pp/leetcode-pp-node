@@ -163,6 +163,8 @@ JaredKenneth	KennethAlgol
 いちかわ	nineis7
 have-belief-to-live	gentleman-goodman
 c	flaming-cl
+往前	CShowww
+E.W.	wwang4768
 `
 
 const unknowns = ['have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
