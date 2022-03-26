@@ -175,6 +175,8 @@ q815101630	q815101630
 冬云瑞雪映松竹	webcoder-hk
 只是只小神龟罢了	hohojii
 james20141606	james20141606
+babbo	babbomax98
+stay h.s.f	mozro0327
 `
 
 const unknowns = ['have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
