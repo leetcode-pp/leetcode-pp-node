@@ -165,6 +165,16 @@ have-belief-to-live	gentleman-goodman
 c	flaming-cl
 往前	CShowww
 E.W.	wwang4768
+Solstafir	floatingstarlight
+LFFF	bzlff
+Judy	JudyZhou95
+q815101630	q815101630
+佚文	lumpychen
+纳百川	ShawYuan97
+憨憨不想写代码	tensorstart
+冬云瑞雪映松竹	webcoder-hk
+只是只小神龟罢了	hohojii
+james20141606	james20141606
 `
 
 const unknowns = ['have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
