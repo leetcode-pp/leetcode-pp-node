@@ -53,9 +53,11 @@ router.get("/api/v1/daily-problem", async (ctx) => {
           "本期活动已经结束，请耐心等待下期~ 活动开始报名会第一时间在公众号《力扣加加》同步!",
       });
     } else {
-      ctx.body = fail({
-        message: "当前暂时没有每日一题，请联系当前讲师进行处理~",
-      });
+      // ctx.body = fail({
+      //   message: "当前暂时没有每日一题，请联系当前讲师进行处理~",
+      // });
+      // 预打卡
+      ctx.body = success({ title: '预打卡', link: '此处正常应该是链接', description: '让大家熟悉如何打卡', day: 0, tags: ['预打卡'] })
     }
   }
 });
