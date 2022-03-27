@@ -5,6 +5,7 @@ const { getDay, chineseDate } = require("../utils/day");
 const { owner, repo } = require("../config/index");
 
 const solutions = require("../static/solution/solutions.json");
+const meta = require("../static/meta.json");
 
 const octokit = new Octokit({ auth: process.env.issueToken });
 
@@ -73,3 +74,14 @@ async function run(solution) {
 if (solution && !solution.issue_number) {
   run(solution);
 }
+
+// 预打卡
+if (meta && !meta.preCard) {
+  meta.preCard = true;
+  run({ title: '预打卡', link: '此处正常应该是链接', description: '让大家熟悉如何打卡', day: 0, tags: ['预打卡'] })
+  fs.writeFileSync(
+    path.resolve(__dirname, "../static/meta.json"),
+    JSON.stringify(meta)
+  );
+}
+
