@@ -55,7 +55,6 @@ xidinghu_3	shawnhu23
 davontZ	Davont
 hiklsabc	lskong
 正儿八经的lc	dzwhh
-zz1194365836	HZHENGZHI
 magua97	Magua-hub
 guid_shin	shin-guid
 zyn1973719588	1973719588
@@ -188,7 +187,7 @@ XIAOYI_Viola	XiaoLiz
 BiN	BiN214
 `
 
-const unknowns = ['宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
