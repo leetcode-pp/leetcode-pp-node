@@ -185,6 +185,8 @@ stay h.s.f	mozro0327
 S	antmup
 XIAOYI_Viola	XiaoLiz
 BiN	BiN214
+荔枝螺 lizimu0709
+Rui	C2tr
 `
 
 const unknowns = ['宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
