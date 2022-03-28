@@ -178,9 +178,17 @@ james20141606	james20141606
 babbo	babbomax98
 stay h.s.f	mozro0327
 一致收敛	TT-Fantastic
+小王小王，兜里有糖	duke-github
+宿愿Cc	coderlfm
+行一	oneline-wsq
+段	duantao74520
+笨王	dtldtt
+S	antmup
+XIAOYI_Viola	XiaoLiz
+BiN	BiN214
 `
 
-const unknowns = ['have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'zz1194365836', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
