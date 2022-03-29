@@ -188,6 +188,11 @@ BiN	BiN214
 Quieter	Quieter2018
 lizimu0709wx	lizimu0709
 Rui	C2tr
+曹锐东	Codernss
+解觐嘉	maggiexie00
+30	TimmmYang
+omega_lzx	Zexuan Li
+Milk	houmk1212
 `
 
 const unknowns = ['宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
