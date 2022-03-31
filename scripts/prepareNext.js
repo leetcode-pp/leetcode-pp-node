@@ -1,5 +1,6 @@
 const fs = require("fs")
 const path = require("path")
+const { start } = require("./reset.js")
 // 备份
 const season = 7
 
@@ -32,3 +33,5 @@ exports.users = join(\`
     \`);
 `)
 
+
+start()
