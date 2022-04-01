@@ -211,9 +211,10 @@ Ken	yz3516
 萌萌哒🐗哥哥	NealChristmas
 街角麻婆豆	pureryuDo
 芝士奶盖	zhishinaigai
+Kokoharalo	helenhhhh
 `
 
-const unknowns = ['Dawn', '宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'elliot_zrj', 'wxid_e52ejucgg5zt11']
+const unknowns = ['Dawn', '宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'wxid_e52ejucgg5zt11']
 const users = {}
 const lines = data.split(/\n/)
 for (const line of lines) {
