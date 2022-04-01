@@ -21,7 +21,7 @@ function start() {
 
     fs.writeFileSync(
         path.resolve(__dirname, "../static/my/solutions.json"),
-        JSON.stringify(solutions)
+        JSON.stringify(mySolutions)
     );
 
     for (const d in solutions) {
