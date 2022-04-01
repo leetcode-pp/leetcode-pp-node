@@ -212,6 +212,8 @@ Ken	yz3516
 街角麻婆豆	pureryuDo
 芝士奶盖	zhishinaigai
 Kokoharalo	helenhhhh
+韦韬_Victor	VictorHuang99
+秋月春风	zuoduozhongguo
 `
 
 const unknowns = ['Dawn', '宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'wxid_e52ejucgg5zt11']
