@@ -219,6 +219,8 @@ Kokoharalo	helenhhhh
 兔子	PattyLiu88
 胡胡阿华	hyh331
 雪球	ethanwlx
+dummy_node	maybetoffee
+fhuang5	fhuang5
 `
 
 const unknowns = ['Dawn', '宿愿Cc', 'have-belief-to-live', 'wxid_gebmw5exn1lc22', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'wxid_e52ejucgg5zt11']
