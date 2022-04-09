@@ -1,10 +1,9 @@
-
 function join(s) {
-  return s
-    .split(/\n/)
-    .filter(Boolean)
-    .map((v) => String.prototype.trim.call(v))
-    .map((v) => String.prototype.toLocaleLowerCase.call(v));
+	return s
+		.split(/\n/)
+		.filter(Boolean)
+		.map((v) => String.prototype.trim.call(v))
+		.map((v) => String.prototype.toLocaleLowerCase.call(v));
 }
 
 const data = `
@@ -224,20 +223,35 @@ fhuang5	fhuang5
 Aaron	aaronwcd
 虎尾春冰	dqhe
 谢伟浩	weihaoxie
-Huimin	renhuimin
 齐得隆咚锵	qq-jiang
-`
+F	fan-svg
+Huimin	huiminren
+`;
 
-const unknowns = ['Dawn', '宿愿Cc', 'have-belief-to-live', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'wxid_e52ejucgg5zt11']
-const users = {}
-const lines = data.split(/\n/)
+const unknowns = [
+	"Dawn",
+	"宿愿Cc",
+	"have-belief-to-live",
+	"Simple_TYJ",
+	"xiaohanlliu.0730",
+	"15396053927",
+	"guid_shin",
+	"wxid_e52ejucgg5zt11",
+];
+const users = {};
+const lines = data.split(/\n/);
 for (const line of lines) {
-  const [wechat, github] = line.split(/\t/)
-  if (!wechat || !github) continue
-  if (unknowns.includes(wechat)) continue
-  users[wechat] = github
+	const [wechat, github] = line.split(/\t/);
+	if (!wechat || !github) {
+		continue;
+	}
+	if (unknowns.includes(wechat)) {
+		continue;
+	}
+	users[wechat] = github;
 }
 
-
-exports.users = Object.values(users).map((v) => String.prototype.trim.call(v))
-  .map((v) => String.prototype.toLocaleLowerCase.call(v))
+exports.users =
+	Object.values(users).map((v) => String.prototype.trim.call(v)).map(
+		(v) => String.prototype.toLocaleLowerCase.call(v),
+	);
