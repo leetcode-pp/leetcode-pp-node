@@ -225,6 +225,7 @@ Aaron	aaronwcd
 虎尾春冰	dqhe
 谢伟浩	weihaoxie
 Huimin	renhuimin
+齐得隆咚锵	qq-jiang
 `
 
 const unknowns = ['Dawn', '宿愿Cc', 'have-belief-to-live', 'Simple_TYJ', 'xiaohanlliu.0730', '15396053927', 'guid_shin', 'wxid_e52ejucgg5zt11']
