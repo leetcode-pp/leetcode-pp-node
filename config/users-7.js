@@ -226,6 +226,7 @@ Aaron	aaronwcd
 齐得隆咚锵	qq-jiang
 F	fan-svg
 Huimin	huiminren
+yo'~yo'~	libeiyang
 `;
 
 const unknowns = [
