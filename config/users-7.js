@@ -227,6 +227,7 @@ Aaron	aaronwcd
 F	fan-svg
 Huimin	huiminren
 yo'~yo'~	libeiyang
+Wan	wantingjun
 `;
 
 const unknowns = [
