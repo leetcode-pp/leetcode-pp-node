@@ -228,6 +228,7 @@ F	fan-svg
 Huimin	huiminren
 yo'~yo'~	libeiyang
 Wan	wantingjun
+Gin	echoocking
 `;
 
 const unknowns = [
