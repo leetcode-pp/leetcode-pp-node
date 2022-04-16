@@ -1,19 +1,18 @@
 const fs = require("fs");
 const path = require("path");
-const name = "Jessie725".trim().toLocaleLowerCase();
+const name = "Brainlds".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
 if (!us[name]) {
-  console.log("用户名错误");
+	console.log("用户名错误");
 } else {
-  us[name].noCheck = false;
+	us[name].noCheck = false;
 
-  us[name].createTime = new Date().getTime();
+	us[name].createTime = new Date().getTime();
 
-  fs.writeFileSync(
-    path.resolve(__dirname, "../static/users/index.json"),
-    JSON.stringify(us)
-  );
+	fs.writeFileSync(
+		path.resolve(__dirname, "../static/users/index.json"),
+		JSON.stringify(us),
+	);
 }
-
