@@ -229,6 +229,7 @@ Huimin	huiminren
 yo'~yo'~	libeiyang
 Wan	wantingjun
 Gin	echoocking
+Pong	pong991
 `;
 
 const unknowns = [
