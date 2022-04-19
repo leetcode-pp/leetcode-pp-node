@@ -230,6 +230,8 @@ yo'~yo'~	libeiyang
 Wan	wantingjun
 Gin	echoocking
 Pong	pong991
+cauivyrong	cauivy
+michaelxiii3	MichaelXi3
 `;
 
 const unknowns = [
