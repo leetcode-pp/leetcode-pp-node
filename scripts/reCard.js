@@ -1,11 +1,13 @@
 const fs = require("fs");
 const path = require("path");
-const name = "Brainlds".trim().toLocaleLowerCase();
+const name = "joyce94".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
 if (!us[name]) {
 	console.log("用户名错误");
+} else if (us[name].noCheck === false) {
+	console.log("用户没有被禁用");
 } else {
 	us[name].noCheck = false;
 
