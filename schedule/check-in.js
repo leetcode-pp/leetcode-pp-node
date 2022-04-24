@@ -101,7 +101,7 @@ function run(n) {
 		}
 		return Object.keys(A);
 	}
-	const graplist = checkWithinNDays(n);
+	const graplist = Object.keys(checkWithinNDays(n));
 	const blacklist = diff(allUsers, graplist).filter(
 		(name) => !/[A-Z]/.test(name),
 	);
@@ -109,10 +109,10 @@ function run(n) {
 	console.log(`no check within ${n} days`, JSON.stringify(blacklist));
 	console.log(`full check`, redlist);
 
-	for (const gray of graplist) {
+	for (const login of graplist) {
 		// 更新 users 信息。 如果七天没有打过卡，则直接不会更新到 users
-		if (!us[gray.login]) {
-			us[gray.login] = {};
+		if (!us[login]) {
+			us[login] = {};
 		}
 	}
 
