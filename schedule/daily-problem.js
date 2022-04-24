@@ -51,28 +51,33 @@ const generateIssueTitle = ({ day, title }) =>
 async function run(solution) {
 	// 假设不注释下面代码，如果 create issue 成功的时候挂了导致没有 commit 成功，以后就永远无法更新 issue_number 了
 	// 因此暂时解决方法是前端不根据 issue_number 判断是否创建了 issue，而是无脑相信创建了。
-	await octokit.rest.issues
-		.listForRepo({ labels: String(solution.day), owner, repo })
-		.then(async (res) => {
-			const { data } = res;
-			if (data.length > 0) {
-				throw new Error(`Day ${solution.day} has been published.`);
-			}
+	try {
+		await octokit.rest.issues
+			.listForRepo({ labels: String(solution.day), owner, repo })
+			.then(async (res) => {
+				const { data } = res;
+				if (data.length > 0) {
+					throw new Error(`Day ${solution.day} has been published.`);
+				}
+			});
+
+		const { data } = await octokit.rest.issues.create({
+			owner,
+			repo,
+			title: generateIssueTitle(solution),
+			body: generateIssueContent(solution),
+			labels: (solution.tags || []).concat(String(solution.day)),
 		});
-	const { data } = await octokit.rest.issues.create({
-		owner,
-		repo,
-		title: generateIssueTitle(solution),
-		body: generateIssueContent(solution),
-		labels: (solution.tags || []).concat(String(solution.day)),
-	});
 
-	solution.issue_number = data.number;
+		solution.issue_number = data.number;
 
-	fs.writeFileSync(
-		path.resolve(__dirname, "../static/solution/solutions.json"),
-		JSON.stringify({ ...solutions, [currentDay]: solution }),
-	);
+		fs.writeFileSync(
+			path.resolve(__dirname, "../static/solution/solutions.json"),
+			JSON.stringify({ ...solutions, [currentDay]: solution }),
+		);
+	} catch (err) {
+		console.log(err);
+	}
 }
 
 // 当前有题解，并且今天的题目还没发布，就自动创建一个 issue
