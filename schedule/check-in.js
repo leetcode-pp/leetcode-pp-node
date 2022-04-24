@@ -59,6 +59,7 @@ function run(n) {
 		}
 		for (const name in us) {
 			if (whitelist.includes(name)) {
+				us[name].noCheck = false;
 				users[name] = true;
 				continue;
 			}
