@@ -234,6 +234,7 @@ cauivyrong	cauivy
 michaelxiii3	MichaelXi3
 z	beikelan
 Jiang-Wenqi	jiangwenqi
+sundiego	gitbingsun
 `;
 
 const unknowns = [
