@@ -59,7 +59,6 @@ function run(n) {
 		}
 		for (const name in us) {
 			if (whitelist.includes(name)) {
-				us[name].noCheck = false;
 				users[name] = true;
 				continue;
 			}
@@ -115,10 +114,12 @@ function run(n) {
 		if (!us[login]) {
 			us[login] = {};
 		}
+		us[login].noCheck = false;
 	}
 
 	for (const red of redlist) {
 		us[red.login].allCheck = true;
+		us[red.login].noCheck = false;
 		us[red.login].card = red.card;
 	}
 	for (const login of blacklist) {
