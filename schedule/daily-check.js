@@ -75,7 +75,7 @@ async function run(d, issue_number) {
 // 仅更新当天的
 const lastUpdateTime = meta.dailyCheck ? meta.dailyCheck.lastUpdateTime : -1;
 if ((TODAY - getDay(lastUpdateTime)) < 1) {
-	run(23);
+	run(TODAY);
 } else {
 	// 更新历史所有的，每天仅全量更新一次
 	// 1. 记录打卡数据
