@@ -42,8 +42,8 @@ module.exports =
 									{
 										...dUser,
 										login,
-										allCheck: us[login].allCheck,
-										noCheck: us[login].noCheck,
+										allCheck: us[login] && us[login].allCheck,
+										noCheck: us[login] && us[login].noCheck,
 										pay,
 										next: us[login] && us[login].noCheck === true ? (
 											db[login] && db[login].next
@@ -94,8 +94,8 @@ module.exports =
 								...user,
 								login,
 								pay,
-								allCheck: us[login].allCheck,
-								noCheck: us[login].noCheck,
+								allCheck: us[login] && us[login].allCheck,
+								noCheck: us[login] && us[login].noCheck,
 								next: us[login] && us[login].noCheck === true ? (
 									db[login] && db[login].next
 								) || false : false,
