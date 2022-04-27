@@ -22,6 +22,8 @@ module.exports =
 					avatar_url: "https://avatars.githubusercontent.com/u/12479470?v=4",
 					name: "lucifer",
 					pay: true,
+					noCheck: false,
+					allCheck: true,
 				};
 
 			await next();

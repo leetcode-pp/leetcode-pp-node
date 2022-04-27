@@ -94,6 +94,8 @@ module.exports =
 								...user,
 								login,
 								pay,
+								allCheck: us[login].allCheck,
+								noCheck: us[login].noCheck,
 								next: us[login] && us[login].noCheck === true ? (
 									db[login] && db[login].next
 								) || false : false,
