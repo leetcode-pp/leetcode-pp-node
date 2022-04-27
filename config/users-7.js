@@ -235,6 +235,8 @@ michaelxiii3	MichaelXi3
 z	beikelan
 Jiang-Wenqi	jiangwenqi
 sundiego	gitbingsun
+dandelion_yxc	qq-jiang
+🙃	snowballbears
 `;
 
 const unknowns = [
