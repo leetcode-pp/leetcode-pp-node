@@ -237,6 +237,8 @@ Jiang-Wenqi	jiangwenqi
 sundiego	gitbingsun
 dandelion_yxc	qq-jiang
 🙃	snowballbears
+末了。	lxgang65
+kongkongysq517	ShuqianYang
 `;
 
 const unknowns = [
