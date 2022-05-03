@@ -239,6 +239,8 @@ dandelion_yxc	qq-jiang
 🙃	snowballbears
 末了。	lxgang65
 kongkongysq517	ShuqianYang
+平常道	gfrxf
+龙	Atanycosts
 `;
 
 const unknowns = [
