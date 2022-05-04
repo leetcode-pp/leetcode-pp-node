@@ -1,1 +1,15 @@
-{"users":{"lastUpdateTime":1651672177778},"dailyCheck":{"lastUpdateTime":1651673851944},"checkIn":{"lastUpdateTime":1651673852078},"preCard":true}
+{
+    "users": {
+        "lastUpdateTime": 1651672177778
+    },
+    "dailyCheck": {
+        "lastUpdateTime": 1651673851944
+    },
+    "checkIn": {
+        "lastUpdateTime": 1651673852078
+    },
+    "lectures": {
+        "lastUpdateTime": 1651673852078
+    },
+    "preCard": true
+}
