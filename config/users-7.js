@@ -242,6 +242,7 @@ kongkongysq517	ShuqianYang
 平常道	gfrxf
 龙	Atanycosts
 嬛	yangyuhuan
+南极星	ssuning
 `;
 
 const unknowns = [
