@@ -15,7 +15,7 @@ module.exports =
 			ctx.session.user =
 				{
 					// login: "Zz10044",
-					login: "zacherycao",
+					login: "ShawYuan97".toLowerCase(),
 					// login: "wangzehan123",
 					// login: "rfhklwt",
 					// login: "azl397985856",
