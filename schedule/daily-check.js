@@ -73,8 +73,8 @@ async function run(d, issue_number) {
 }
 
 // 仅更新当天的
-const lastUpdateTime = meta.dailyCheck ? meta.dailyCheck.lastUpdateTime : -1;
-if ((TODAY - getDay(lastUpdateTime)) < 1) {
+const lastFulllyUpdateTime = meta.dailyCheck ? meta.dailyCheck.lastFulllyUpdateTime : -1;
+if ((TODAY - getDay(lastFulllyUpdateTime)) < 1) {
 	run(TODAY);
 } else {
 	// 更新历史所有的，每天仅全量更新一次
@@ -85,6 +85,12 @@ if ((TODAY - getDay(lastUpdateTime)) < 1) {
 	for (let d = 1; d <= TODAY; d++) {
 		run(d);
 	}
+	meta.dailyCheck.lastFulllyUpdateTime = new Date().getTime();
+
+	fs.writeFileSync(
+		path.resolve(__dirname, "../static/meta.json"),
+		JSON.stringify(meta),
+	);
 }
 
 module.exports = { run };
