@@ -243,6 +243,7 @@ kongkongysq517	ShuqianYang
 龙	Atanycosts
 嬛	yangyuhuan
 南极星	ssuning
+研	zdsss
 `;
 
 const unknowns = [
