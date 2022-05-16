@@ -244,6 +244,7 @@ kongkongysq517	ShuqianYang
 嬛	yangyuhuan
 南极星	ssuning
 研	zdsss
+ちわわぢから	hatoriMain
 `;
 
 const unknowns = [
