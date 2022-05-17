@@ -245,6 +245,7 @@ kongkongysq517	ShuqianYang
 南极星	ssuning
 研	zdsss
 ちわわぢから	hatoriMain
+山下石	uoubyy
 `;
 
 const unknowns = [
