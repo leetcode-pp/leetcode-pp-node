@@ -246,6 +246,7 @@ kongkongysq517	ShuqianYang
 研	zdsss
 ちわわぢから	hatoriMain
 山下石	uoubyy
+Hang	tongyuhangg
 `;
 
 const unknowns = [
