@@ -247,6 +247,7 @@ kongkongysq517	ShuqianYang
 ちわわぢから	hatoriMain
 山下石	uoubyy
 Hang	tongyuhangg
+Bugmaker	Shuchunyu
 `;
 
 const unknowns = [
