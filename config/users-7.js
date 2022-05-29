@@ -248,6 +248,8 @@ kongkongysq517	ShuqianYang
 山下石	uoubyy
 Hang	tongyuhangg
 Bugmaker	Shuchunyu
+生命练习生	asuka1h
+Jeffrey	djd28176
 `;
 
 const unknowns = [
@@ -274,6 +276,6 @@ for (const line of lines) {
 }
 
 exports.users =
-	Object.values(users).map((v) => String.prototype.trim.call(v)).map(
-		(v) => String.prototype.toLocaleLowerCase.call(v),
-	);
+	Object.values(users)
+		.map((v) => String.prototype.trim.call(v))
+		.map((v) => String.prototype.toLocaleLowerCase.call(v));
