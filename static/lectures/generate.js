@@ -320,19 +320,25 @@ const idLectures = JSON.stringify(
 	merge(lectures.intro, lectures.basic, lectures.topic, lectures.advance),
 );
 
-if (
-	idLectures !== fs.readFileSync(__dirname + "/lectures-by-id.json").toString()
-) {
-	if (!meta.lectures) {
-		meta.lectures = {};
+const originalLectures = fs.readFileSync(__dirname + "/lectures-by-id.json");
+
+// update lastUpdateTime if needed
+for (const k in lectures) {
+	if (lectures[k] !== originalLectures[k]) {
+		if (!meta.lectures) {
+			meta.lectures = {};
+		}
+		if (!meta.lectures[k]) {
+			meta.lectures[k] = {};
+		}
+
+		meta.lectures[k].lastUpdateTime = new Date().getTime();
+
+		fs.writeFileSync(
+			path.resolve(__dirname, "../meta.json"),
+			JSON.stringify(meta),
+		);
 	}
-
-	meta.lectures.lastUpdateTime = new Date().getTime();
-
-	fs.writeFileSync(
-		path.resolve(__dirname, "../meta.json"),
-		JSON.stringify(meta),
-	);
 }
 
 fs.writeFileSync(__dirname + "/lectures-by-id.json", idLectures);
