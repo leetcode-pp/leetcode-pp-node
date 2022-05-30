@@ -10,6 +10,10 @@ function merge(A, ...B) {
 	return merge(merge(A, B[0]), ...B.slice(1));
 }
 
+const originalLectures = JSON.parse(
+	fs.readFileSync(__dirname + "/lectures-by-category.json"),
+);
+
 const lectures = {
 	intro: {
 		1000: {
@@ -320,11 +324,14 @@ const idLectures = JSON.stringify(
 	merge(lectures.intro, lectures.basic, lectures.topic, lectures.advance),
 );
 
-const originalLectures = fs.readFileSync(__dirname + "/lectures-by-id.json");
-
 // update lastUpdateTime if needed
 for (const k in lectures) {
-	if (lectures[k] !== originalLectures[k]) {
+	console.log(
+		JSON.stringify(lectures[k]).length,
+		JSON.stringify(originalLectures[k]).length,
+	);
+	if (JSON.stringify(lectures[k]) !== JSON.stringify(originalLectures[k])) {
+		console.log("x");
 		if (!meta.lectures) {
 			meta.lectures = {};
 		}
