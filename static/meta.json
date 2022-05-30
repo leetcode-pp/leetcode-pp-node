@@ -1,6 +1,6 @@
 {
     "users": {
-        "lastUpdateTime": 1653909831976
+        "lastUpdateTime": 1653915129110
     },
     "dailyCheck": {
         "lastUpdateTime": 1653913507603,
@@ -12,16 +12,16 @@
     "lectures": {
         "lastUpdateTime": 1652878368502,
         "intro": {
-            "lastUpdateTime": 1653914834653
+            "lastUpdateTime": 1653915130419
         },
         "basic": {
-            "lastUpdateTime": 1653915104476
+            "lastUpdateTime": 1653915130419
         },
         "topic": {
-            "lastUpdateTime": 1653914834661
+            "lastUpdateTime": 1653915130420
         },
         "advance": {
-            "lastUpdateTime": 1653914834663
+            "lastUpdateTime": 1653915130420
         }
     },
     "preCard": true
