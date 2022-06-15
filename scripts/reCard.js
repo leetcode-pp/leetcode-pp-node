@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "hatoriMain".trim().toLocaleLowerCase();
+const name = "flaming-cl".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
