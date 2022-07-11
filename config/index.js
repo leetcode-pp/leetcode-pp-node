@@ -16,7 +16,7 @@ const whitelist = [
 
 const userList = whitelist
 	.concat(users)
-	.map((name) => ({ login: name }))
+	.map((name) => ({ login: name, next: true }))
 	.filter(
 		(user) => {
 			if (user.login in us) {
