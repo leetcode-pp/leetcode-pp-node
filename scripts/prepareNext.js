@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { start } = require("./reset.js");
+const { move } = require("./backupStatic");
 // 备份
 const season = 8;
 
@@ -39,4 +40,5 @@ fs.writeFileSync(
 	fs.readFileSync(`./config/users-${season - 1}.js`),
 );
 
-start();
+start(season);
+move(season);

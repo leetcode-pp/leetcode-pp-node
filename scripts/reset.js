@@ -2,12 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const mySolutions = require("../static/my/solutions.json");
 const solutions = require("../static/solution/solutions.json");
-// 备份
-const season = 8;
 
 // 新的一期开始，重启！
 
-function start() {
+function start(season) {
 	for (const name in solutions) {
 		const my = [];
 		mySolutions[name] = my;
