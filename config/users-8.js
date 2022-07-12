@@ -76,7 +76,7 @@ JY-11007	yaya-bb
 YuKang_Zhong	Hacker90
 YuKang_Zhong	Hacker90
 LXJRichard	Richard-Lime
-tribulations2022	https://github.com/aq666888
+tribulations2022	aq666888
 liushinan8888	okkband
 aW5jaXBl	incipe
 wxid_z2pbolnax5e112	xy147
@@ -114,7 +114,7 @@ as18772957769	zhongranherz
 wxid_m1em3bp06oaq22	 Luckysq999
 cytrue	cytrue
 duanyaqi-_-	DuanYaQi
-adehappy168	https://github.com/dereklisdr
+adehappy168	dereklisdr
 Z02f0202	zhangfei18
 hookjs	andyyxw
 happy_lizhe	woshichuanqilz
@@ -154,5 +154,6 @@ for (const line of lines) {
 
 exports.users =
 	Object.values(users)
+		.filter(Boolean)
 		.map((v) => String.prototype.trim.call(v))
 		.map((v) => String.prototype.toLocaleLowerCase.call(v));
