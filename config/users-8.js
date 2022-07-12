@@ -129,7 +129,6 @@ wxid_9597205970012	SamLu-ECNU
 laofu_wf	laofuWF
 YuSunny0702	SunnyYuJF
 talongge	willuuu
-
 `;
 
 const unknowns = [
