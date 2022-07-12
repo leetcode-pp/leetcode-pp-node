@@ -119,6 +119,16 @@ momo-rain8	nuomituxedo
 所念皆星河	lmlkeepgoing
 Architect620	hackbl
 mathematical_2020	dujt-X
+aW5jaXBl	Incipe-win
+Mryaoml	mryao1
+hundanxingxiaobao	Christina-Soda
+xingzhan0312	xingzhan0312
+smelllikeaqua	shunanch
+Gelx1015	gelxgx
+wxid_9597205970012	SamLu-ECNU
+laofu_wf	laofuWF
+YuSunny0702	SunnyYuJF
+talongge	willuuu
 `;
 
 const unknowns = [
