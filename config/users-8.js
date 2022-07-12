@@ -6,11 +6,8 @@ function join(s) {
 		.map((v) => String.prototype.toLocaleLowerCase.call(v));
 }
 
-exports.users =
-	join(
-		`
-    azl397985856
-    John_17	suiyi8760
+const data = `
+John_17	suiyi8760
 M.X	xxxiaoma
 DarkNightWriter	DarkNightWriter
 youhaha67	admu
@@ -128,5 +125,34 @@ amazinglalabro(夜鹰)	XingZhaoDev
 Jay	jay-xzj
 momo-rain8	nuomituxedo
 所念皆星河	lmlkeepgoing
-    `,
-	);
+Architect620	hackbl
+mathematical_2020	dujt-X
+`;
+
+const unknowns = [
+	"Dawn",
+	"宿愿Cc",
+	"have-belief-to-live",
+	"Simple_TYJ",
+	"xiaohanlliu.0730",
+	"15396053927",
+	"guid_shin",
+	"wxid_e52ejucgg5zt11",
+];
+const users = {};
+const lines = data.split(/\n/);
+for (const line of lines) {
+	const [wechat, github] = line.split(/\t/);
+	if (!wechat || !github) {
+		continue;
+	}
+	if (unknowns.includes(wechat)) {
+		continue;
+	}
+	users[wechat] = github;
+}
+
+exports.users =
+	Object.values(users)
+		.map((v) => String.prototype.trim.call(v))
+		.map((v) => String.prototype.toLocaleLowerCase.call(v));
