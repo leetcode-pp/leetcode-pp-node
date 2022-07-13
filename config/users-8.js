@@ -157,7 +157,7 @@ xiaoranzife	FontEndArt
 GUXUEHUA1127	guxuehua
 hellosuukii	suukii
 sallycat33	starrystarry33
-NickyK9	
+NickyK9	nickyk319	
 workday944	heng518
 cyang258	cyang258
 Sky-1024519	likeyousmile
@@ -194,6 +194,8 @@ wxid_tdyao6q9bwsu22	kiirii4
 wxid_tdyao6q9bwsu22	kiirii4
 LokoHua	perfqi
 YU_0817_	saltychess
+gzgzgz	gzgzgzgzgzgz
+frankelleo	frankelzeng
 `;
 
 const unknowns = [
