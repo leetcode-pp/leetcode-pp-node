@@ -156,6 +156,8 @@ xiaoranzife	FontEndArt
 流浪野王（llywjtlbszdd）	dlm001128（Chen Zhang）
 GUXUEHUA1127	guxuehua
 hellosuukii	suukii
+sallycat33	starrystarry33
+NickyK9	nickyk319
 `;
 
 const unknowns = [
