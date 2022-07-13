@@ -157,7 +157,43 @@ xiaoranzife	FontEndArt
 GUXUEHUA1127	guxuehua
 hellosuukii	suukii
 sallycat33	starrystarry33
-NickyK9	nickyk319
+NickyK9	
+workday944	heng518
+cyang258	cyang258
+Sky-1024519	likeyousmile
+passengerses	passengersa
+JYe_1999	Serena9
+jokertzw	jokertzw
+Karzh	degndaixingqiu
+Orangejuz_	Orangejuz
+q815101630	q815101630
+tht826508921	tanghaitao
+yanjyumoso	joeymoso
+w17521693530	suzuola
+syy_mushroom	Irenia111
+puzhuya	YppaH-Eb
+qwer	miss1
+moyuanhua_dev	moyuanhua
+Ellenson_	Hioneowner
+wojiushibushi	wxleah
+elliot_zrj	tobepellucid
+kitkwanL	leungogogo
+jacquelinecheung	hanaka-dba
+zck-ybyqjy	cachezhou0617
+xiaojunjun1110	xiaojunjun1110
+waixinren9	Junzmer
+含光	luhaoling
+Never_Stop_cnpyy	zzzkaiNS
+Mr.Lair	johnxizhao
+wufangzhouzhou	naomiwufzz
+pls_try_again_later	ricjli
+a13168745569	pgquestions
+zzz607	zzz607
+taiyangzhou_	kaiykk
+wxid_tdyao6q9bwsu22	kiirii4
+wxid_tdyao6q9bwsu22	kiirii4
+LokoHua	perfqi
+YU_0817_	saltychess
 `;
 
 const unknowns = [
