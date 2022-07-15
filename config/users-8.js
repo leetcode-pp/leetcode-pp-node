@@ -237,7 +237,15 @@ ipearl2010	wzasd
 Johnkx	JohnVSD
 s2000022831	lsunxh
 HaloSimon	xxoojs
+wwwwww一辉	itsjacob
+653870977	liuxy94
+_YouNeverKnow_	Jessie725
+junchenghou66	junchenghou1991
+饼干	biscuit279
+二竹一间	Jiangwenzhe
 `;
+// r19000815	renxuyang
+// have-belief-to-live	gentleman-goodman
 
 const unknowns = [
 	"Dawn",
