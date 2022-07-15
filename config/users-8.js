@@ -153,7 +153,7 @@ tom_tao626	Tomtao626
 沉浮	 jia98shanliang
 se fei	LuckyRyan-web
 xiaoranzife	FontEndArt
-流浪野王（llywjtlbszdd）	dlm001128（Chen Zhang）
+流浪野王（llywjtlbszdd）	dlm001128
 GUXUEHUA1127	guxuehua
 hellosuukii	suukii
 sallycat33	starrystarry33
