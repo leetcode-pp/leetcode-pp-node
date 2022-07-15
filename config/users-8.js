@@ -243,9 +243,9 @@ _YouNeverKnow_	Jessie725
 junchenghou66	junchenghou1991
 饼干	biscuit279
 二竹一间	Jiangwenzhe
+have-belief-to-live	gentleman-goodman
 `;
 // r19000815	renxuyang
-// have-belief-to-live	gentleman-goodman
 
 const unknowns = [
 	"Dawn",
