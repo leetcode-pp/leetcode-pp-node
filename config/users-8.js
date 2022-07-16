@@ -250,6 +250,11 @@ qycoderfe	qycoder
 NomoSerenade	VictorHuang99
 M.X	xxiaomm
 wxid_nk9qxm79s33b12	Xinyue-Ma
+wxid_t0jo7a3hzy8122	wenjialu
+MRli1801	lanceli424
+chenqilin_1988	qilin88
+xianyuis7989	yufeng727
+zhujian19891203	zhujian19891203
 `;
 // r19000815	renxuyang
 
