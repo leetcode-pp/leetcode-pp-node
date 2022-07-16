@@ -118,11 +118,17 @@ function run(n) {
 	}
 
 	for (const red of redlist) {
+		if (!us[red.login]) {
+			us[red.login] = {};
+		}
 		us[red.login].allCheck = true;
 		us[red.login].noCheck = false;
 		us[red.login].card = red.card;
 	}
 	for (const login of blacklist) {
+		if (!us[login]) {
+			us[login] = {};
+		}
 		us[login].noCheck = true;
 	}
 
