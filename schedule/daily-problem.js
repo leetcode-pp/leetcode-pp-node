@@ -56,6 +56,14 @@ async function run(solution) {
 			.listForRepo({ labels: String(solution.day), owner, repo })
 			.then(async (res) => {
 				const { data } = res;
+				const firstIssue = data[0];
+				solution.issue_number = firstIssue.number; // 之前没有更新上（commit 之前挂了导致没 commit 上，一个例子就是 commit 的时候发现要先 git pull 就会挂），这次更新上去
+
+				fs.writeFileSync(
+					path.resolve(__dirname, "../static/solution/solutions.json"),
+					JSON.stringify({ ...solutions, [currentDay]: solution }),
+				);
+				console.log("solution", solution);
 				if (data.length > 0) {
 					throw new Error(`Day ${solution.day} has been published.`);
 				}
@@ -79,7 +87,7 @@ async function run(solution) {
 		console.log(err);
 	}
 }
-
+console.log(solution.issue_number);
 // 当前有题解，并且今天的题目还没发布，就自动创建一个 issue
 if (solution && !solution.issue_number) {
 	run(solution);
