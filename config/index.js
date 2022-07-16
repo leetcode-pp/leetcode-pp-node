@@ -41,7 +41,7 @@ const db = userList.reduce(
 	},
 	{},
 );
-console.log("db", db["suiyi8760"]);
+
 const leetcodeConfig = {
 	baseUrl: "https://leetcode-cn.com",
 	submitUrl: "https://leetcode-cn.com/problems/$slug/submit/",
