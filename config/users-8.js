@@ -275,33 +275,35 @@ yxx13477097262	shawyuan97
 Cusanity_9	Cusanity
 Yza_530	yueza
 spark-wings	kaimingkai
+Yuan_Ling_Fei	https://github.com/tian-pengfei
+Jean-Tao	taojin1992
+kingonsky	bugMarker
 `;
 // r19000815	renxuyang
 
 const unknowns = [
-	"Dawn",
-	"宿愿Cc",
-	"Simple_TYJ",
-	"xiaohanlliu.0730",
-	"15396053927",
-	"guid_shin",
-	"wxid_e52ejucgg5zt11",
+  "Dawn",
+  "宿愿Cc",
+  "Simple_TYJ",
+  "xiaohanlliu.0730",
+  "15396053927",
+  "guid_shin",
+  "wxid_e52ejucgg5zt11",
 ];
 const users = {};
 const lines = data.split(/\n/);
 for (const line of lines) {
-	const [wechat, github] = line.split(/\t/);
-	if (!wechat || !github) {
-		continue;
-	}
-	if (unknowns.includes(wechat)) {
-		continue;
-	}
-	users[wechat] = github;
+  const [wechat, github] = line.split(/\t/);
+  if (!wechat || !github) {
+    continue;
+  }
+  if (unknowns.includes(wechat)) {
+    continue;
+  }
+  users[wechat] = github;
 }
 
-exports.users =
-	Object.values(users)
-		.filter(Boolean)
-		.map((v) => String.prototype.trim.call(v))
-		.map((v) => String.prototype.toLocaleLowerCase.call(v));
+exports.users = Object.values(users)
+  .filter(Boolean)
+  .map((v) => String.prototype.trim.call(v))
+  .map((v) => String.prototype.toLocaleLowerCase.call(v));
