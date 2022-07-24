@@ -275,9 +275,9 @@ yxx13477097262	shawyuan97
 Cusanity_9	Cusanity
 Yza_530	yueza
 spark-wings	kaimingkai
-Yuan_Ling_Fei	https://github.com/tian-pengfei
 Jean-Tao	taojin1992
 kingonsky	bugMarker
+Yuan_Ling_Fei	tian-pengfei
 `;
 // r19000815	renxuyang
 
