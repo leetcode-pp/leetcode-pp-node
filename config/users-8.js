@@ -219,7 +219,7 @@ chenguixian	guixian001
 18674385426	smalldarks
 liao_jie_yi_xia	u1235
 jaxvan	revisegoal
-902	https://github.com/LiquanLuo
+902	LiquanLuo
 hanchutianji622	richypang
 单行道	jawn-ha
 ipearl2010	wzasd
@@ -279,6 +279,8 @@ Jean-Tao	taojin1992
 kingonsky	bugMarker
 Yuan_Ling_Fei	tian-pengfei
 Ice_cola1008	starOrbiting
+bearwillflies1999	BearingCode
+z_yangxu	Kaneyang
 `;
 // r19000815	renxuyang
 
