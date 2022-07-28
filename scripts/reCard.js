@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "mirrors-cl".trim().toLocaleLowerCase();
+const name = "kernelSue".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
