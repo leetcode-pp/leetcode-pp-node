@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "luhaoling".trim().toLocaleLowerCase();
+const name = "fan-svg".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 
