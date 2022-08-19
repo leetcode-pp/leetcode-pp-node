@@ -288,6 +288,8 @@ Running_Imama	runninggao
 a602120	chengfengfengwang
 myHeartInCA	ShellyLCooper
 Eden_Ricardo	eden-ye
+Half^blood_King	VGSTU
+PleaseHEHe	testplm
 `;
 // r19000815	renxuyang
 
