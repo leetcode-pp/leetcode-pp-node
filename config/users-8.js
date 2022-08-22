@@ -290,6 +290,8 @@ myHeartInCA	ShellyLCooper
 Eden_Ricardo	eden-ye
 Half^blood_King	VGSTU
 PleaseHEHe	testplm
+snowhale	Skylarxu214
+maker	Yanping-Li-oss
 `;
 // r19000815	renxuyang
 
