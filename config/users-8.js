@@ -292,6 +292,8 @@ Half^blood_King	VGSTU
 PleaseHEHe	testplm
 snowhale	Skylarxu214
 maker	Yanping-Li-oss
+Orange_xxx	tom-zhouch
+ltaihui	taihui
 `;
 // r19000815	renxuyang
 
