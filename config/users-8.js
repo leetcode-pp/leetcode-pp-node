@@ -296,10 +296,13 @@ smixiaang	jakkiabc
 愿逐月华流照君	huaxueguakele
 StevenQiHe	H-steven
 smilexiaang	Jakkiabc
+Running_Imama	BiaBiaRun
+zoro-lulu	lulukdog
 `;
 // r19000815	renxuyang
 
 const unknowns = [
+  "zoro-lulu",
   "Dawn",
   "宿愿Cc",
   "Simple_TYJ",
