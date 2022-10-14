@@ -1,7 +1,9 @@
 const startTime = new Date("2022-11-01T00:00:00.000+08:00");
 // const { users } = require("./users-5");
-const { users } = require("./users-8");
+const { users } = require("./users-9");
 const us = require("../static/users/index");
+
+export const season = 9;
 
 const whitelist = [
   "unclegem",
@@ -51,7 +53,7 @@ const leetcodeConfig = {
 module.exports = {
   leetcodeConfig,
   owner: "leetcode-pp",
-  repo: "91alg-8-daily-check",
+  repo: `91alg-${season}-daily-check`,
   startTime: startTime.getTime(),
   secret: process.env.secret,
   clientId: "c16b80e7b58a5a007157",

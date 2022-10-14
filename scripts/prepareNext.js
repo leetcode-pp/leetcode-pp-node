@@ -2,8 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { start } = require("./reset.js");
 const { move } = require("./backupStatic");
-// 备份
-const season = 9;
+const { season } = require("../config/index");
 
 function resolve(_path) {
   return path.resolve(path.resolve(process.cwd(), _path));
