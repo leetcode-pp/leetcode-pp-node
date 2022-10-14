@@ -47,10 +47,10 @@ const leetcodeConfig = {
   lcSeesionCookieName: "LEETCODE_SESSION", // lc存seesionid的 cookie键名
   lcCsrftokenCookieName: "csrftoken", // lc存csrf的 cookie键名
 };
-
+const season = 9;
 module.exports = {
   leetcodeConfig,
-  season: 9,
+  season,
   owner: "leetcode-pp",
   repo: `91alg-${season}-daily-check`,
   startTime: startTime.getTime(),
