@@ -1,3 +1,4 @@
+# see also: https://github.com/beeinger/vercel-private-submodule
 # github submodule repo address without https:// prefix
 SUBMODULE_GITHUB=github.com/beeinger/vercel-private-submodule
 
