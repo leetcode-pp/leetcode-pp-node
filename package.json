@@ -12,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "daily-schedule": "node ./schedule/daily-problem.js && node ./schedule/daily-check.js && node ./schedule/check-in.js",
     "generate": "node ./static/solution/generate.js && node ./static/users/generate.js",
-    "lecture": "node ./static/lectures/generate.js"
+    "lecture": "node ./static/lectures/generate.js",
+    "vercel-install": "./vercel-submodule-workaround.sh && yarn --ignore-scripts --production=false"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
