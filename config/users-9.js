@@ -126,6 +126,9 @@ qingge899504	bwspsu
 maker	Yanping-Li-oss
 wufangzhouzhou	naomiwufzz
 Aa112211urp	uancen
+meggia	chouqin99
+MOS	snmyj
+Yfucan	yetfan
 `;
 // r19000815	renxuyang
 
