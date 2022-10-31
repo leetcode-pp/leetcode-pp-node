@@ -129,6 +129,9 @@ Aa112211urp	uancen
 meggia	chouqin99
 MOS	snmyj
 Yfucan	yetfan
+workday944	heng518
+darwinmonkey	darwintk
+hanchutianji622	richypang
 `;
 // r19000815	renxuyang
 
