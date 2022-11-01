@@ -158,7 +158,6 @@ const unknowns = [
   "guid_shin",
   "wxid_e52ejucgg5zt11",
   "453593547",
-  "wxid_rdu0te34117m22",
   "Forschers",
 ];
 const users = {};
