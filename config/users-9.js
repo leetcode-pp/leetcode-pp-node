@@ -145,8 +145,12 @@ Forschers	Forscher
 _wuxiao_	wuxiaoShawn
 OpalArin	arinzz
 yindadaws	yin02
+smilexiang	Jakkiabc
+rzj15345711326	renzhejun
+hundanxingxiaobao	Christina-Soda
+nea	neado
+13719295799	hwfrankfung
 `;
-// r19000815	renxuyang
 
 const unknowns = [
   "zoro-lulu",
@@ -158,7 +162,9 @@ const unknowns = [
   "guid_shin",
   "wxid_e52ejucgg5zt11",
   "453593547",
-  "Forschers",
+  "smilexiang",
+  "nea",
+  "13719295799",
 ];
 const users = {};
 const lines = data.split(/\n/);
