@@ -132,6 +132,16 @@ Yfucan	yetfan
 workday944	heng518
 darwinmonkey	darwintk
 hanchutianji622	richypang
+Lj1433887494	liuajingliu
+zhiyuan7707	steven72574
+soyAnanas	ruikiwi
+453593547	zjsuper
+wxid_rdu0te34117m22	syh-coder
+wengzhouyunfan	wengzhouyunfan
+含光	luhaoling
+zhou1224150218	amazeding
+hatori1110	hatorimain
+Forschers	Forscher
 `;
 // r19000815	renxuyang
 
@@ -144,6 +154,9 @@ const unknowns = [
   "15396053927",
   "guid_shin",
   "wxid_e52ejucgg5zt11",
+  "453593547",
+  "wxid_rdu0te34117m22",
+  "Forschers",
 ];
 const users = {};
 const lines = data.split(/\n/);
