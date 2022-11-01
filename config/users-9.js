@@ -163,7 +163,6 @@ const unknowns = [
   "wxid_e52ejucgg5zt11",
   "453593547",
   "smilexiang",
-  "nea",
   "13719295799",
 ];
 const users = {};
