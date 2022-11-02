@@ -145,11 +145,15 @@ Forschers	Forscher
 _wuxiao_	wuxiaoShawn
 OpalArin	arinzz
 yindadaws	yin02
-smilexiang	Jakkiabc
+smilexiaang	Jakkiabc
 rzj15345711326	renzhejun
 hundanxingxiaobao	Christina-Soda
 nea	neado
 13719295799	hwfrankfung
+zm-nerd	zhumiao-taylor
+tribulations2022	aq666888
+wizard1616	zjsuper
+FungHiuwang	HWFrankFung
 `;
 
 const unknowns = [
@@ -162,7 +166,6 @@ const unknowns = [
   "guid_shin",
   "wxid_e52ejucgg5zt11",
   "453593547",
-  "smilexiang",
   "13719295799",
 ];
 const users = {};
