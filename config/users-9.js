@@ -154,6 +154,8 @@ zm-nerd	zhumiao-taylor
 tribulations2022	aq666888
 wizard1616	zjsuper
 FungHiuwang	HWFrankFung
+Zyxccc66	Yongxi-Zhou
+kongkongysq517	ShuqianYang
 `;
 
 const unknowns = [
