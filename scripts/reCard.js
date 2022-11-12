@@ -1,8 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const name = "huibinny".trim().toLocaleLowerCase();
+const name = "vhhgx".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
+// const delta = 3 * 24 * 60 * 60 * 1000;
+const delta = 0;
 
 if (!us[name]) {
   console.log("用户名错误");
@@ -11,7 +13,7 @@ if (!us[name]) {
 } else {
   us[name].noCheck = false;
 
-  us[name].createTime = new Date().getTime();
+  us[name].createTime = new Date().getTime() - delta;
 
   fs.writeFileSync(
     path.resolve(__dirname, "../static/users/index.json"),
