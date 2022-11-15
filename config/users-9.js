@@ -165,6 +165,8 @@ WZFggmybro	ggmybro
 Michile2618	Alconzy
 EEL_VHHG	vhhgx
 Asuka1h	asuka1h
+huayuxsugoi	hyxupup
+cpw1015	myleetcodejourney
 `;
 
 const unknowns = [
