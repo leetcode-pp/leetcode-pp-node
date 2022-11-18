@@ -170,7 +170,7 @@ cpw1015	myleetcodejourney
 x2365427670	want2333
 aColocasia	StaringWhere
 Sunlitskylines-onlyu	Ryanbaiyansong
-Lucky_cyp992	YuXuan Dou
+Lucky_cyp992	Dou-Yu-xuan
 `;
 
 const unknowns = [
