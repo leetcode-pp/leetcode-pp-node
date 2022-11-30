@@ -62,6 +62,15 @@ const lectures = {
       external: true,
       externalLink: "https://www.bilibili.com/video/av670114626",
     },
+    1005: {
+      title: "05. 力扣刷题的正确姿势是什么？",
+      desc: "方法+工具",
+      image: {
+        url: "https://tva1.sinaimg.cn/large/008vxvgGly1h8ni9nscv4j32bq0u0dkr.jpg",
+        alt: "方法和技巧介绍",
+      },
+      id: 1005,
+    },
   },
   basic: {
     2001: {
@@ -277,7 +286,7 @@ lectures.intro["1002"].content = encrypt(
   fs.readFileSync(path.resolve(__dirname, "../../91alg-5/bigO.md"))
 );
 
-lectures.intro["1003"].content = encrypt(
+lectures.intro["1005"].content = encrypt(
   fs.readFileSync(path.resolve(__dirname, "../../91alg-5/how-leetcode.md"))
 );
 
@@ -322,12 +331,7 @@ const idLectures = JSON.stringify(
 
 // update lastUpdateTime if needed
 for (const k in lectures) {
-  console.log(
-    JSON.stringify(lectures[k]).length,
-    JSON.stringify(originalLectures[k]).length
-  );
   if (JSON.stringify(lectures[k]) !== JSON.stringify(originalLectures[k])) {
-    console.log("x");
     if (!meta.lectures) {
       meta.lectures = {};
     }
