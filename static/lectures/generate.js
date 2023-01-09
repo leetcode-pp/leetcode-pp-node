@@ -20,7 +20,7 @@ const lectures = {
       title: "00. 学前必读",
       desc: "活动的基本介绍以及大家需要准备的东西",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gvjurc1by8j60u012iaef02.jpg",
+        url: "https://p.ipic.vip/wnvyon.jpg",
       },
       id: 1000,
     },
@@ -44,7 +44,7 @@ const lectures = {
       title: "03. 如何使用好仓库",
       desc: "仓库使用指南",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1gomv0rscf4j31c00u0adk.jpg",
+        url: "https://p.ipic.vip/qltqzt.jpg",
         alt: "仓库使用指南",
       },
       id: 1003,
@@ -55,7 +55,7 @@ const lectures = {
       title: "04. 如何高效刷题",
       desc: "方法和技巧介绍",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1gomv0r0f1ej30zk0k0tac.jpg",
+        url: "https://p.ipic.vip/g5r985.jpg",
         alt: "方法和技巧介绍",
       },
       id: 1004,
@@ -66,7 +66,7 @@ const lectures = {
       title: "05. 力扣刷题的正确姿势是什么？",
       desc: "方法+工具",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008vxvgGly1h8ni9nscv4j32bq0u0dkr.jpg",
+        url: "https://p.ipic.vip/t9t4e2.jpg",
         alt: "方法和技巧介绍",
       },
       id: 1005,
@@ -77,7 +77,7 @@ const lectures = {
       title: "01. 数组，栈，队列",
       desc: "主要介绍了数组，栈，队列基本原理，基础 API 以及其对应的复杂度",
       image: {
-        url: "https://tva1.sinaimg.cn/large/007S8ZIlly1gfbikq9ipmj30cd0a73yp.jpg",
+        url: "https://p.ipic.vip/1tsrna.jpg",
       },
       id: 2001,
     },
@@ -85,7 +85,7 @@ const lectures = {
       title: "02. 链表",
       desc: "主要介绍了链表基本原理，基础 API 以及其对应的复杂度，另外还列举了链表的常见考点和题型",
       image: {
-        url: "https://tva1.sinaimg.cn/large/007S8ZIlly1gfigbvzje1j30ky0bhq3x.jpg",
+        url: "https://p.ipic.vip/sp82rf.jpg",
       },
       id: 2002,
     },
@@ -101,7 +101,7 @@ const lectures = {
       title: "04. 哈希表",
       desc: "主要介绍了哈希表基本原理，基础 API ，处理冲突的方式以及其对应的复杂度，最后介绍了哈希表的常见题型和套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/007S8ZIlly1gjurye2oxyj30zk0cymz7.jpg",
+        url: "https://p.ipic.vip/racwhd.jpg",
       },
       id: 2004,
     },
@@ -109,7 +109,7 @@ const lectures = {
       title: "05. 双指针",
       desc: "主要介绍了双指针的基本概念，题型以及实际操作技巧。",
       image: {
-        url: "https://tva1.sinaimg.cn/large/007S8ZIlly1gf5w79tciyj30aa0hl77b.jpg",
+        url: "https://p.ipic.vip/37hxg3.jpg",
       },
       id: 2005,
     },
@@ -117,7 +117,7 @@ const lectures = {
       title: "06. 图",
       desc: "主要介绍了图基本原理，表示方式，常见算法。",
       image: {
-        url: "https://tva1.sinaimg.cn/large/0081Kckwly1gk3qh59semj30ec05ptab.jpg",
+        url: "https://p.ipic.vip/oepxsy.jpg",
       },
       id: 2006,
     },
@@ -125,7 +125,7 @@ const lectures = {
       title: "07. 模拟与枚举",
       desc: "模拟和枚举的简单介绍",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gq8s81iijpj308i04it92.jpg",
+        url: "https://p.ipic.vip/smfm1k.jpg",
       },
       id: 2007,
     },
@@ -133,7 +133,7 @@ const lectures = {
       title: "08. 排序（加餐）",
       desc: "经典排序的实现以及思想",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gwzne4sdw7j31hc0u0gnc.jpg",
+        url: "https://p.ipic.vip/h4721s.jpg",
       },
       id: 2008,
     },
@@ -143,7 +143,7 @@ const lectures = {
       title: "01. 二分",
       desc: "主要介绍了二分的本质，类型以及常见的套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008eGmZEly1goss2vq59dj30c407rgm0.jpg",
+        url: "https://p.ipic.vip/g0mlg9.jpg",
       },
       id: 3001,
     },
@@ -151,7 +151,7 @@ const lectures = {
       title: "02. 滑动窗口",
       desc: "主要介绍了滑动的本质，类型以及常见的套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/007S8ZIlly1ghlugl94y8j30d90d50t5.jpg",
+        url: "https://p.ipic.vip/z474q4.jpg",
       },
       id: 3002,
     },
@@ -159,7 +159,7 @@ const lectures = {
       title: "03. 搜索（BFS，DFS，回溯）专题",
       desc: "主要介绍了搜索的本质，类型以及常见的套路和解题模板",
       image: {
-        url: "https://tva1.sinaimg.cn/large/0081Kckwly1gkaub4scgij30uu0io40h.jpg",
+        url: "https://p.ipic.vip/tctlra.jpg",
       },
       id: 3003,
     },
@@ -168,7 +168,7 @@ const lectures = {
       title: "04. 动态规划",
       desc: "主要介绍了动态规划的本质，常见类型以及常见的套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6btdzgsbj31ak0p0gpj.jpg",
+        url: "https://p.ipic.vip/3d11nv.jpg",
       },
       id: 3004,
     },
@@ -176,7 +176,7 @@ const lectures = {
       title: "05. 背包",
       desc: "主要介绍了常见的背包问题及其对应套路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6byqpl1ij30m80m8q4p.jpg",
+        url: "https://p.ipic.vip/7gzbch.jpg",
       },
       id: 3005,
     },
@@ -184,7 +184,7 @@ const lectures = {
       title: "06. 分治",
       desc: "主要介绍了分治的基本解题思路",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6btwbwt0j30jv0gf0u7.jpg",
+        url: "https://p.ipic.vip/1ht19f.jpg",
       },
       id: 3006,
     },
@@ -192,7 +192,7 @@ const lectures = {
       title: "07. 贪心",
       desc: "主要介绍了贪心的常见问题",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6bvgz7c4j30c10390sq.jpg",
+        url: "https://p.ipic.vip/b5yn0t.jpg",
       },
       id: 3007,
     },
@@ -200,7 +200,7 @@ const lectures = {
       title: "08. 位运算",
       desc: "主要介绍了位运算是什么，种类有哪些，这是状态压缩的基础。",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gr6bzd54kij30pc0bcmxx.jpg",
+        url: "https://p.ipic.vip/nt3qlf.jpg",
       },
       id: 3008,
     },
@@ -210,7 +210,7 @@ const lectures = {
       title: "01. Trie",
       desc: "主要介绍了 Trie 解决的问题，适用场景，以及如何自己动手实现一个 Trie",
       image: {
-        url: "https://tva1.sinaimg.cn/large/007S8ZIlly1ghlug87vyfj30mz0gq406.jpg",
+        url: "https://p.ipic.vip/s2pbj5.jpg",
       },
       id: 4001,
     },
@@ -218,7 +218,7 @@ const lectures = {
       title: "02. 并查集",
       desc: "主要介绍了并查集解决的问题，适用场景，以及如何自己动手实现一个并查集",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gpzcws8miqj30dh053glo.jpg",
+        url: "https://p.ipic.vip/2avrij.jpg",
       },
       id: 4002,
     },
@@ -226,7 +226,7 @@ const lectures = {
       title: "03. 剪枝",
       desc: "主要介绍了什么是剪枝，以及如何运用剪枝技巧使得暴力法可以 AC",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gpzcxvawtdj30qb0bjq41.jpg",
+        url: "https://p.ipic.vip/1kst3h.jpg",
       },
       id: 4003,
     },
@@ -234,7 +234,7 @@ const lectures = {
       title: "04. 字符串匹配（BF&RK&KMP）",
       desc: "主要介绍了字符串匹配的三种经典算法",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gpzd084vk4j314o0hutaz.jpg",
+        url: "https://p.ipic.vip/huik66.jpg",
       },
       id: 4004,
     },
@@ -242,7 +242,7 @@ const lectures = {
       title: "05. 堆",
       desc: "主要介绍了堆的特点，解决的问题以及常见题型",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gpzcyng27aj30dt0f33yy.jpg",
+        url: "https://p.ipic.vip/x2pgw9.jpg",
       },
       id: 4005,
     },
@@ -250,7 +250,7 @@ const lectures = {
       title: "06. 跳表",
       desc: "主要介绍了跳表是什么，解决的问题",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gpzcyzany9j31u90u0n14.jpg",
+        url: "https://p.ipic.vip/08bvxx.jpg",
       },
       id: 4006,
     },
@@ -258,7 +258,7 @@ const lectures = {
       title: "07. 高频面试题",
       desc: "最后给大家带来常见的面试题系列，为大家的面试保驾护航~",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gpzd0qzll5j30zk0k10tz.jpg",
+        url: "https://p.ipic.vip/b3wks0.jpg",
       },
       id: 4007,
     },
@@ -266,7 +266,7 @@ const lectures = {
       title: "08. 线段树（加餐）",
       desc: "区间算法题用线段树可以秒解？",
       image: {
-        url: "https://tva1.sinaimg.cn/large/008i3skNly1gxeuwtgg9oj30u00vvmym.jpg",
+        url: "https://p.ipic.vip/mjhkaj.jpg",
       },
       id: 4008,
     },
