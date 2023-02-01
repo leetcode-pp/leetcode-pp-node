@@ -55,6 +55,8 @@ w_TRTW	GISW
 yldznf	chocolate-emperor
 13060206910	ezwkg@qq.com
 Adir42	texamc2
+Arrthure	KangQinSen
+huizsh	huizsh
 `;
 
 const unknowns = [
