@@ -102,6 +102,11 @@ KrabbeJing	krabbejing
 zmt1981208770	yuzmt
 zq945293035	franciszq
 liujiaqi3686	Jackielj
+ACutieCutiePie	SoSo1105
+Clarence5wo	Clarence5
+bzhang5121	bingzxy
+bo996233	HQHC
+ghs1205	HanshengGUO
 `;
 
 const unknowns = [
@@ -111,7 +116,7 @@ const unknowns = [
   "Simple_TYJ",
   "xiaohanlliu.0730",
   "15396053927",
-  "guid_shin",
+  // "guid_shin", 第 X 期加入
   "wxid_e52ejucgg5zt11",
   "453593547",
   "13719295799",
