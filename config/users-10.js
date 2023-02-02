@@ -57,6 +57,51 @@ yldznf	chocolate-emperor
 Adir42	texamc2
 Arrthure	KangQinSen
 huizsh	huizsh
+wx1398633077	luoanyang
+LIMBO_42	LIMBO42
+w1322021456	duke-github
+wangleilei1124	JETWLL
+13060206910	DrinkMorekaik
+_wuxiao_	wuxiaoShawn
+絮由	luckyoneday
+acelinguo	guoling0019
+web_code-5	lubaoqing
+wxid_o9o4m8nos7xe22	tzuikuo
+llforever126	chanceyliu
+chengh-nju	ha0cheng
+D-609860117	zhenxied
+ThatDoctor	JasonQiu
+Horace_uu	Horace7
+guid_shin	shin-guid
+zouzeyu1	CruiseYuGH
+ccslience	ccslience
+ccslience	ccslience
+Van2643097225	User-Vannnn
+du_dmq	Dianlandu
+603289228	for123s
+joriscai	joriscai
+X1AO___X1A	x1aox1a
+lt1114061614	zcytm3000
+lt1114061614	zcytm3000
+cc1046034010	jiujingxukong
+north-sea-coder	NorthSeacoder
+13250504940	954545647
+JingYuZhou-GoodLuck	JingYuZhou123
+18742055687	JadeLiu13
+drexolo	kevinding0218
+KrabbeJing	KrabbeJing
+KrabbeJing	KrabbeJing
+dujt2022	dujt-X
+dujt2022	dujt-X
+dujt2022	dujt-X
+zcdzyf	yufanzh
+_curlyJJ	erquaner 
+_curlyJJ	erquaner 
+wx_nawtain	snmyj
+KrabbeJing	krabbejing
+zmt1981208770	yuzmt
+zq945293035	franciszq
+liujiaqi3686	Jackielj
 `;
 
 const unknowns = [
@@ -78,7 +123,15 @@ const unknowns = [
   "Zephr1943",
   "wxid_z2pbolnax5e112",
   "BaoChengYo",
-  "13060206910"
+  "13060206910",
+  "wxid_o9o4m8nos7xe22",
+  "web_code-5",
+  "chengh-nju",
+  "ThatDoctor",
+  "Van2643097225",
+  "603289228",
+  "13250504940",
+  "18742055687"
 ];
 const users = {};
 const lines = data.split(/\n/);
