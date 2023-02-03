@@ -115,6 +115,20 @@ wxid_o9o4m8nos7xe22	tzuikuo
 pjd18260854526	pangjiadai
 kaoru_lino	kanmiian
 wxid_rdu0te34117m22	syh-coder
+xmsn90	wty9sky
+xmsn90	wty9sky
+aneureka2	aneureka
+Van2643097225	User-Vannnn
+wxid_8764367643811	for123s
+BaoAChengYo	c1f2h3
+qq1224832526	dinjufen
+nuo_mituan	linlizzz
+siezof8	Size-of
+sizeof8	Size-of
+Prosperidad_	Zoeyzyzyzy
+DiL_0349	RestlessBreeze
+bookyue	bookyue
+WYZMJD116	liuxiner
 `;
 
 const unknowns = [
@@ -139,14 +153,16 @@ const unknowns = [
   "13060206910",
   // "wxid_o9o4m8nos7xe22",
   "web_code-5",
-  "chengh-nju",
+  // "chengh-nju",
   "ThatDoctor",
   "Van2643097225",
   // "603289228",
   "13250504940",
   // "18742055687",
   "16602112714",
-  "wxid_rdu0te34117m22"
+  "wxid_rdu0te34117m22",
+  "aneureka2",
+  "Van2643097225"
 ];
 const users = {};
 const lines = data.split(/\n/);
