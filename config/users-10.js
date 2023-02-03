@@ -162,7 +162,6 @@ const unknowns = [
   "16602112714",
   "wxid_rdu0te34117m22",
   "aneureka2",
-  "Van2643097225"
 ];
 const users = {};
 const lines = data.split(/\n/);
