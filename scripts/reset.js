@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const mySolutions = require("../static/my/solutions.json");
 const solutions = require("../static/solution/solutions.json");
+const meta = require("../static/meta.json");
 const { season } = require("../config/index");
 
 // 新的一期开始，重启！
@@ -37,6 +38,28 @@ function start(season) {
   fs.writeFileSync(
     path.resolve(__dirname, "../static/solution/solutions.json"),
     JSON.stringify(solutions)
+  );
+
+  // 清空 meta
+  fs.writeFileSync(
+    path.resolve(__dirname, "../static/meta.json"),
+    JSON.stringify({
+      ...meta,
+      users: { lastUpdateTime: -1 },
+      dailyCheck: {
+        lastUpdateTime: -1,
+        lastFulllyUpdateTime: -1,
+      },
+      checkIn: { lastUpdateTime: -1 },
+      // lectures: {
+      //   lastUpdateTime: 1652878368502,
+      //   intro: { lastUpdateTime: 1673259935703 },
+      //   basic: { lastUpdateTime: 1673259935707 },
+      //   topic: { lastUpdateTime: 1673800051084 },
+      //   advance: { lastUpdateTime: 1673259935713 },
+      // },
+      preCard: false,
+    })
   );
 }
 // start(season);
