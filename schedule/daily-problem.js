@@ -84,7 +84,7 @@ async function run(solution) {
 			JSON.stringify({ ...solutions, [currentDay]: solution }),
 		);
 	} catch (err) {
-		console.log(err);
+		console.log('an error occured when creating issue', err);
 	}
 }
 // 当前有题解，并且今天的题目还没发布，就自动创建一个 issue
