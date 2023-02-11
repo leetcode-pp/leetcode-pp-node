@@ -171,6 +171,8 @@ CarolinaFu1998	yfu6
 Stellaaa_ma	jmastella
 paradisemusic	kofzhang
 LJY91505	JiangyanLiNEU
+sd8663	Meisgithub
+coffee_tans	HKTangShuo
 `;
 
 const unknowns = [
