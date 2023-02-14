@@ -187,6 +187,8 @@ wuziyang0126	manwzy
 pkuphy	pkuphy
 A-qi___	xiaoq777
 5436888893	enrilwang
+Tachikomaa	FlipN9
+Ztrey__	Jetery
 `;
 
 const unknowns = [
