@@ -189,6 +189,7 @@ A-qi___	xiaoq777
 5436888893	enrilwang
 Tachikomaa	FlipN9
 Ztrey__	Jetery
+withoutoctober	skyoct
 `;
 
 const unknowns = [
@@ -224,7 +225,7 @@ const unknowns = [
   // "aneureka2",
   "wang18804001869",
   "16602112714",
-  "lmx55011",
+  // "lmx55011",
   "15275150257",
   "5436888893"
 ];
