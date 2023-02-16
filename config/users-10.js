@@ -190,6 +190,10 @@ A-qi___	xiaoq777
 Tachikomaa	FlipN9
 Ztrey__	Jetery
 withoutoctober	skyoct
+lwting_1999	elon-lau
+CYCL1224	cyk1337
+jiangjiayib	jyjsunny
+En176666	enrilwang
 `;
 
 const unknowns = [
