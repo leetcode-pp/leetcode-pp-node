@@ -194,6 +194,10 @@ lwting_1999	elon-lau
 CYCL1224	cyk1337
 jiangjiayib	jyjsunny
 En176666	enrilwang
+wxid_tvkpmouwp0n522	uratora
+jdj	uratora
+ljqiswm	ljqchlsw
+injurehu	yingchehu
 `;
 
 const unknowns = [
@@ -231,7 +235,8 @@ const unknowns = [
   "16602112714",
   // "lmx55011",
   "15275150257",
-  "5436888893"
+  "5436888893",
+  "wxid_tvkpmouwp0n522"
 ];
 const users = {};
 const lines = data.split(/\n/);
