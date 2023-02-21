@@ -198,6 +198,11 @@ wxid_tvkpmouwp0n522	uratora
 jdj	uratora
 ljqiswm	ljqchlsw
 injurehu	yingchehu
+kyong961115	kyo-tom
+w549261270	Bochengwan
+ys954244923	GuitarYs
+w549261270	Bochengwan
+820064276	frankzhang1990
 `;
 
 const unknowns = [
@@ -236,7 +241,8 @@ const unknowns = [
   // "lmx55011",
   "15275150257",
   "5436888893",
-  "wxid_tvkpmouwp0n522"
+  "wxid_tvkpmouwp0n522",
+  "820064276"
 ];
 const users = {};
 const lines = data.split(/\n/);
