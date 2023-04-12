@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "Size-of".trim().toLocaleLowerCase();
+const name = "huizsh".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 // const delta = 3 * 24 * 60 * 60 * 1000;
