@@ -1,4 +1,4 @@
-const startTime = new Date("2023-02-14T00:00:00.000+08:00");
+const startTime = new Date("2023-06-10T00:00:00.000+08:00");
 // const { users } = require("./users-5");
 const { users } = require("./users-10");
 const us = require("../static/users/index");
@@ -47,7 +47,7 @@ const leetcodeConfig = {
   lcSeesionCookieName: "LEETCODE_SESSION", // lc存seesionid的 cookie键名
   lcCsrftokenCookieName: "csrftoken", // lc存csrf的 cookie键名
 };
-const season = 10;
+const season = 11;
 module.exports = {
   leetcodeConfig,
   season,

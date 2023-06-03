@@ -53,6 +53,13 @@
 
 creator,createtime,updator, updatetime
 
+## 新一期
+
+- [ ] leetcode-pp-node 和 leetcode-pp 项目中 config 修改 startTime 和 season
+- [ ] 新建 users-${season}.js 被更新引入
+- [ ] 执行 agenda.js 被将其 copy 到 leetcode-pp 的 91.db.js
+- [ ] 执行 prepareNext.js
+
 ## 讲师必看
 
 ### 同步讲义
