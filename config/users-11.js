@@ -30,6 +30,10 @@ qq578752350	guangsizhongbin
 Moin-Jer	Moin-Jer
 qq578752350	guangsizhongbin
 zyj2660399402	SunStrongChina
+zhou1813785561	Miller-em
+wx_nawtain	snmyj
+-_-#	zhuxinyu-znb
+YuLansiyaki	beanza
 `;
 
 const unknowns = [
@@ -77,7 +81,8 @@ const unknowns = [
   "iai1110",
   "13886812418",
   "po'n'y",
-  "15021187156"
+  "15021187156",
+  "zhou1813785561"
 ];
 const users = {};
 const lines = data.split(/\n/);
