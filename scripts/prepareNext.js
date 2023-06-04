@@ -39,5 +39,6 @@ fs.writeFileSync(
   fs.readFileSync(`./config/users-${season - 1}.js`)
 );
 
-start(season);
 move(season);
+start(season);
+
