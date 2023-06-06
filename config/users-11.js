@@ -73,9 +73,23 @@ xiaoxinyu51	xixiao51
 bzwill	yizhewill
 xiao_guang_0	Master-guang
 _wuxiao_	wuxiaoShawn
+timmyhotimmy	sosdogecoin@gmail.com
+junn-chen	qiaojunch 
+gu2896431151	weiguangjiayou
+lmx55011	Alexno1no2
+watermenlon827	jameswangxin
+JAMJID	beginner-jamji
+afoolsjourney	dorian-byte
+CarolinaFu1998	yfu6
+w2441505169	diana21170648
+Lukashuang1995	hzzaicyz
+iai1110	MetSystem
+hotimmyho	sosdogecoin
+gu2896431151	weiguangjiayou
 `;
 
 const unknowns = [
+  "timmyhotimmy",
   "zoro-lulu",
   "Dawn",
   "宿愿Cc",
