@@ -44,7 +44,7 @@ JY-11007	-yayabb
 iswesley	wasedawesley
 ys954244923	GuitarYs
 Fear_of_Jay	WANGjay408
-w2441506169	diana21170648
+w2441505169	diana21170648
 JY-11007	yaya-bb
 13250504940	954545647
 yoci642	chang-you
@@ -83,7 +83,7 @@ const unknowns = [
   "xiaohanlliu.0730",
   "15396053927",
   // "guid_shin", 第 X 期加入
-  "wxid_e52ejucgg5zt11",
+  // "wxid_e52ejucgg5zt11",
   "453593547",
   "13719295799",
   // "丁",
@@ -114,7 +114,7 @@ const unknowns = [
   "wxid_tvkpmouwp0n522",
   // "820064276",
   "1143183660",
-  "JennyHovo",
+  // "JennyHovo",
   "15021187156",
   // "zhou1813785561",
   "iai1110",
