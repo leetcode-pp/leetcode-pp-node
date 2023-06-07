@@ -46,7 +46,7 @@ ys954244923	GuitarYs
 Fear_of_Jay	WANGjay408
 w2441505169	diana21170648
 JY-11007	yaya-bb
-13250504940	954545647
+xhj__1119	954545647
 yoci642	chang-you
 iambigchen0	iambigchen
 RyanOnCloud	gaoyuan1223m
@@ -87,6 +87,7 @@ iai1110	MetSystem
 hotimmyho	sosdogecoin
 gu2896431151	weiguangjiayou
 biscuit279	biscuit279
+kingonsky	kingxiaozhe
 `;
 
 const unknowns = [
@@ -132,7 +133,7 @@ const unknowns = [
   // "JennyHovo",
   "15021187156",
   // "zhou1813785561",
-  "iai1110",
+  // "iai1110",
   "13886812418",
   "po'n'y",
   "15021187156",
