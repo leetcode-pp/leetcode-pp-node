@@ -97,6 +97,9 @@ wxid_rdu0te34117m22	syh-coder
 xuyuefan2013	zhouliuhuo
 gaoyuan19880111	jackgaoyuan
 duanyukun150	1095135037
+han-9113	aohanliu
+LJ1433887494	liuajingliu
+GEMINI__HJ	hengistchan
 `;
 
 const unknowns = [
