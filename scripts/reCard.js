@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "Master-guang".trim().toLocaleLowerCase();
+const name = "954545647".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 // const delta = 3 * 24 * 60 * 60 * 1000;
@@ -19,4 +19,5 @@ if (!us[name]) {
     path.resolve(__dirname, "../static/users/index.json"),
     JSON.stringify(us)
   );
+  console.log('success~')
 }
