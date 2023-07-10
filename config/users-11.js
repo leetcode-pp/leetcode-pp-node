@@ -101,6 +101,8 @@ han-9113	aohanliu
 LJ1433887494	liuajingliu
 GEMINI__HJ	hengistchan
 passengerses	passengersa
+BestBoyMarcus	lizlian
+hchen_CA	HuiyingC
 `;
 
 const unknowns = [
