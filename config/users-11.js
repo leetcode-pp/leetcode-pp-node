@@ -106,6 +106,7 @@ hchen_CA	HuiyingC
 a136751026	andyli4
 Momogir_air	momogir
 OscarZxt	OscarZhou0107
+waq1129	uchuuWei
 `;
 
 const unknowns = [
