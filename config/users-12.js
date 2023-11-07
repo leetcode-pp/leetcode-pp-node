@@ -4,6 +4,9 @@ Nonkul_R	0Christ1
 larscheng	larscheng
 ahu-wx	jsaki
 donald_duck	javajianghu
+QinhaoChang	QinhaoChang
+Lauralwx	laurallalala
+Y4W3B1	freeroo2
 `;
 
 const unknowns = [
