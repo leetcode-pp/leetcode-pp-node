@@ -4,9 +4,17 @@ Nonkul_R	0Christ1
 larscheng	larscheng
 ahu-wx	jsaki
 donald_duck	javajianghu
-QinhaoChang	QinhaoChang
 Lauralwx	laurallalala
 Y4W3B1	freeroo2
+youyin__	EggEggLiu
+QinhaoChang	QinhaoChang
+wxid_7490714906511	zm-hunter
+wx_nawtain	snmyj
+yangcan17	ycan253
+yangcan17	ycan253
+wx_nawtain	snmyj
+wx_nawtain	snmyj
+shirlin19	Junru281
 `;
 
 const unknowns = [
@@ -47,6 +55,7 @@ const unknowns = [
   "5436888893",
   "wxid_tvkpmouwp0n522",
   // "820064276"
+  "wxid_7490714906511",
 ];
 const users = {};
 const lines = data.split(/\n/);
