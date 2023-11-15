@@ -15,6 +15,14 @@ yangcan17	ycan253
 wx_nawtain	snmyj
 wx_nawtain	snmyj
 shirlin19	Junru281
+Z906155099	rennzhang
+FishMoCuishle	emergence23
+jx8023997	qingkediguo
+IamJHM	JinhMa
+duruo8686	Verkru
+13781000528	adfvcdxv
+xyan516495459	Danielyan86
+ jau_ianxaus-99914	kiirii4
 `;
 
 const unknowns = [
@@ -56,6 +64,7 @@ const unknowns = [
   "wxid_tvkpmouwp0n522",
   // "820064276"
   "wxid_7490714906511",
+  "13781000528"
 ];
 const users = {};
 const lines = data.split(/\n/);
