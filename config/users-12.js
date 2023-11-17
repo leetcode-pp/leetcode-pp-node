@@ -27,7 +27,7 @@ wxid_aq27maw9rf4u22	adfvcdxv
 wxid_u69garvv48jr21	 Luster-lyl
 TianlinGui	dr-kkk 
 yudong-sun-	joe-the-plumber
-wxid_eaxvmu9x593s12	github.com/Ludwig-LL
+wxid_eaxvmu9x593s12	Ludwig-LL
 `;
 
 const unknowns = [
