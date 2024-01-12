@@ -35,6 +35,7 @@ andynick1983	smallppgirl
 duxiyang430105	RealDuxy
 aiziyouhao	peggyhao
 pweinihao	Awilekong
+singeewx	ImSingee
 `;
 
 const unknowns = [
