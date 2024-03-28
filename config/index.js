@@ -1,6 +1,6 @@
-const startTime = new Date("2023-11-16T00:00:00.000+08:00");
+const startTime = new Date("2024-04-08T00:00:00.000+08:00");
 // const { users } = require("./users-5");
-const { users } = require("./users-12");
+const { users } = require("./users-13");
 const us = require("../static/users/index");
 
 const whitelist = [
@@ -47,7 +47,7 @@ const leetcodeConfig = {
   lcSeesionCookieName: "LEETCODE_SESSION", // lc存seesionid的 cookie键名
   lcCsrftokenCookieName: "csrftoken", // lc存csrf的 cookie键名
 };
-const season = 12;
+const season = 13;
 module.exports = {
   leetcodeConfig,
   season,
