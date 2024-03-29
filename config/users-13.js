@@ -1,5 +1,5 @@
 const data = `
-ren_FEE	hillson_ziqiu
+ren_FEE	hillsonziqiu
 GenXiao0824	atom-set
 io123456789987654321	Alexzhang-Mini
 `;
