@@ -8,6 +8,10 @@ GreyQT	GReyQT
 Neary23	20donkey
 saniededka	coderXiaowq
 AnonymousBit	zhiyuanpeng
+andynick1983	smallppgirl
+yunshen-1995	zhangjinzhepro
+lucksstarr	Dtjk
+xiaohanliu0730	xil324
 `;
 
 const unknowns = [
@@ -47,6 +51,7 @@ const unknowns = [
   "15275150257",
   "5436888893",
   "wxid_tvkpmouwp0n522",
+  "lucksstarr"
   // "820064276"
 ];
 const users = {};
