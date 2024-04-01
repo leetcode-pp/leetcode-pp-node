@@ -12,6 +12,8 @@ andynick1983	smallppgirl
 yunshen-1995	zhangjinzhepro
 lucksstarr	Dtjk
 xiaohanliu0730	xil324
+hjqeasymoneysniper	Hawkins-hjq
+border_g	borderGong
 `;
 
 const unknowns = [
@@ -51,7 +53,6 @@ const unknowns = [
   "15275150257",
   "5436888893",
   "wxid_tvkpmouwp0n522",
-  "lucksstarr"
   // "820064276"
 ];
 const users = {};
