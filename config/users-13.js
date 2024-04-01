@@ -2,7 +2,7 @@ const data = `
 ren_FEE	hillsonziqiu
 GenXiao0824	atom-set
 io123456789987654321	Alexzhang-Mini
-16602112714	xy147
+wxid_z2pbolnax5e112	xy147
 yunshen-1995	zhangjinzhepro
 GreyQT	GReyQT
 Neary23	20donkey
@@ -15,6 +15,8 @@ xiaohanliu0730	xil324
 hjqeasymoneysniper	Hawkins-hjq
 border_g	borderGong
 shirlin19	Junru281
+LeoG0922	RocJeMaintiendrai
+Brainlds	brainlds
 `;
 
 const unknowns = [
