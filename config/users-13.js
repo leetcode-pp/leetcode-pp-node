@@ -14,6 +14,7 @@ lucksstarr	Dtjk
 xiaohanliu0730	xil324
 hjqeasymoneysniper	Hawkins-hjq
 border_g	borderGong
+shirlin19	Junru281
 `;
 
 const unknowns = [
