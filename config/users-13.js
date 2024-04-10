@@ -28,6 +28,7 @@ jesterroger	YANGLimbo
 wxid_b7us59fzrrne22	eclairs46
 i-love-you-827	yashuning
 rql897999002	rao-qianlin
+yaolongyun07	franklinsworld666
 `;
 
 const unknowns = [
