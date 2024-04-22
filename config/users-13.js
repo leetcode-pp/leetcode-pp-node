@@ -32,6 +32,7 @@ yaolongyun07	franklinsworld666
 陈涵博	Hamberrrr
 maybeoneday18	maike-hps
 mcp0010	Qinmengx
+zhao2010xf	Lizhao-Liu
 `;
 
 const unknowns = [
