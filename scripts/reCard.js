@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const name = "lxy1108".trim().toLocaleLowerCase();
+const name = "pandapls".trim().toLocaleLowerCase();
 
 const us = require("../static/users/index");
 // const delta = 3 * 24 * 60 * 60 * 1000;
