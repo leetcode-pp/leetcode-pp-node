@@ -8,6 +8,8 @@ Forschers	Forschers
 nbnscyd	zjy-debug
 Lcangroove	edwineo
 yh_199-	DADAHUI
+smile__yangkun	godkun
+dulalalaka	jialigogogo
 `;
 
 const unknowns = [
