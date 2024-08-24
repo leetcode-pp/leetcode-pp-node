@@ -15,6 +15,8 @@ Nic_9047	liudi9047
 SherllyBernard	celestexiong
 joyce3221	sleepydog25
 wufangzhouzhou	naomiwufzz
+huizsh	huizsh
+LHH19168000	AllanLi-LHH
 `;
 
 const unknowns = [
