@@ -7,6 +7,9 @@ darwinmonkey	darwintankon@gmail.com
 BillyCHX0410	CHXBilly
 PEng	rocjemaintiendrai
 passengerses	passengersa
+w01h14b	shuichicx
+IamJHM	jinhma
+kizibai	baiqz
 `;
 
 const unknowns = [
