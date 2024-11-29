@@ -14,6 +14,8 @@ CPP-PENG-QFFDNLXX	XiaogaoDDD
 vivihbl999	hebingliang
 tuuna_	tuuna
 wtb2632057	wtbkevin
+darwinmonkey	darwintk
+tongxiaoweiwill	tongxw
 `;
 
 const unknowns = [
