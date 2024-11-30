@@ -16,6 +16,11 @@ tuuna_	tuuna
 wtb2632057	wtbkevin
 darwinmonkey	darwintk
 tongxiaoweiwill	tongxw
+turnalltocashflow	hallcia
+asukawsj	shangjiaw
+Lauralwx	lauraliu61b
+xiao_guang_0	master-guang
+watermenlon827	jameswangxin
 `;
 
 const unknowns = [
