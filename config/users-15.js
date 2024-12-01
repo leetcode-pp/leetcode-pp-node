@@ -21,9 +21,12 @@ asukawsj	shangjiaw
 Lauralwx	lauraliu61b
 xiao_guang_0	master-guang
 watermenlon827	jameswangxin
+wxid_oj77ij5q2utg22	m1592
+晨曦	Dtjk
 `;
 
 const unknowns = [
+  "wxid_oj77ij5q2utg22",
   "xarey870629",
   "zoro-lulu",
   "Dawn",
