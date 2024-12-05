@@ -26,6 +26,8 @@ wxid_oj77ij5q2utg22	m1592
 xx13295441574	lxy12l
 qq874329147	dencanwen
 L13724343058	fea1220
+kitkwanL	leungogogo
+liub0_o	awenbocc
 `;
 
 const unknowns = [
