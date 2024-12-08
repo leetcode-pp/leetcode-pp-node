@@ -18,7 +18,7 @@ darwinmonkey	darwintk
 tongxiaoweiwill	tongxw
 turnalltocashflow	hallcia
 asukawsj	shangjiaw
-Lauralwx	lauraliu61b
+Lauralwx	laurallalala
 xiao_guang_0	master-guang
 watermenlon827	jameswangxin
 wxid_oj77ij5q2utg22	m1592
