@@ -1,41 +1,7 @@
 const data = `
-xarey870629	xarey0629
-haodongwang0000	HaodongWang1995
-JazzingMountain	QunShanHe
-xstb_ly	xstblu
-darwinmonkey	darwintankon@gmail.com
-BillyCHX0410	CHXBilly
-PEng	rocjemaintiendrai
-passengerses	passengersa
-w01h14b	shuichicx
-IamJHM	jinhma
-kizibai	baiqz
-CPP-PENG-QFFDNLXX	XiaogaoDDD
-vivihbl999	hebingliang
-tuuna_	tuuna
-wtb2632057	wtbkevin
-darwinmonkey	darwintk
-tongxiaoweiwill	tongxw
-turnalltocashflow	hallcia
-asukawsj	shangjiaw
-Lauralwx	laurallalala
-xiao_guang_0	master-guang
-watermenlon827	jameswangxin
-wxid_oj77ij5q2utg22	m1592
-晨曦	Dtjk
-xx13295441574	lxy12l
-qq874329147	dencanwen
-L13724343058	fea1220
-kitkwanL	leungogogo
-liub0_o	awenbocc
-sentiy_when	sentiy-hub
-Lauralwx	laurallalala
-hzp2061448973	HuZhipeng
-hzp2061448973	HuZhipeng-hu
-15171667126	tongtz
-wmz9812ytlds	lindo146
-maoting844336	maoting
-dreamdragonHeHao	heye0507
+liuhongyi096522	leohongyi
+csyuu3	yuetong3yu
+DM1132961804	DMax1314
 `;
 
 const unknowns = [
