@@ -8,6 +8,7 @@ const { season } = require("../config/index");
 // 新的一期开始，重启！
 
 function start(season) {
+  console.log('mySolutions', mySolutions)
   // 清空不是这一期的打卡数据
   for (const name in mySolutions) {
     const my = [];
@@ -62,5 +63,5 @@ function start(season) {
     })
   );
 }
-// start(season);
+start(season);
 module.exports = { start };
