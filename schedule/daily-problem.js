@@ -11,6 +11,8 @@ const octokit = new Octokit({ auth: process.env.issueToken });
 
 const MS_PER_HOUR = 1 * 60 * 60 * 1000;
 const currentDay = getDay(new Date().getTime() + MS_PER_HOUR); // 发布题目。为了照顾一些人， 我们提前一个小时发明天的题目，而不是当天的。
+console.log('currentDay', currentDay)
+throw 1
 const solution = solutions[currentDay];
 
 // generate content for issues
