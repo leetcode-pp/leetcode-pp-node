@@ -11,9 +11,9 @@ const octokit = new Octokit({ auth: process.env.issueToken });
 
 const MS_PER_HOUR = 1 * 60 * 60 * 1000;
 const currentDay = getDay(new Date().getTime() + MS_PER_HOUR); // 发布题目。为了照顾一些人， 我们提前一个小时发明天的题目，而不是当天的。
-console.log('currentDay', currentDay)
-throw 1
+// console.log('currentDay', currentDay)
 const solution = solutions[currentDay];
+// console.log('solution', solution)
 
 // generate content for issues
 const generateIssueContent = ({ title, link, pres, description, whys }) => {
@@ -54,6 +54,7 @@ async function run(solution) {
 	// 假设不注释下面代码，如果 create issue 成功的时候挂了导致没有 commit 成功，以后就永远无法更新 issue_number 了
 	// 因此暂时解决方法是前端不根据 issue_number 判断是否创建了 issue，而是无脑相信创建了。
 	try {
+		console.log("create issue for day", solution.day);
 		await octokit.rest.issues
 			.listForRepo({ labels: String(solution.day), owner, repo })
 			.then(async (res) => {
@@ -69,7 +70,7 @@ async function run(solution) {
 					);
 					throw new Error(`Day ${solution.day} has been published.`);
 				}
-			});
+			})
 
 		const { data } = await octokit.rest.issues.create({
 			owner,
